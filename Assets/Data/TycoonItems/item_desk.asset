@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47e53b5c88189044a5343832dc32650, type: 3}
+  m_Name: item_desk
+  m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
+  itemId: item_desk
+  itemName: Executive Desk
+  itemDescription: Meja kerja utama kantor
+  category: 0
+  shopIcon: {fileID: 0}
+  levels:
+  - levelIndex: 1
+    levelName: Meja Kayu Standard
+    upgradeCost: 200
+    topdownSprite: {fileID: 0}
+    boostDescription: +5% Professional Look
+  - levelIndex: 2
+    levelName: Meja Ergonomis Modern
+    upgradeCost: 500
+    topdownSprite: {fileID: 0}
+    boostDescription: +15% Efficiency
+  - levelIndex: 3
+    levelName: Meja Direktur Glass Top
+    upgradeCost: 1200
+    topdownSprite: {fileID: 0}
+    boostDescription: +35% Prestige
