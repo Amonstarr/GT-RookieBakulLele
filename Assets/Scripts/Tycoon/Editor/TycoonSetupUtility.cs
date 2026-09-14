@@ -84,6 +84,46 @@ namespace Tycoon.Editor
 
             EditorUtility.SetDirty(item);
         }
+
+        [MenuItem("Tools/Tycoon/Create Sample Characters")]
+        public static void CreateSampleCharacters()
+        {
+            string folderPath = "Assets/Data/TycoonCharacters";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+                AssetDatabase.Refresh();
+            }
+
+            CreateOrUpdateCharacter(folderPath, "worker_dev_1", "Budi Programmer", "Senior Developer", "Suka minum kopi sambil ngoding bug-free.", 2.2f, 100f);
+            CreateOrUpdateCharacter(folderPath, "worker_des_1", "Siti UI/UX", "Lead Designer", "Mendesain antarmuka aplikasi super estetik.", 1.8f, 90f);
+            CreateOrUpdateCharacter(folderPath, "worker_pm_1", "Andi PM", "Project Manager", "Pengatur jadwal sprint & reminder deadline.", 2.0f, 110f);
+
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+            EditorUtility.DisplayDialog("Tycoon Setup", $"Sample Characters successfully created in '{folderPath}'!", "OK");
+        }
+
+        private static void CreateOrUpdateCharacter(string folder, string id, string name, string title, string bio, float speed, float stamina)
+        {
+            string assetPath = $"{folder}/{id}.asset";
+            CharacterSO character = AssetDatabase.LoadAssetAtPath<CharacterSO>(assetPath);
+
+            if (character == null)
+            {
+                character = ScriptableObject.CreateInstance<CharacterSO>();
+                AssetDatabase.CreateAsset(character, assetPath);
+            }
+
+            character.characterId = id;
+            character.characterName = name;
+            character.jobTitle = title;
+            character.bio = bio;
+            character.baseWalkSpeed = speed;
+            character.maxStamina = stamina;
+
+            EditorUtility.SetDirty(character);
+        }
     }
 }
 #endif

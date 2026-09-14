@@ -40,7 +40,14 @@ namespace Tycoon.Data
         [Header("Upgrade Levels")]
         public List<OfficeItemLevelData> levels = new List<OfficeItemLevelData>();
 
-        public int MaxLevel => levels.Count;
+        [Header("Dynamic Pricing Options (Optional)")]
+        [Tooltip("If true, upgrade cost is calculated dynamically using formula: baseCost * (costMultiplier ^ level)")]
+        public bool useFormulaCost = false;
+        public int baseCost = 100;
+        [Range(1.1f, 5.0f)]
+        public float costMultiplier = 1.5f;
+
+        public int MaxLevel => levels != null && levels.Count > 0 ? levels.Count : 10;
 
         /// <summary>
         /// Gets data for a specific level (1-indexed). Returns default if out of bounds.
@@ -48,11 +55,21 @@ namespace Tycoon.Data
         /// </summary>
         public OfficeItemLevelData GetLevelData(int level)
         {
-            if (level <= 0 || level > levels.Count)
+            if (level <= 0) return default;
+
+            if (levels != null && level <= levels.Count)
             {
-                return default;
+                return levels[level - 1];
             }
-            return levels[level - 1];
+
+            // Fallback for formula-generated levels
+            return new OfficeItemLevelData
+            {
+                levelIndex = level,
+                levelName = $"{itemName} Lvl {level}",
+                upgradeCost = CalculateFormulaCost(level - 1),
+                boostDescription = $"Boost Lvl {level}"
+            };
         }
 
         /// <summary>
@@ -62,11 +79,22 @@ namespace Tycoon.Data
         public int GetUpgradeCost(int currentLevel)
         {
             int nextLevel = currentLevel + 1;
-            if (nextLevel > levels.Count)
+            if (nextLevel > MaxLevel)
             {
                 return -1; // Max level reached
             }
+
+            if (useFormulaCost || levels == null || nextLevel > levels.Count)
+            {
+                return CalculateFormulaCost(currentLevel);
+            }
+
             return levels[nextLevel - 1].upgradeCost;
+        }
+
+        public int CalculateFormulaCost(int currentLevel)
+        {
+            return Mathf.RoundToInt(baseCost * Mathf.Pow(costMultiplier, currentLevel));
         }
 
         private void OnValidate()

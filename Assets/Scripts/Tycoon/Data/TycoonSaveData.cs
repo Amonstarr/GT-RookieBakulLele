@@ -15,5 +15,7 @@ namespace Tycoon.Data
     {
         public int coins;
         public List<ItemLevelEntry> itemLevels = new List<ItemLevelEntry>();
+        public List<string> hiredCharacterIds = new List<string>();
+        public List<string> activeCharacterIds = new List<string>();
     }
 }
