@@ -25,12 +25,17 @@ namespace Tycoon.Core
         private List<CharacterSO> hiredCharacters = new List<CharacterSO>();
         private List<string> activeCharacterIds = new List<string>();
         private List<WorkerCharacterAI> activeWorkerInstances = new List<WorkerCharacterAI>();
+        private bool hasChosenCharacter = false;
+        private string chosenCharacterId = "";
 
         public event Action<CharacterSO> OnCharacterHired;
+        public event Action<CharacterSO> OnCharacterChosen;
         public event Action OnActiveCharactersChanged;
 
         public IReadOnlyList<CharacterSO> HiredCharacters => hiredCharacters;
         public IReadOnlyList<WorkerCharacterAI> ActiveWorkerInstances => activeWorkerInstances;
+        public bool HasChosenCharacter => hasChosenCharacter;
+        public string ChosenCharacterId => chosenCharacterId;
 
         private void Awake()
         {
@@ -69,31 +74,106 @@ namespace Tycoon.Core
                 }
             }
 
-            // Load active IDs from save data
+            // Load active IDs and choice status from save data
             activeCharacterIds.Clear();
+            hasChosenCharacter = false;
+            chosenCharacterId = "";
+
             if (PlayerPrefs.HasKey("Tycoon_SaveData"))
             {
                 string json = PlayerPrefs.GetString("Tycoon_SaveData");
                 if (!string.IsNullOrEmpty(json))
                 {
                     TycoonSaveData data = JsonUtility.FromJson<TycoonSaveData>(json);
-                    if (data != null && data.activeCharacterIds != null)
+                    if (data != null)
                     {
-                        activeCharacterIds = new List<string>(data.activeCharacterIds);
+                        if (data.activeCharacterIds != null) activeCharacterIds = new List<string>(data.activeCharacterIds);
+                        hasChosenCharacter = data.hasChosenCharacter;
+                        chosenCharacterId = data.chosenCharacterId;
                     }
                 }
             }
 
-            // If no active list is saved yet, default all hired characters to active
-            if (activeCharacterIds.Count == 0 && hiredCharacters.Count > 0)
+            // Ensure all active character IDs are added to hiredCharacters list
+            foreach (var id in activeCharacterIds)
             {
-                foreach (var c in hiredCharacters)
+                CharacterSO charSO = GetCharacterById(id);
+                if (charSO != null && !hiredCharacters.Contains(charSO))
                 {
-                    if (c != null) activeCharacterIds.Add(c.characterId);
+                    hiredCharacters.Add(charSO);
                 }
             }
 
-            Debug.Log($"[CharacterManager] Loaded {hiredCharacters.Count} hired workers ({activeCharacterIds.Count} active) into Tycoon scene.");
+            // If activeCharacterIds was empty, fallback to chosenCharacterId or all hired characters
+            if (activeCharacterIds.Count == 0 && !string.IsNullOrEmpty(chosenCharacterId))
+            {
+                activeCharacterIds.Add(chosenCharacterId);
+            }
+            else if (activeCharacterIds.Count == 0 && hiredCharacters.Count > 0)
+            {
+                foreach (var c in hiredCharacters)
+                {
+                    if (c != null && !string.IsNullOrEmpty(c.characterId)) activeCharacterIds.Add(c.characterId);
+                }
+            }
+
+            Debug.Log($"[CharacterManager] Loaded {hiredCharacters.Count} hired workers ({activeCharacterIds.Count} ACTIVE) into Tycoon scene.");
+        }
+
+        /// <summary>
+        /// Allows player to pick a character ONCE. Locks choice permanently so it cannot be changed again.
+        /// </summary>
+        public bool SelectChosenCharacter(CharacterSO character)
+        {
+            if (character == null) return false;
+            return SelectChosenCharacters(new List<CharacterSO> { character });
+        }
+
+        /// <summary>
+        /// Allows player to pick multiple characters ONCE (up to configured limit). Locks choice permanently.
+        /// </summary>
+        public bool SelectChosenCharacters(List<CharacterSO> characters)
+        {
+            if (characters == null || characters.Count == 0) return false;
+
+            if (hasChosenCharacter)
+            {
+                Debug.LogWarning($"[CharacterManager] Selection locked! Player has already confirmed character selection.");
+                return false;
+            }
+
+            hasChosenCharacter = true;
+            activeCharacterIds.Clear();
+
+            foreach (var charSO in characters)
+            {
+                if (charSO != null && !string.IsNullOrEmpty(charSO.characterId))
+                {
+                    if (!activeCharacterIds.Contains(charSO.characterId))
+                    {
+                        activeCharacterIds.Add(charSO.characterId);
+                    }
+                    if (!hiredCharacters.Contains(charSO))
+                    {
+                        hiredCharacters.Add(charSO);
+                    }
+                    InterviewRecruitmentBridge.HireCandidate(charSO.characterId);
+                }
+            }
+
+            if (activeCharacterIds.Count > 0)
+            {
+                chosenCharacterId = activeCharacterIds[0];
+            }
+
+            SaveActiveCharacters();
+            SpawnHiredWorkers();
+
+            if (characters.Count > 0) OnCharacterChosen?.Invoke(characters[0]);
+            OnActiveCharactersChanged?.Invoke();
+
+            Debug.Log($"[CharacterManager] Player successfully CHOSE {activeCharacterIds.Count} workers! Selection locked permanently.");
+            return true;
         }
 
         public bool IsCharacterActive(string characterId)
@@ -109,10 +189,16 @@ namespace Tycoon.Core
         }
 
         /// <summary>
-        /// Toggles a hired character between active (deployed in office) and inactive (resting off-duty).
+        /// Toggles a hired character between active and inactive (if selection is not locked).
         /// </summary>
         public void ToggleCharacterActive(CharacterSO character)
         {
+            if (hasChosenCharacter)
+            {
+                Debug.LogWarning("[CharacterManager] Character selection is locked! Cannot toggle.");
+                return;
+            }
+
             if (character == null || !hiredCharacters.Contains(character)) return;
 
             if (activeCharacterIds.Contains(character.characterId))
@@ -136,13 +222,15 @@ namespace Tycoon.Core
             if (string.IsNullOrEmpty(json)) return;
 
             TycoonSaveData data = JsonUtility.FromJson<TycoonSaveData>(json);
-            if (data != null)
-            {
-                data.activeCharacterIds = new List<string>(activeCharacterIds);
-                string newJson = JsonUtility.ToJson(data, true);
-                PlayerPrefs.SetString("Tycoon_SaveData", newJson);
-                PlayerPrefs.Save();
-            }
+            if (data == null) data = new TycoonSaveData();
+
+            data.activeCharacterIds = new List<string>(activeCharacterIds);
+            data.hasChosenCharacter = hasChosenCharacter;
+            data.chosenCharacterId = chosenCharacterId;
+
+            string newJson = JsonUtility.ToJson(data, true);
+            PlayerPrefs.SetString("Tycoon_SaveData", newJson);
+            PlayerPrefs.Save();
         }
 
         /// <summary>

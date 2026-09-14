@@ -17,5 +17,7 @@ namespace Tycoon.Data
         public List<ItemLevelEntry> itemLevels = new List<ItemLevelEntry>();
         public List<string> hiredCharacterIds = new List<string>();
         public List<string> activeCharacterIds = new List<string>();
+        public bool hasChosenCharacter = false;
+        public string chosenCharacterId = "";
     }
 }

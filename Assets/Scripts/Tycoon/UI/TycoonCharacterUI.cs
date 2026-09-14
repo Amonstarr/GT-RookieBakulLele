@@ -1,276 +1,180 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using Tycoon.Core;
 using Tycoon.Data;
-using Tycoon.Visual;
 
 namespace Tycoon.UI
 {
     /// <summary>
-    /// UI Window showing all recruited employees hired from the Interview process.
-    /// Displays character info, job titles, and current autonomous status/stamina.
+    /// UI Controller Otomatis untuk Scene Pemilihan Karakter (SelectCharacter).
+    /// Karakter yang dipilih akan otomatis meredup (gelap) & tidak bisa diklik lagi.
     /// </summary>
     public class TycoonCharacterUI : MonoBehaviour
     {
-        [Header("UI Containers")]
-        [SerializeField] private GameObject characterPanel;
-        [SerializeField] private Transform characterCardContainer;
-        [SerializeField] private GameObject characterCardPrefab;
-        [SerializeField] private ScrollRect characterScrollRect;
+        [Header("Selection Limit Settings")]
+        [Tooltip("Batas jumlah karakter yang bisa dipilih (Misal: 2 sekarang, ubah ke 4 nanti lewat Inspector)")]
+        [Range(1, 10)]
+        [SerializeField] private int maxSelectableCharacters = 2;
 
-        [Header("Arrow Navigation Buttons (Optional)")]
-        [SerializeField] private Button leftArrowButton;
-        [SerializeField] private Button rightArrowButton;
-        [Range(0.1f, 0.8f)]
-        [SerializeField] private float scrollStep = 0.35f;
+        [Header("Darken Visual Style")]
+        [Tooltip("Warna saat maskot sudah dipilih dan terkunci (gelap/dimmed)")]
+        [SerializeField] private Color selectedDarkColor = new Color(0.4f, 0.4f, 0.4f, 1f);
 
-        [Header("Options")]
-        [SerializeField] private bool openOnStart = false;
+        [Header("Confirm Button Setup")]
+        [Tooltip("Tombol 'PILIH KARAKTER' untuk konfirmasi & masuk scene Tycoon")]
+        [SerializeField] private Button confirmButton;
 
-        private Coroutine scrollCoroutine;
+        [Header("Scene Navigation")]
+        [Tooltip("Nama Scene kantor Tycoon (contoh: TycoonMiniGames)")]
+        [SerializeField] private string targetSceneOnSelect = "TycoonMiniGames";
+
+        private List<CharacterSO> selectedCharacters = new List<CharacterSO>();
 
         private void Start()
         {
-            if (characterPanel != null)
+            if (confirmButton != null)
             {
-                characterPanel.SetActive(openOnStart);
-            }
-
-            if (characterScrollRect == null && characterCardContainer != null)
-            {
-                characterScrollRect = characterCardContainer.GetComponentInParent<ScrollRect>();
-            }
-
-            SetupArrowButtons();
-            RefreshEmployeeList();
-        }
-
-        private void SetupArrowButtons()
-        {
-            if (leftArrowButton != null)
-            {
-                leftArrowButton.onClick.RemoveAllListeners();
-                leftArrowButton.onClick.AddListener(ScrollLeft);
-            }
-
-            if (rightArrowButton != null)
-            {
-                rightArrowButton.onClick.RemoveAllListeners();
-                rightArrowButton.onClick.AddListener(ScrollRight);
+                confirmButton.onClick.RemoveAllListeners();
+                confirmButton.onClick.AddListener(ConfirmAndLoadScene);
+                confirmButton.interactable = false;
             }
         }
 
-        public void ScrollLeft()
+        /// <summary>
+        /// Dipanggil langsung dari Event OnClick () Button Maskot di Inspector Unity!
+        /// Karakter yang diklik akan otomatis menjadi GELAP dan TIDAK BISA DIKLIK LAGI.
+        /// </summary>
+        public void SetSelectedCharacter(CharacterSO character)
         {
-            EnsureScrollRect();
-            if (characterScrollRect == null) return;
-            float targetPos = Mathf.Clamp01(characterScrollRect.horizontalNormalizedPosition - scrollStep);
-            StartSmoothScroll(targetPos);
-        }
+            if (character == null) return;
 
-        public void ScrollRight()
-        {
-            EnsureScrollRect();
-            if (characterScrollRect == null) return;
-            float targetPos = Mathf.Clamp01(characterScrollRect.horizontalNormalizedPosition + scrollStep);
-            StartSmoothScroll(targetPos);
-        }
-
-        private void EnsureScrollRect()
-        {
-            if (characterScrollRect == null && characterCardContainer != null)
+            // Jika sudah mencapai batas maksimal pilihan, abaikan
+            if (selectedCharacters.Count >= maxSelectableCharacters)
             {
-                characterScrollRect = characterCardContainer.GetComponentInParent<ScrollRect>();
-            }
-            if (characterScrollRect != null)
-            {
-                characterScrollRect.movementType = ScrollRect.MovementType.Clamped;
-                characterScrollRect.inertia = true;
-            }
-        }
-
-        private void StartSmoothScroll(float targetNormalizedPos)
-        {
-            if (scrollCoroutine != null) StopCoroutine(scrollCoroutine);
-            scrollCoroutine = StartCoroutine(SmoothScrollRoutine(targetNormalizedPos));
-        }
-
-        private System.Collections.IEnumerator SmoothScrollRoutine(float targetPos)
-        {
-            if (characterScrollRect == null) yield break;
-
-            float startPos = characterScrollRect.horizontalNormalizedPosition;
-            float elapsed = 0f;
-            float duration = 0.25f;
-
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                characterScrollRect.horizontalNormalizedPosition = Mathf.Lerp(startPos, targetPos, elapsed / duration);
-                yield return null;
+                Debug.LogWarning($"[TycoonCharacterUI] Batas maksimal ({maxSelectableCharacters}) karakter sudah tercapai!");
+                return;
             }
 
-            characterScrollRect.horizontalNormalizedPosition = targetPos;
-        }
-
-        public void OpenPanel()
-        {
-            if (characterPanel != null) characterPanel.SetActive(true);
-            RefreshEmployeeList();
-        }
-
-        public void ClosePanel()
-        {
-            if (characterPanel != null) characterPanel.SetActive(false);
-        }
-
-        public void TogglePanel()
-        {
-            if (characterPanel != null)
+            // Cegah duplikasi jika karakter sudah dipilih
+            if (selectedCharacters.Exists(c => c != null && c.characterId == character.characterId))
             {
-                bool nextState = !characterPanel.activeSelf;
-                characterPanel.SetActive(nextState);
-                if (nextState) RefreshEmployeeList();
+                return;
+            }
+
+            selectedCharacters.Add(character);
+            Debug.Log($"[TycoonCharacterUI] Memilih '{character.characterName}'. ({selectedCharacters.Count}/{maxSelectableCharacters})");
+
+            // Otomatis ubah tombol maskot yang diklik menjadi GELAP & Disable Click
+            ApplyDarkenToClickedButton();
+
+            // Aktifkan tombol confirm jika minimal 1 karakter terpilih
+            if (confirmButton != null)
+            {
+                confirmButton.interactable = (selectedCharacters.Count > 0);
             }
         }
 
-        public void RefreshEmployeeList()
+        /// <summary>
+        /// Mengubah visual tombol yang diklik di EventSystem menjadi gelap & non-aktif
+        /// </summary>
+        private void ApplyDarkenToClickedButton()
         {
-            if (characterCardContainer == null) return;
-
-            EnsureHorizontalLayout();
-
-            foreach (Transform child in characterCardContainer)
+            GameObject currentObj = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
+            if (currentObj != null)
             {
-                Destroy(child.gameObject);
-            }
+                Button btn = currentObj.GetComponent<Button>();
+                if (btn == null) btn = currentObj.GetComponentInParent<Button>();
 
-            if (CharacterManager.Instance == null) return;
-
-            var hiredWorkers = CharacterManager.Instance.HiredCharacters;
-            foreach (var charData in hiredWorkers)
-            {
-                if (charData == null) continue;
-
-                if (characterCardPrefab != null)
+                if (btn != null)
                 {
-                    GameObject card = Instantiate(characterCardPrefab, characterCardContainer);
-                    card.transform.localScale = Vector3.one;
+                    // Matikan interactable agar tidak bisa diklik lagi
+                    btn.interactable = false;
 
-                    // Ensure card has LayoutElement for ContentSizeFitter width calculation
-                    LayoutElement le = card.GetComponent<LayoutElement>();
-                    if (le == null) le = card.AddComponent<LayoutElement>();
-                    RectTransform cardRt = card.GetComponent<RectTransform>();
-                    float cardW = (cardRt != null && cardRt.rect.width > 30f) ? cardRt.rect.width : 160f;
-                    float cardH = (cardRt != null && cardRt.rect.height > 30f) ? cardRt.rect.height : 160f;
-                    le.preferredWidth = cardW;
-                    le.preferredHeight = cardH;
+                    // Ubah warna menjadi agak gelap
+                    Image img = btn.GetComponent<Image>();
+                    if (img != null)
+                    {
+                        img.color = selectedDarkColor;
+                    }
+                }
+            }
+        }
 
-                    SetupCardView(card, charData);
+        /// <summary>
+        /// Dipanggil saat tombol Confirm ("PILIH KARAKTER") diklik.
+        /// Mengunci seluruh karakter yang dipilih dan berpindah ke scene Tycoon!
+        /// </summary>
+        public void ConfirmAndLoadScene()
+        {
+            if (selectedCharacters.Count == 0)
+            {
+                Debug.LogWarning("[TycoonCharacterUI] Belum ada karakter yang dipilih!");
+                return;
+            }
+
+            // Simpan semua karakter terpilih agar KEDUANYA muncul di Tycoon!
+            if (CharacterManager.Instance != null)
+            {
+                CharacterManager.Instance.SelectChosenCharacters(selectedCharacters);
+            }
+            else
+            {
+                SaveChosenCharactersDirectly(selectedCharacters);
+            }
+
+            Debug.Log($"[TycoonCharacterUI] Total {selectedCharacters.Count} Karakter BERHASIL DISIMPAN & AKTIF di Tycoon!");
+
+            if (!string.IsNullOrEmpty(targetSceneOnSelect))
+            {
+                SceneManager.LoadScene(targetSceneOnSelect);
+            }
+        }
+
+        private void SaveChosenCharactersDirectly(List<CharacterSO> characters)
+        {
+            TycoonSaveData data = new TycoonSaveData();
+            if (PlayerPrefs.HasKey("Tycoon_SaveData"))
+            {
+                string json = PlayerPrefs.GetString("Tycoon_SaveData");
+                if (!string.IsNullOrEmpty(json))
+                {
+                    data = JsonUtility.FromJson<TycoonSaveData>(json) ?? new TycoonSaveData();
                 }
             }
 
-            // Force immediate UI layout recalculation so container expands properly
-            Canvas.ForceUpdateCanvases();
-            if (characterCardContainer is RectTransform rectTransform)
+            if (data.hiredCharacterIds == null) data.hiredCharacterIds = new List<string>();
+            if (data.activeCharacterIds == null) data.activeCharacterIds = new List<string>();
+
+            data.activeCharacterIds.Clear();
+
+            foreach (var charSO in characters)
             {
-                LayoutRebuilder.ForceRebuildLayoutImmediate(rectTransform);
-            }
-        }
-
-        private void SetupCardView(GameObject cardObj, CharacterSO data)
-        {
-            // Find Mascot Image or Button on the card
-            Image mascotImage = cardObj.transform.Find("MascotImage")?.GetComponent<Image>();
-            if (mascotImage == null) mascotImage = cardObj.transform.Find("AvatarImage")?.GetComponent<Image>();
-            if (mascotImage == null) mascotImage = cardObj.GetComponent<Image>();
-
-            Button mascotButton = cardObj.GetComponent<Button>();
-            if (mascotButton == null) mascotButton = cardObj.transform.Find("MascotImage")?.GetComponent<Button>();
-            if (mascotButton == null) mascotButton = cardObj.transform.Find("ActionButton")?.GetComponent<Button>();
-
-            // Set Mascot Sprite (use avatarIcon or standingSprite)
-            Sprite displaySprite = data.avatarIcon != null ? data.avatarIcon : data.standingSprite;
-            if (mascotImage != null && displaySprite != null)
-            {
-                mascotImage.sprite = displaySprite;
-            }
-
-            bool isActive = CharacterManager.Instance != null && CharacterManager.Instance.IsCharacterActive(data);
-
-            // Update visual active state (full color when active, dimmed when inactive)
-            if (mascotImage != null)
-            {
-                mascotImage.color = isActive ? Color.white : new Color(0.4f, 0.4f, 0.4f, 0.5f);
-            }
-
-            // Selection indicator overlay (optional)
-            GameObject checkmarkObj = cardObj.transform.Find("ActiveCheckmark")?.gameObject;
-            if (checkmarkObj != null)
-            {
-                checkmarkObj.SetActive(isActive);
-            }
-
-            // Click Mascot to Toggle Active Deployment!
-            if (mascotButton != null)
-            {
-                mascotButton.onClick.RemoveAllListeners();
-                mascotButton.onClick.AddListener(() =>
+                if (charSO != null && !string.IsNullOrEmpty(charSO.characterId))
                 {
-                    if (CharacterManager.Instance != null)
+                    if (!data.hiredCharacterIds.Contains(charSO.characterId))
                     {
-                        CharacterManager.Instance.ToggleCharacterActive(data);
-                        RefreshEmployeeList();
+                        data.hiredCharacterIds.Add(charSO.characterId);
                     }
-                });
+                    if (!data.activeCharacterIds.Contains(charSO.characterId))
+                    {
+                        data.activeCharacterIds.Add(charSO.characterId);
+                    }
+                    InterviewRecruitmentBridge.HireCandidate(charSO.characterId);
+                }
             }
-            
-            // Text fields are entirely optional now
-            TMP_Text nameTxt = cardObj.transform.Find("NameText")?.GetComponent<TMP_Text>();
-            if (nameTxt != null) nameTxt.gameObject.SetActive(false);
 
-            TMP_Text titleTxt = cardObj.transform.Find("TitleText")?.GetComponent<TMP_Text>();
-            if (titleTxt != null) titleTxt.gameObject.SetActive(false);
-
-            TMP_Text statusTxt = cardObj.transform.Find("StatusText")?.GetComponent<TMP_Text>();
-            if (statusTxt != null) statusTxt.gameObject.SetActive(false);
-        }
-
-        private void EnsureHorizontalLayout()
-        {
-            if (characterCardContainer == null) return;
-
-            // Ensure container Anchors & Pivot are set to Left-Center (0, 0.5) so ContentSizeFitter can expand width
-            if (characterCardContainer is RectTransform rt)
+            data.hasChosenCharacter = true;
+            if (data.activeCharacterIds.Count > 0)
             {
-                rt.anchorMin = new Vector2(0f, 0.5f);
-                rt.anchorMax = new Vector2(0f, 0.5f);
-                rt.pivot = new Vector2(0f, 0.5f);
+                data.chosenCharacterId = data.activeCharacterIds[0];
             }
 
-            // Auto-add Horizontal Layout Group if missing
-            UnityEngine.UI.HorizontalLayoutGroup hlg = characterCardContainer.GetComponent<UnityEngine.UI.HorizontalLayoutGroup>();
-            if (hlg == null)
-            {
-                hlg = characterCardContainer.gameObject.AddComponent<UnityEngine.UI.HorizontalLayoutGroup>();
-            }
-            hlg.spacing = 15f;
-            hlg.childAlignment = TextAnchor.MiddleLeft;
-            hlg.childControlWidth = false;
-            hlg.childControlHeight = false;
-            hlg.childForceExpandWidth = false;
-            hlg.childForceExpandHeight = false;
-
-            // Auto-add Content Size Fitter if missing
-            UnityEngine.UI.ContentSizeFitter csf = characterCardContainer.GetComponent<UnityEngine.UI.ContentSizeFitter>();
-            if (csf == null)
-            {
-                csf = characterCardContainer.gameObject.AddComponent<UnityEngine.UI.ContentSizeFitter>();
-            }
-            csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize;
-            csf.verticalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained;
+            string updatedJson = JsonUtility.ToJson(data, true);
+            PlayerPrefs.SetString("Tycoon_SaveData", updatedJson);
+            PlayerPrefs.Save();
         }
     }
 }
