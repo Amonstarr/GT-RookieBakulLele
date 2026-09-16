@@ -21,15 +21,18 @@ MonoBehaviour:
   - levelIndex: 1
     levelName: Meja Kayu Standard
     upgradeCost: 200
-    topdownSprite: {fileID: 0}
+    topdownSprite: {fileID: 7442119372556542788, guid: bc2c6253e187e6549bfd14258798f8a2, type: 3}
     boostDescription: +5% Professional Look
   - levelIndex: 2
     levelName: Meja Ergonomis Modern
     upgradeCost: 500
-    topdownSprite: {fileID: 0}
+    topdownSprite: {fileID: -8642378989369045141, guid: d687c30ffbc9616409dd9c01391825c2, type: 3}
     boostDescription: +15% Efficiency
   - levelIndex: 3
     levelName: Meja Direktur Glass Top
     upgradeCost: 1200
-    topdownSprite: {fileID: 0}
+    topdownSprite: {fileID: -5215388391695264072, guid: 4b902364ee7ccef4d9f4ab017032c908, type: 3}
     boostDescription: +35% Prestige
+  useFormulaCost: 0
+  baseCost: 100
+  costMultiplier: 1.5
