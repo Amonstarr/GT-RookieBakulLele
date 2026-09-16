@@ -21,15 +21,8 @@ MonoBehaviour:
   - levelIndex: 1
     levelName: Tekh & Tekan Manual
     upgradeCost: 150
-    topdownSprite: {fileID: 0}
+    topdownSprite: {fileID: 2531523630291291641, guid: 6558335c44f608b4cbd0c283a2aeb5d3, type: 3}
     boostDescription: +5% Energy
-  - levelIndex: 2
-    levelName: Mesin Espresso Capsule
-    upgradeCost: 450
-    topdownSprite: {fileID: 0}
-    boostDescription: +15% Energy Boost
-  - levelIndex: 3
-    levelName: Barista Espresso Machine
-    upgradeCost: 1000
-    topdownSprite: {fileID: 0}
-    boostDescription: +35% Team Morale
+  useFormulaCost: 0
+  baseCost: 100
+  costMultiplier: 1.5

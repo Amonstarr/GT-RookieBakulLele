@@ -21,15 +21,13 @@ MonoBehaviour:
   - levelIndex: 1
     levelName: Kursi Plastik
     upgradeCost: 100
-    topdownSprite: {fileID: 0}
+    topdownSprite: {fileID: -8450649767191371574, guid: f074f8fa21d84344d8747e1b2f568422, type: 3}
     boostDescription: +2% Comfort
   - levelIndex: 2
     levelName: Kursi Busa Putar
     upgradeCost: 350
-    topdownSprite: {fileID: 0}
+    topdownSprite: {fileID: 1782350145459984053, guid: 8a8585badcb480d47a058df4301941e4, type: 3}
     boostDescription: +10% Ergonomics
-  - levelIndex: 3
-    levelName: Kursi Gaming Mesh Premium
-    upgradeCost: 900
-    topdownSprite: {fileID: 0}
-    boostDescription: +25% Comfort & Health
+  useFormulaCost: 0
+  baseCost: 100
+  costMultiplier: 1.5
