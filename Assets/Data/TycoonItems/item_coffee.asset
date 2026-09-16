@@ -16,7 +16,7 @@ MonoBehaviour:
   itemName: Coffee Machine
   itemDescription: Mesin kopi area istirahat
   category: 5
-  shopIcon: {fileID: 0}
+  shopIcon: {fileID: 2531523630291291641, guid: 6558335c44f608b4cbd0c283a2aeb5d3, type: 3}
   levels:
   - levelIndex: 1
     levelName: Tekh & Tekan Manual
