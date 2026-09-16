@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47e53b5c88189044a5343832dc32650, type: 3}
+  m_Name: item_computer
+  m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
+  itemId: item_computer
+  itemName: Office PC & Workstation
+  itemDescription: Komputer kerja karyawan
+  category: 2
+  shopIcon: {fileID: 0}
+  levels:
+  - levelIndex: 1
+    levelName: PC Standar Kantor
+    upgradeCost: 300
+    topdownSprite: {fileID: 0}
+    boostDescription: +10% Processing Speed
+  - levelIndex: 2
+    levelName: Dual Monitor Workstation
+    upgradeCost: 750
+    topdownSprite: {fileID: 0}
+    boostDescription: +25% Productivity
+  - levelIndex: 3
+    levelName: Supercomputer Rig
+    upgradeCost: 1800
+    topdownSprite: {fileID: 0}
+    boostDescription: +60% Work Output
