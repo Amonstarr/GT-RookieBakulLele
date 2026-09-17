@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c60c8e966f79564ba165beefdd93b01, type: 3}
+  m_Name: Candidate_6_worker_6
+  m_EditorClassIdentifier: Assembly-CSharp::GT.Dialogue.Data.CandidateInterviewScriptSO
+  candidateId: worker_6
+  candidateName: Agus Setiawan
+  roleTitle: Finance & Logistik Operasional
+  candidateBio: Penjaga kasir teliti yang tidak membiarkan selisih 100 rupiah pun.
+  defaultPortrait: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+  dialogueLines:
+  - speakerName: Agus Setiawan
+    dialogueText: Halo pak, perkenalkan nama saya Agus Setiawan. Saya melamar sebagai
+      Finance & Logistik Operasional di startup ini.
+    expressionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Selamat datang! Terima kasih sudah hadir. Ada beberapa hal penting
+      yang ingin saya tanyakan...
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '[Pertanyaan 1/3] Bagaimana cara kamu menghadapi tekanan kerja
+      saat deadline mepet dan sistem tiba-tiba error?'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 'Pertanyaan 1: Manajemen Tekanan'
+    choices:
+    - toneType: 0
+      choiceText: Tetap tenang, prioritaskan bug paling kritis, dan selesaikan tanpa
+        panik.
+      scoreWeight: 20
+      reactionText: Luar biasa! Saya sangat menghargai ketenangan dan fokus pada
+        prioritas seperti itu.
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+    - toneType: 1
+      choiceText: Diskusikan dengan tim untuk membagi beban tugas dan minta perpanjangan
+        waktu jika perlu.
+      scoreWeight: 10
+      reactionText: Pendekatan kerja sama tim yang bijak dan realistis.
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+    - toneType: 2
+      choiceText: Pasrah saja pak, kalau error ya sudah takdirnya lembur sampai pagi...
+      scoreWeight: 2
+      reactionText: Waduh... mentalnya jangan langsung pasrah dong pak, kita kan
+        tim pembangun startup!
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+  - speakerName: Agus Setiawan
+    dialogueText: Saya mengerti visi perusahaan ini, dan saya siap memberikan dedikasi
+      terbaik.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '[Pertanyaan 2/3] Bagaimana pandanganmu tentang budaya kerja yang
+      sehat di kantor?'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 'Pertanyaan 2: Budaya Kerja'
+    choices:
+    - toneType: 0
+      choiceText: Transparansi, saling menghargai batasan waktu kerja, dan komunikasi
+        terbuka tanpa politik kantor.
+      scoreWeight: 25
+      reactionText: Tepat sekali! Itu prinsip utama yang ingin saya bangun di kantor
+        baru ini!
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+    - toneType: 1
+      choiceText: Yang penting suasana santai, ada kopi gratis, dan rekan kerja yang
+        ramah.
+      scoreWeight: 12
+      reactionText: Fasilitas dan keramahan memang penting untuk menjaga mood kerja
+        tetap positif.
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+    - toneType: 2
+      choiceText: Asal atasan tidak sering marah-marah di grup WA, saya sudah bersyukur
+        pak...
+      scoreWeight: 5
+      reactionText: Hahaha, kelihatan sekali ya trauma dari kantor sebelumnya...
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+  - speakerName: Agus Setiawan
+    dialogueText: Satu pertanyaan terakhir pak? Silakan, saya siap menjawab.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '[Pertanyaan 3/3] Apa kontribusi terbesar yang ingin kamu berikan
+      jika diterima bergabung?'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 'Pertanyaan 3: Komitmen & Kontribusi'
+    choices:
+    - toneType: 0
+      choiceText: Membangun sistem yang scalable, meningkatkan efisiensi operasional,
+        dan membawa bisnis lele kita go-global!
+      scoreWeight: 25
+      reactionText: Visi yang sangat ambisius dan berani! Ini yang kita cari!
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+    - toneType: 1
+      choiceText: Menyelesaikan seluruh target pekerjaan harian saya dengan standar
+        kualitas tinggi.
+      scoreWeight: 15
+      reactionText: Konsistensi dan tanggung jawab adalah fondasi yang kokoh.
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+    - toneType: 2
+      choiceText: Saya ikut arahan saja pak, apa pun tugasnya akan saya kerjakan
+        semampu saya.
+      scoreWeight: 2
+      reactionText: Baik, yang penting ada kemauan untuk terus belajar ya.
+      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+  - speakerName: Agus Setiawan
+    dialogueText: Terima kasih banyak atas kesempatannya pak Rookie! Saya sangat
+      berharap bisa bergabung di tim ini.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
