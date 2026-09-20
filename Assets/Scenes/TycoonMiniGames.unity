@@ -6304,7 +6304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411f941ee32e6f742a0c21723a60b1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Visual.OfficeItemVisual
-  targetItem: {fileID: 0}
+  targetItem: {fileID: 11400000, guid: 52809215fed19f546989641b0734e886, type: 2}
   useSpriteRenderer: 1
   targetSpriteRenderer: {fileID: 1077262371}
   levelVisualGameObjects: []

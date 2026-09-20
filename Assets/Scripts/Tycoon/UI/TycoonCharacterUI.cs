@@ -20,7 +20,9 @@ namespace Tycoon.UI
         [SerializeField] private int maxSelectableCharacters = 2;
 
         [Header("Darken Visual Style")]
-        [Tooltip("Warna saat maskot sudah dipilih dan terkunci (gelap/dimmed)")]
+        [Tooltip("Warna saat maskot belum dipilih atau di-unselect (normal)")]
+        [SerializeField] private Color normalColor = Color.white;
+        [Tooltip("Warna saat maskot sudah dipilih (gelap/dimmed)")]
         [SerializeField] private Color selectedDarkColor = new Color(0.4f, 0.4f, 0.4f, 1f);
 
         [Header("Confirm Button Setup")]
@@ -45,30 +47,41 @@ namespace Tycoon.UI
 
         /// <summary>
         /// Dipanggil langsung dari Event OnClick () Button Maskot di Inspector Unity!
-        /// Karakter yang diklik akan otomatis menjadi GELAP dan TIDAK BISA DIKLIK LAGI.
+        /// Jika karakter belum dipilih: menambahkan karakter & menggelapkan tombol.
+        /// Jika karakter sudah dipilih: membatalkan pilihan (unselect) & mengembalikan warna tombol.
         /// </summary>
         public void SetSelectedCharacter(CharacterSO character)
         {
             if (character == null) return;
 
-            // Jika sudah mencapai batas maksimal pilihan, abaikan
-            if (selectedCharacters.Count >= maxSelectableCharacters)
+            // Cek apakah karakter sudah ada di daftar pilihan
+            int existingIndex = selectedCharacters.FindIndex(c => c != null && c.characterId == character.characterId);
+
+            if (existingIndex >= 0)
             {
-                Debug.LogWarning($"[TycoonCharacterUI] Batas maksimal ({maxSelectableCharacters}) karakter sudah tercapai!");
-                return;
-            }
+                // UNSELECT: Hapus dari daftar terpilih
+                selectedCharacters.RemoveAt(existingIndex);
+                Debug.Log($"[TycoonCharacterUI] Membatalkan pilihan '{character.characterName}'. ({selectedCharacters.Count}/{maxSelectableCharacters})");
 
-            // Cegah duplikasi jika karakter sudah dipilih
-            if (selectedCharacters.Exists(c => c != null && c.characterId == character.characterId))
+                // Kembalikan warna ke normal & pastikan interactable tetap true
+                ApplyButtonVisual(isSelected: false);
+            }
+            else
             {
-                return;
+                // Jika sudah mencapai batas maksimal pilihan, abaikan
+                if (selectedCharacters.Count >= maxSelectableCharacters)
+                {
+                    Debug.LogWarning($"[TycoonCharacterUI] Batas maksimal ({maxSelectableCharacters}) karakter sudah tercapai!");
+                    return;
+                }
+
+                // SELECT: Tambahkan ke daftar terpilih
+                selectedCharacters.Add(character);
+                Debug.Log($"[TycoonCharacterUI] Memilih '{character.characterName}'. ({selectedCharacters.Count}/{maxSelectableCharacters})");
+
+                // Ubah warna menjadi gelap & pastikan interactable tetap true agar bisa di-unselect nanti
+                ApplyButtonVisual(isSelected: true);
             }
-
-            selectedCharacters.Add(character);
-            Debug.Log($"[TycoonCharacterUI] Memilih '{character.characterName}'. ({selectedCharacters.Count}/{maxSelectableCharacters})");
-
-            // Otomatis ubah tombol maskot yang diklik menjadi GELAP & Disable Click
-            ApplyDarkenToClickedButton();
 
             // Aktifkan tombol confirm jika minimal 1 karakter terpilih
             if (confirmButton != null)
@@ -78,9 +91,10 @@ namespace Tycoon.UI
         }
 
         /// <summary>
-        /// Mengubah visual tombol yang diklik di EventSystem menjadi gelap & non-aktif
+        /// Mengubah visual tombol yang diklik di EventSystem (gelap saat dipilih, normal saat unselect).
+        /// Tombol tetap interaktif (`interactable = true`) agar pengguna bisa mengeklik kembali untuk unselect.
         /// </summary>
-        private void ApplyDarkenToClickedButton()
+        private void ApplyButtonVisual(bool isSelected)
         {
             GameObject currentObj = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
             if (currentObj != null)
@@ -90,14 +104,14 @@ namespace Tycoon.UI
 
                 if (btn != null)
                 {
-                    // Matikan interactable agar tidak bisa diklik lagi
-                    btn.interactable = false;
+                    // Pastikan tombol tetap interactable agar bisa diklik lagi (unselect)
+                    btn.interactable = true;
 
-                    // Ubah warna menjadi agak gelap
+                    // Ubah warna sesuai status terpilih
                     Image img = btn.GetComponent<Image>();
                     if (img != null)
                     {
-                        img.color = selectedDarkColor;
+                        img.color = isSelected ? selectedDarkColor : normalColor;
                     }
                 }
             }
