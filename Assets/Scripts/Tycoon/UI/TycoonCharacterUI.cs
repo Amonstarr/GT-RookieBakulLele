@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 using Tycoon.Core;
 using Tycoon.Data;
 
@@ -10,7 +11,7 @@ namespace Tycoon.UI
 {
     /// <summary>
     /// UI Controller Otomatis untuk Scene Pemilihan Karakter (SelectCharacter).
-    /// Karakter yang dipilih akan otomatis meredup (gelap) & tidak bisa diklik lagi.
+    /// Mengelola toggle pemilihan karakter, indikator jumlah pilihan (misal: 0/3), dan preview karakter besar di sebelah kanan.
     /// </summary>
     public class TycoonCharacterUI : MonoBehaviour
     {
@@ -26,8 +27,20 @@ namespace Tycoon.UI
         [SerializeField] private Color selectedDarkColor = new Color(0.4f, 0.4f, 0.4f, 1f);
 
         [Header("Confirm Button Setup")]
-        [Tooltip("Tombol 'PILIH KARAKTER' untuk konfirmasi & masuk scene Tycoon")]
+        [Tooltip("Tombol 'PILIH KARAKTER' / 'NEXT' untuk konfirmasi & masuk scene Tycoon")]
         [SerializeField] private Button confirmButton;
+
+        [Header("Selection Indicator & Preview UI")]
+        [Tooltip("Teks indikator berapa karakter terpilih (contoh: 0/3)")]
+        [SerializeField] private TMP_Text selectionCountText;
+        [Tooltip("Fallback UI Text biasa untuk indikator jumlah jika tidak memakai TMPro")]
+        [SerializeField] private Text selectionCountLegacyText;
+
+        [Tooltip("Gambar preview besar karakter di sebelah kanan UI")]
+        [SerializeField] private Image characterPreviewImage;
+        [Tooltip("Teks nama karakter di area preview (opsional)")]
+        [SerializeField] private TMP_Text characterPreviewNameText;
+        [SerializeField] private Text characterPreviewNameLegacyText;
 
         [Header("Scene Navigation")]
         [Tooltip("Nama Scene kantor Tycoon (contoh: TycoonMiniGames)")]
@@ -43,6 +56,8 @@ namespace Tycoon.UI
                 confirmButton.onClick.AddListener(ConfirmAndLoadScene);
                 confirmButton.interactable = false;
             }
+
+            UpdateSelectionUI(null);
         }
 
         /// <summary>
@@ -83,10 +98,69 @@ namespace Tycoon.UI
                 ApplyButtonVisual(isSelected: true);
             }
 
+            // Perbarui Indikator (0/3) & Preview Karakter di Sebelah Kanan
+            UpdateSelectionUI(character);
+
             // Aktifkan tombol confirm jika minimal 1 karakter terpilih
             if (confirmButton != null)
             {
                 confirmButton.interactable = (selectedCharacters.Count > 0);
+            }
+        }
+
+        /// <summary>
+        /// Memperbarui indikator jumlah pilihan (misal 0/3) dan gambar preview karakter besar di sebelah kanan.
+        /// </summary>
+        private void UpdateSelectionUI(CharacterSO lastClickedCharacter)
+        {
+            // 1. Indikator Jumlah Pilihan (contoh: 0/3)
+            string counterString = $"{selectedCharacters.Count}/{maxSelectableCharacters}";
+            if (selectionCountText != null) selectionCountText.text = counterString;
+            if (selectionCountLegacyText != null) selectionCountLegacyText.text = counterString;
+
+            // 2. Preview Karakter Sebelah Kanan
+            CharacterSO previewTarget = null;
+            if (lastClickedCharacter != null && selectedCharacters.Contains(lastClickedCharacter))
+            {
+                previewTarget = lastClickedCharacter;
+            }
+            else if (selectedCharacters.Count > 0)
+            {
+                previewTarget = selectedCharacters[selectedCharacters.Count - 1];
+            }
+
+            if (previewTarget != null)
+            {
+                Sprite previewSprite = previewTarget.avatarIcon != null ? previewTarget.avatarIcon : previewTarget.standingSprite;
+                if (characterPreviewImage != null)
+                {
+                    characterPreviewImage.sprite = previewSprite;
+                    characterPreviewImage.enabled = (previewSprite != null);
+                }
+
+                if (characterPreviewNameText != null) characterPreviewNameText.text = previewTarget.characterName;
+                if (characterPreviewNameLegacyText != null) characterPreviewNameLegacyText.text = previewTarget.characterName;
+            }
+            else
+            {
+                // Jika tidak ada karakter terpilih, sembunyikan preview
+                if (characterPreviewImage != null)
+                {
+                    characterPreviewImage.enabled = false;
+                }
+                if (characterPreviewNameText != null) characterPreviewNameText.text = "";
+                if (characterPreviewNameLegacyText != null) characterPreviewNameLegacyText.text = "";
+            }
+        }
+
+        /// <summary>
+        /// Opsional: Dipanggil jika ingin menampilkan preview karakter (misal hover/klik) tanpa langsung memilihnya.
+        /// </summary>
+        public void ShowCharacterPreview(CharacterSO character)
+        {
+            if (character != null)
+            {
+                UpdateSelectionUI(character);
             }
         }
 
