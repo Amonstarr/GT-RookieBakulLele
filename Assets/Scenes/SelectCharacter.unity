@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da48a50843fc404e92b9fc12d0925fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.UI.TycoonCharacterUI
-  maxSelectableCharacters: 2
+  maxSelectableCharacters: 3
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   selectedDarkColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
   confirmButton: {fileID: 1353164632}
