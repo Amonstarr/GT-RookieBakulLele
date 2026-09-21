@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using GT.Dialogue.Data;
 using GT.Dialogue.UI;
+using GT.Leaderboard;
 using Tycoon.Data;
 
 namespace GT.Dialogue.Core
@@ -372,10 +373,32 @@ namespace GT.Dialogue.Core
             // Simpan skor ke PlayerPrefs & Data Tycoon
             SaveInterviewResults();
 
+            // Kirim skor total ke leaderboard Unity Gaming Services
+            SubmitScoreToLeaderboard();
+
             // Tampilkan Modal Summary di UI
             if (interviewUI != null)
             {
                 interviewUI.ShowSummaryModal(totalScore, totalQuestionsAnswered, OnSummaryContinueClicked);
+            }
+        }
+
+        /// <summary>
+        /// Mengirim skor akhir interview ke leaderboard tanpa menunggu hasilnya,
+        /// sehingga tidak menghambat transisi ke scene berikutnya.
+        /// </summary>
+        private async void SubmitScoreToLeaderboard()
+        {
+            if (LeaderboardManager.Instance == null)
+            {
+                Debug.LogWarning("[DialogueInterviewManager] LeaderboardManager belum ada di scene, skor tidak dikirim ke leaderboard.");
+                return;
+            }
+
+            var entry = await LeaderboardManager.Instance.SubmitScoreAsync(totalScore);
+            if (entry != null)
+            {
+                Debug.Log($"[DialogueInterviewManager] Skor interview {totalScore} terdaftar di leaderboard dengan rank #{entry.Rank}.");
             }
         }
 
