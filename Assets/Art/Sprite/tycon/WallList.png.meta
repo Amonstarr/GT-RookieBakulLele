@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 05441caaa81253e4ca66bfbb71ebdc7c
+guid: 7715508499dbde94ba373bd65972f9fe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3774272932702319956
-    second: lemari2_0
+      213: -4288591311983987207
+    second: WallList_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lemari2_0
+      name: WallList_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 4
-        width: 20
-        height: 25
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 455f71f3c39e06430800000000000000
-      internalID: 3774272932702319956
+      spriteID: 9f53e567cecdb74c0800000000000000
+      internalID: -4288591311983987207
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lemari2_0: 3774272932702319956
+      WallList_0: -4288591311983987207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -156,6 +156,17 @@ namespace Tycoon.Visual
             {
                 currentState = WorkerAIState.MovingToSeat;
                 SetSprite(characterData != null ? characterData.standingSprite : null);
+
+                // Bergerak ke waypoint lorong terdekat dahulu agar tidak berjalan menyamping menabrak meja/objek
+                if (OfficeWaypointGroup.Instance != null)
+                {
+                    Transform nearestWp = OfficeWaypointGroup.Instance.GetNearestPacingWaypoint(transform.position);
+                    if (nearestWp != null && Vector3.Distance(transform.position, nearestWp.position) > 0.5f)
+                    {
+                        yield return StartCoroutine(MoveToPosition(nearestWp.position));
+                    }
+                }
+
                 yield return StartCoroutine(MoveToPosition(assignedChairTarget.position));
 
                 // Sit down and work
@@ -180,6 +191,11 @@ namespace Tycoon.Visual
                     assignedChairTarget = null;
                 }
             }
+            else
+            {
+                // Fallback ke jalan-jalan biasa jika tidak ada kursi yang terbuka/dibeli
+                yield return StartCoroutine(RoutinePacingWander());
+            }
         }
 
         private IEnumerator RoutineGoToCoffee()
@@ -198,6 +214,17 @@ namespace Tycoon.Visual
             {
                 currentState = WorkerAIState.MovingToCoffee;
                 SetSprite(characterData != null ? characterData.standingSprite : null);
+
+                // Bergerak ke waypoint lorong terdekat dahulu sebelum menuju mesin kopi
+                if (OfficeWaypointGroup.Instance != null)
+                {
+                    Transform nearestWp = OfficeWaypointGroup.Instance.GetNearestPacingWaypoint(transform.position);
+                    if (nearestWp != null && Vector3.Distance(transform.position, nearestWp.position) > 0.5f)
+                    {
+                        yield return StartCoroutine(MoveToPosition(nearestWp.position));
+                    }
+                }
+
                 yield return StartCoroutine(MoveToPosition(coffeeSpot.position));
 
                 // Drinking coffee / break
@@ -213,6 +240,11 @@ namespace Tycoon.Visual
 
                 // Brief satisfaction pause after drinking coffee
                 yield return new WaitForSeconds(Random.Range(1.0f, 2.5f));
+            }
+            else
+            {
+                // Fallback ke jalan-jalan biasa jika mesin kopi belum dibeli
+                yield return StartCoroutine(RoutinePacingWander());
             }
         }
 
