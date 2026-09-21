@@ -16,7 +16,7 @@ MonoBehaviour:
   characterName: Budi Programmer
   jobTitle: Senior Developer
   bio: Suka minum kopi sambil ngoding bug-free.
-  avatarIcon: {fileID: 0}
+  avatarIcon: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
   standingSprite: {fileID: 0}
   sittingSprite: {fileID: 0}
   walkingSprites: []

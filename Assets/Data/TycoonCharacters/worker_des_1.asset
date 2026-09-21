@@ -16,7 +16,7 @@ MonoBehaviour:
   characterName: Siti UI/UX
   jobTitle: Lead Designer
   bio: Mendesain antarmuka aplikasi super estetik.
-  avatarIcon: {fileID: 0}
+  avatarIcon: {fileID: 7598980446433480984, guid: f5aab459f21993d418e27d99016846c1, type: 3}
   standingSprite: {fileID: 0}
   sittingSprite: {fileID: 0}
   walkingSprites: []

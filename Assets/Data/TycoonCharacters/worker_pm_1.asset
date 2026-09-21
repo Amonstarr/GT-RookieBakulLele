@@ -16,7 +16,7 @@ MonoBehaviour:
   characterName: Andi PM
   jobTitle: Project Manager
   bio: Pengatur jadwal sprint & reminder deadline.
-  avatarIcon: {fileID: 0}
+  avatarIcon: {fileID: 4534523224128987913, guid: 56c3829efa2f4f6448a239aba4c3b139, type: 3}
   standingSprite: {fileID: 0}
   sittingSprite: {fileID: 0}
   walkingSprites: []
