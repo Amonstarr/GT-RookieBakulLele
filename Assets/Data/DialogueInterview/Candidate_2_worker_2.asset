@@ -13,120 +13,299 @@ MonoBehaviour:
   m_Name: Candidate_2_worker_2
   m_EditorClassIdentifier: Assembly-CSharp::GT.Dialogue.Data.CandidateInterviewScriptSO
   candidateId: worker_2
-  candidateName: Siti Aisyah
-  roleTitle: UI/UX Designer / Spesialis Estetika
+  candidateName: Wendy
   candidateBio: Designer perfeksionis yang alergi layout miring.
   defaultPortrait: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
   dialogueLines:
-  - speakerName: Siti Aisyah
-    dialogueText: Halo pak, perkenalkan nama saya Siti Aisyah. Saya melamar sebagai
-      UI/UX Designer / Spesialis Estetika di startup ini.
-    expressionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
+  - speakerName: Wendy
+    dialogueText: Permisi... araa, kamu kelihatan agak lelah. Kamu sudah sempat istirahat?
+    expressionSprite: {fileID: 0}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
-  - speakerName: Rookie
-    dialogueText: Selamat datang! Terima kasih sudah hadir. Ada beberapa hal penting
-      yang ingin saya tanyakan...
+  - speakerName: Wendy
+    dialogueText: Mungkin aku percepat saja perkenalannya, ya. Namaku Wendy. Aku
+      memang masih baru di bidang ini, tapi aku cukup bersemangat untuk belajar dan
+      menekuninya
     expressionSprite: {fileID: 0}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Rookie
-    dialogueText: '[Pertanyaan 1/3] Bagaimana cara kamu menghadapi tekanan kerja
-      saat deadline mepet dan sistem tiba-tiba error?'
+    dialogueText: Terima kasih sudah mengerti. Kalau begitu, mungkin kita bisa langsung
+      mulai saja, ya?
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
     expressionSprite: {fileID: 0}
     isDecisionPoint: 1
-    questionTitle: 'Pertanyaan 1: Manajemen Tekanan'
-    choices:
-    - toneType: 0
-      choiceText: Tetap tenang, prioritaskan bug paling kritis, dan selesaikan tanpa
-        panik.
-      scoreWeight: 20
-      reactionText: Luar biasa! Saya sangat menghargai ketenangan dan fokus pada
-        prioritas seperti itu.
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-    - toneType: 1
-      choiceText: Diskusikan dengan tim untuk membagi beban tugas dan minta perpanjangan
-        waktu jika perlu.
-      scoreWeight: 10
-      reactionText: Pendekatan kerja sama tim yang bijak dan realistis.
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-    - toneType: 2
-      choiceText: Pasrah saja pak, kalau error ya sudah takdirnya lembur sampai pagi...
-      scoreWeight: 2
-      reactionText: Waduh... mentalnya jangan langsung pasrah dong pak, kita kan
-        tim pembangun startup!
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-  - speakerName: Siti Aisyah
-    dialogueText: Saya mengerti visi perusahaan ini, dan saya siap memberikan dedikasi
-      terbaik.
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 0
     questionTitle: 
-    choices: []
-  - speakerName: Rookie
-    dialogueText: '[Pertanyaan 2/3] Bagaimana pandanganmu tentang budaya kerja yang
-      sehat di kantor?'
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 1
-    questionTitle: 'Pertanyaan 2: Budaya Kerja'
     choices:
-    - toneType: 0
-      choiceText: Transparansi, saling menghargai batasan waktu kerja, dan komunikasi
-        terbuka tanpa politik kantor.
+    - choiceText: Kalau boleh tahu, kontribusi apa yang bisa kamu berikan untuk perusahaan
+        ini, mengingat kamu masih cukup awam di bidang yang kamu lamar?
       scoreWeight: 25
-      reactionText: Tepat sekali! Itu prinsip utama yang ingin saya bangun di kantor
-        baru ini!
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-    - toneType: 1
-      choiceText: Yang penting suasana santai, ada kopi gratis, dan rekan kerja yang
-        ramah.
-      scoreWeight: 12
-      reactionText: Fasilitas dan keramahan memang penting untuk menjaga mood kerja
-        tetap positif.
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-    - toneType: 2
-      choiceText: Asal atasan tidak sering marah-marah di grup WA, saya sudah bersyukur
-        pak...
-      scoreWeight: 5
-      reactionText: Hahaha, kelihatan sekali ya trauma dari kantor sebelumnya...
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-  - speakerName: Siti Aisyah
-    dialogueText: Satu pertanyaan terakhir pak? Silakan, saya siap menjawab.
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 0
-    questionTitle: 
-    choices: []
-  - speakerName: Rookie
-    dialogueText: '[Pertanyaan 3/3] Apa kontribusi terbesar yang ingin kamu berikan
-      jika diterima bergabung?'
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 1
-    questionTitle: 'Pertanyaan 3: Komitmen & Kontribusi'
-    choices:
-    - toneType: 0
-      choiceText: Membangun sistem yang scalable, meningkatkan efisiensi operasional,
-        dan membawa bisnis lele kita go-global!
-      scoreWeight: 25
-      reactionText: Visi yang sangat ambisius dan berani! Ini yang kita cari!
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-    - toneType: 1
-      choiceText: Menyelesaikan seluruh target pekerjaan harian saya dengan standar
-        kualitas tinggi.
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau boleh tahu, kontribusi apa yang bisa kamu berikan untuk
+          perusahaan ini, mengingat kamu masih cukup awam di bidang yang kamu lamar?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Anuuu... aku punya semangat belajar yang tinggi dan juga cukup
+          mudah bergaul dengan orang baru.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Walaupun masih pemula, sebelumnya aku pernah ikut bootcamp,
+          kok. Jadi... aku nggak benar-benar mulai dari nol, hehe.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau dilihat dari CV-mu, sepertinya kamu agak salah melamar posisi,
+        deh. Pengalamanmu lebih banyak mengarah ke marketing. Sementara saat ini,
+        kami sedang nggak mencari marketing crew.
       scoreWeight: 15
-      reactionText: Konsistensi dan tanggung jawab adalah fondasi yang kokoh.
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-    - toneType: 2
-      choiceText: Saya ikut arahan saja pak, apa pun tugasnya akan saya kerjakan
-        semampu saya.
-      scoreWeight: 2
-      reactionText: Baik, yang penting ada kemauan untuk terus belajar ya.
-      reactionSprite: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-  - speakerName: Siti Aisyah
-    dialogueText: Terima kasih banyak atas kesempatannya pak Rookie! Saya sangat
-      berharap bisa bergabung di tim ini.
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau dilihat dari CV-mu, sepertinya kamu agak salah melamar
+          posisi, deh. Pengalamanmu lebih banyak mengarah ke marketing. Sementara
+          saat ini, kami sedang nggak mencari marketing crew.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Waduhhh... aku salah kasih CV! Maaf banget, ya!
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Yang ini CV-ku untuk posisi staf di sini. Memang pengalamanku
+          masih kelihatan sedikit, tapi aku sudah ikut beberapa bootcamp yang berkaitan
+          dengan posisi ini, kok.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kamu kelihatannya cukup ceria, ya. Apa memang selalu seperti ini?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kamu kelihatannya cukup ceria, ya. Apa memang selalu seperti
+          ini?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Biasanya aku nggak selalu seceria ini, kok. Tapi entah kenapa,
+          pas lihat kamu rasanya jadi lebih santai aja, hehe.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Oh, iya! Aku tadi bawa beberapa kue. Kamu mau? Anggap saja
+          teman buat nemenin interview kita.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Baiklah, mungkin kita lanjutkan wawancara dulu, ya?
     expressionSprite: {fileID: 0}
     isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: 'Kamu bilang sebelumnya pernah ikut beberapa bootcamp, kan?
+
+        Kalau
+        boleh, aku bisa lihat sertifikatnya?'
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: 'Kamu bilang sebelumnya pernah ikut beberapa bootcamp, kan?
+
+          Kalau
+          boleh, aku bisa lihat sertifikatnya?'
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Aduh... aku kelupaan lagi. Maaf banget, ya!
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Tapi aku punya foto bareng teman-temanku waktu kami ikut bootcamp.
+          Mungkin itu bisa jadi bukti sementara?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
+          tadi kelihatannya kamu capek banget.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
+          sampai kamu merasa cukup baikan buat lanjut interview-nya.
+        expressionSprite: {fileID: 0}
+    - choiceText: 'Kamu yakin dengan nominal gaji yang kamu ajukan ini?
+
+        Bukannya
+        angka ini terlalu rendah untuk posisi yang kamu lamar?'
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: 'Kamu yakin dengan nominal gaji yang kamu ajukan ini?
+
+          Bukannya
+          angka ini terlalu rendah untuk posisi yang kamu lamar?'
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Aku cukup sadar diri, kok. Aku masih pemula dan masih banyak
+          yang harus aku pelajari.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Lagipula, aku nggak mau terlalu membebani kamu dengan meminta
+          gaji yang tinggi. Buatku, mendapat kesempatan untuk belajar dan berkembang
+          di sini saja sudah berarti banyak
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
+          tadi kelihatannya kamu capek banget.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
+          sampai kamu merasa cukup baikan buat lanjut interview-nya.
+        expressionSprite: {fileID: 0}
+    - choiceText: Gimana caramu membagi waktu dan mengatur semuanya supaya nggak
+        saling mengganggu?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau dilihat dari pengalamanmu, kamu juga cukup aktif di berbagai
+          organisasi, ya. Bahkan sampai sekarang masih ada beberapa yang kamu jalani.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Gimana caramu membagi waktu dan mengatur semuanya supaya nggak
+          saling mengganggu?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Oh, soal itu... aku merasa mereka sudah seperti keluarga sendiri.
+          Makanya sampai sekarang aku masih tetap terlibat.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Tapi karena sekarang statusku sudah alumni, aku nggak terlalu
+          sering ikut kegiatan mereka, kok.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Jadi tenang saja. Aku tetap bisa membagi waktu dan bersikap
+          profesional saat mengerjakan proyek di perusahaanmu.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
+          tadi kelihatannya kamu capek banget.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
+          sampai kamu merasa cukup baikan buat lanjut interview-nya.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Ehm... aku masih aman, kok. Nggak perlu terlalu khawatir.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Kita lanjut ke pertanyaan berikutnya saja, ya?
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Kamu memang selalu sepeduli ini sama orang lain?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kamu memang selalu sepeduli ini sama orang lain?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Mouuuh... jangan kasih pertanyaan kayak gitu, dong! Ini cuma
+          buang-buang waktumu. Lebih baik kamu istirahat dulu.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Kalau soal jawabannya... entah kenapa, aku merasa kayak sudah
+          kenal kamu sejak lama.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: A-aaa... udah, ya! Jangan tanya lebih jauh lagi... aku malu.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau kamu diterima bekerja di sini, apa yang sebenarnya kamu harapkan?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau kamu diterima bekerja di sini, apa yang sebenarnya kamu
+          harapkan?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Hmm... aku sendiri masih belum terlalu tahu, sih. Tapi aku
+          berharap bisa bertemu rekan-rekan yang sefrekuensi denganku.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Terus, aku juga berharap bisa bekerja di lingkungan yang mendukungku
+          untuk terus belajar dan berkembang. Apalagi aku masih cukup awam di bidang
+          staf ini.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Jadi... mungkin aku bakal banyak bertanya nanti. Jangan bosan
+          ngajarin aku, ya? Hehe.
+        expressionSprite: {fileID: 0}
+    - choiceText: Boleh ceritakan salah satu pengalamanmu saat mengerjakan sebuah
+        proyek bersama tim?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Boleh ceritakan salah satu pengalamanmu saat mengerjakan sebuah
+          proyek bersama tim?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Aku penasaran bagaimana caramu bekerja sama dengan orang lain.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Waktu itu aku pernah mengerjakan sebuah proyek bersama organisasi
+          amal yang aku ikuti. Aku dipercaya menjadi wakil ketua karena... sepertinya
+          aku yang paling antusias waktu itu, hehe.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Kebanyakan anggota lain ikut karena ingin mendapatkan nilai.
+          Tapi menurutku, kalau dikerjakan karena terpaksa, semuanya malah terasa
+          lebih berat.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Jadi aku berusaha bikin suasananya lebih menyenangkan. Aku
+          ingin teman-teman yang lain nggak cuma berpikir soal nilai, tapi juga bisa
+          menikmati prosesnya.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Dan ternyata lumayan berhasil, kok! Mereka jadi lebih semangat
+          dan suasana tim juga jadi lebih enak.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Baiklah, kurasa cukup sampai di sini untuk interview-nya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Terima kasih sudah meluangkan waktu dan menjawab semua pertanyaanku,
+      ya. Nanti akan aku kabari lagi mengenai hasilnya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
     questionTitle: 
     choices: []

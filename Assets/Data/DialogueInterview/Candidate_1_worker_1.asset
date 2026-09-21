@@ -72,6 +72,15 @@ MonoBehaviour:
       reactionSprite: {fileID: 0}
       followUpDialogue:
       - speakerName: Rookie
+        dialogueText: 'Hmm... tapi perlu kuingatkan, kami di sini sedang mencari
+          seorang staf, bukan manajer.
+
+'
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: Rookie
         dialogueText: Kamu yakin bisa menyesuaikan diri dengan posisi itu?
         expressionSprite: {fileID: 0}
         isDecisionPoint: 0
@@ -151,7 +160,8 @@ MonoBehaviour:
     - choiceText: Se-eksentrik kamu tertarik melamar jadi staf di sini? Aku penasaran,
         kamu menemukan lowongan ini dari mana?
       scoreWeight: 10
-      reactionText: 
+      reactionText: Fine. Aku tahu lowongan ini dari postingan yang kamu unggah di
+        media sosial. Kebetulan lewat di berandaku, jadi aku pikir... kenapa nggak?
       reactionSprite: {fileID: 0}
       followUpDialogue: []
     - choiceText: 'Kamu meminta gaji yang cukup tinggi, ya. Sementara itu, anggaran
@@ -161,7 +171,30 @@ MonoBehaviour:
       scoreWeight: 25
       reactionText: 
       reactionSprite: {fileID: 0}
-      followUpDialogue: []
+      followUpDialogue:
+      - speakerName: Rokiee
+        dialogueText: 'Kamu meminta gaji yang cukup tinggi, ya. Sementara itu, anggaran
+          kami cukup terbatas.
+
+          Apakah kamu bersedia menurunkan tuntutan
+          gajimu?'
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Value-ku banyak, Bos. Enak saja kalau aku digaji rendah.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Tapi... since your company is still small, aku masih bisa kompromi.
+          Dua digit, dan kita bisa mulai bicara.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
   - speakerName: Rookie
     dialogueText: Cukup pedas juga jawabanmu... baiklah.
     expressionSprite: {fileID: 0}
@@ -180,18 +213,82 @@ MonoBehaviour:
     isDecisionPoint: 1
     questionTitle: 
     choices:
-    - choiceText: 
-      scoreWeight: 0
+    - choiceText: Jujur saja, aku masih kurang yakin kamu akan cocok dengan tim ini
+      scoreWeight: 10
       reactionText: 
       reactionSprite: {fileID: 0}
-      followUpDialogue: []
-    - choiceText: 
-      scoreWeight: 0
-      reactionText: 
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Jujur saja, aku masih kurang yakin kamu akan cocok dengan tim
+          ini
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Fair enough. Lidah pedas dibalas lidah pedas, ya?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Kalau begitu, aku harap  my CV-ku cukup meyakinkanmu.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+    - choiceText: 'Kalau dilihat dari CV-mu, kamu sudah cukup sering memimpin berbagai
+        proyek.
+
+        Tapi aku juga melihat kamu cukup sering berpindah dari satu
+        perusahaan ke perusahaan lain.'
+      scoreWeight: 15
+      reactionText: 'Ayolah, aku bukan tipe orang yang bisa diam di satu tempat tanpa
+        berkembang. Aku selalu ingin terus grow dan mencari tantangan baru.
+
+        Selama
+        perusahaanmu bisa terus membuatku tertantang dan berkembang, tenang saja...
+        aku bakal tetap stay di sini.'
       reactionSprite: {fileID: 0}
       followUpDialogue: []
-    - choiceText: 
-      scoreWeight: 0
+    - choiceText: Dengan sifatmu yang seperti itu, aku jadi penasaran... bagaimana
+        caramu menangani dan memimpin sebuah tim?
+      scoreWeight: 25
       reactionText: 
       reactionSprite: {fileID: 0}
-      followUpDialogue: []
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Dengan sifatmu yang seperti itu, aku jadi penasaran... bagaimana
+          caramu menangani dan memimpin sebuah tim?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: CV-ku sebenarnya sudah cukup membuktikan. Tapi kalau kamu penasaran
+          soal how I lead, aku tipe orang yang suka menyusun setiap kegiatan secara
+          terjadwal, bahkan sampai hitungan jam.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Dengan begitu, timku selalu tahu apa yang harus mereka kerjakan
+          dan nggak kelabakan kalau tiba-tiba ada tugas baru.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+  - speakerName: Rookie
+    dialogueText: Baiklah, terima kasih. Kurasa itu saja yang ingin aku tanyakan.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Nanti akan aku kabari lagi mengenai hasil wawancaranya. Sampai
+      saat itu, tunggu kabar dariku, ya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices: []

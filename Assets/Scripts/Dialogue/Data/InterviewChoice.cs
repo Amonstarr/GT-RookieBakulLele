@@ -28,6 +28,6 @@ namespace GT.Dialogue.Data
 
         [Header("Mode Fleksibel: Percakapan Lanjutan (Multi-baris / Bergantian)")]
         [Tooltip("Jika diisi, opsi ini akan memutar rentetan dialog ini (bisa Rookie tanya beberapa kalimat, kandidat jawab beberapa kalimat) sebelum kembali ke dialog universal.")]
-        public List<DialogueLine> followUpDialogue = new List<DialogueLine>();
+        public List<ChoiceDialogueLine> followUpDialogue = new List<ChoiceDialogueLine>();
     }
 }

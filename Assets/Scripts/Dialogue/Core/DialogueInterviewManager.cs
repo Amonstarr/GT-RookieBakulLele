@@ -49,7 +49,8 @@ namespace GT.Dialogue.Core
         private int currentQuestionCount = 0;
         private int totalScore = 0;
         private int totalQuestionsAnswered = 0;
-        private List<DialogueLine> activeChoiceDialogue = null;
+        [System.NonSerialized]
+        private List<ChoiceDialogueLine> activeChoiceDialogue = null;
         private int choiceDialogueIndex = 0;
         private InterviewState currentState = InterviewState.ShowingDialogue;
 
@@ -318,10 +319,10 @@ namespace GT.Dialogue.Core
             }
             else
             {
-                activeChoiceDialogue = new List<DialogueLine>
+                activeChoiceDialogue = new List<ChoiceDialogueLine>
                 {
-                    new DialogueLine { speakerName = playerSpeakerName, dialogueText = selectedChoice.choiceText },
-                    new DialogueLine { speakerName = candidate.candidateName, dialogueText = selectedChoice.reactionText, expressionSprite = selectedChoice.reactionSprite }
+                    new ChoiceDialogueLine { speakerName = playerSpeakerName, dialogueText = selectedChoice.choiceText },
+                    new ChoiceDialogueLine { speakerName = candidate.candidateName, dialogueText = selectedChoice.reactionText, expressionSprite = selectedChoice.reactionSprite }
                 };
             }
 
@@ -333,7 +334,7 @@ namespace GT.Dialogue.Core
         private void PlayCurrentChoiceDialogue()
         {
             if (activeChoiceDialogue == null || choiceDialogueIndex >= activeChoiceDialogue.Count) return;
-            DialogueLine line = activeChoiceDialogue[choiceDialogueIndex];
+            ChoiceDialogueLine line = activeChoiceDialogue[choiceDialogueIndex];
             CandidateInterviewScriptSO candidate = storySequence.candidates[currentCandidateIndex];
 
             string speaker = line.speakerName;

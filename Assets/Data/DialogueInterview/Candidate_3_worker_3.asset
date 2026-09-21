@@ -13,119 +13,340 @@ MonoBehaviour:
   m_Name: Candidate_3_worker_3
   m_EditorClassIdentifier: Assembly-CSharp::GT.Dialogue.Data.CandidateInterviewScriptSO
   candidateId: worker_3
-  candidateName: Dimas Radit
-  roleTitle: Project Manager / Penjaga Deadline
-  candidateBio: PM tegas yang punya seribu cara mengingatkan task trello.
+  candidateName: Sania Pawpaw
+  candidateBio: 
   defaultPortrait: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
   dialogueLines:
-  - speakerName: Dimas Radit
-    dialogueText: Halo pak, perkenalkan nama saya Dimas Radit. Saya melamar sebagai
-      Project Manager / Penjaga Deadline di startup ini.
-    expressionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
+  - speakerName: Sania Pawpaw
+    dialogueText: Permisi. Ara ara... postur dudukmu kaku sekali. Kelihatan sekali
+      kalau kamu masih amatir, ya?
+    expressionSprite: {fileID: 0}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
-  - speakerName: Rookie
-    dialogueText: Selamat datang! Terima kasih sudah hadir. Ada beberapa hal penting
-      yang ingin saya tanyakan...
+  - speakerName: Sania Pawpaw
+    dialogueText: Panggil saja saya Sania. Saya sudah cukup lama berkecimpung di
+      industri ini dan rasanya sudah melihat hampir semua yang bisa ditawarkan bidang
+      ini.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Sania Pawpaw
+    dialogueText: Jadi, kita langsung ke intinya saja. Saya paling malas membuang
+      waktu dan tenaga untuk sekadar basa-basi.
     expressionSprite: {fileID: 0}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Rookie
-    dialogueText: '[Pertanyaan 1/3] Bagaimana cara kamu menghadapi tekanan kerja
-      saat deadline mepet dan sistem tiba-tiba error?'
+    dialogueText: Baik, Sania. Kalau memang begitu maumu, kita tidak perlu membuang
+      waktu lagi.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Mari kita langsung mulai wawancaranya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
     expressionSprite: {fileID: 0}
     isDecisionPoint: 1
-    questionTitle: 'Pertanyaan 1: Manajemen Tekanan'
-    choices:
-    - toneType: 0
-      choiceText: Tetap tenang, prioritaskan bug paling kritis, dan selesaikan tanpa
-        panik.
-      scoreWeight: 20
-      reactionText: Luar biasa! Saya sangat menghargai ketenangan dan fokus pada
-        prioritas seperti itu.
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-    - toneType: 1
-      choiceText: Diskusikan dengan tim untuk membagi beban tugas dan minta perpanjangan
-        waktu jika perlu.
-      scoreWeight: 10
-      reactionText: Pendekatan kerja sama tim yang bijak dan realistis.
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-    - toneType: 2
-      choiceText: Pasrah saja pak, kalau error ya sudah takdirnya lembur sampai pagi...
-      scoreWeight: 2
-      reactionText: Waduh... mentalnya jangan langsung pasrah dong pak, kita kan
-        tim pembangun startup!
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-  - speakerName: Dimas Radit
-    dialogueText: Saya mengerti visi perusahaan ini, dan saya siap memberikan dedikasi
-      terbaik.
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 0
     questionTitle: 
-    choices: []
-  - speakerName: Rookie
-    dialogueText: '[Pertanyaan 2/3] Bagaimana pandanganmu tentang budaya kerja yang
-      sehat di kantor?'
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 1
-    questionTitle: 'Pertanyaan 2: Budaya Kerja'
     choices:
-    - toneType: 0
-      choiceText: Transparansi, saling menghargai batasan waktu kerja, dan komunikasi
-        terbuka tanpa politik kantor.
+    - choiceText: Kenapa kamu justru tertarik melamar di perusahaan kami yang skalanya
+        masih jauh lebih kecil?
       scoreWeight: 25
-      reactionText: Tepat sekali! Itu prinsip utama yang ingin saya bangun di kantor
-        baru ini!
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-    - toneType: 1
-      choiceText: Yang penting suasana santai, ada kopi gratis, dan rekan kerja yang
-        ramah.
-      scoreWeight: 12
-      reactionText: Fasilitas dan keramahan memang penting untuk menjaga mood kerja
-        tetap positif.
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-    - toneType: 2
-      choiceText: Asal atasan tidak sering marah-marah di grup WA, saya sudah bersyukur
-        pak...
-      scoreWeight: 5
-      reactionText: Hahaha, kelihatan sekali ya trauma dari kantor sebelumnya...
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-  - speakerName: Dimas Radit
-    dialogueText: Satu pertanyaan terakhir pak? Silakan, saya siap menjawab.
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 0
-    questionTitle: 
-    choices: []
-  - speakerName: Rookie
-    dialogueText: '[Pertanyaan 3/3] Apa kontribusi terbesar yang ingin kamu berikan
-      jika diterima bergabung?'
-    expressionSprite: {fileID: 0}
-    isDecisionPoint: 1
-    questionTitle: 'Pertanyaan 3: Komitmen & Kontribusi'
-    choices:
-    - toneType: 0
-      choiceText: Membangun sistem yang scalable, meningkatkan efisiensi operasional,
-        dan membawa bisnis lele kita go-global!
-      scoreWeight: 25
-      reactionText: Visi yang sangat ambisius dan berani! Ini yang kita cari!
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-    - toneType: 1
-      choiceText: Menyelesaikan seluruh target pekerjaan harian saya dengan standar
-        kualitas tinggi.
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau dilihat dari CV-mu, pengalamanmu bisa dibilang luar biasa.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Dengan rekam jejak seperti ini, kenapa kamu justru tertarik
+          melamar di perusahaan kami yang skalanya masih jauh lebih kecil?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Karena saya butuh tempat dengan standar kerja yang... lebih
+          rendah.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Target yang kalian susun untuk satu tahun, mungkin bisa saya
+          selesaikan dalam waktu satu bulan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Setelah itu, saya hanya ingin duduk tenang, menikmati teh saya,
+          dan tidak diganggu siapa pun.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Cukup sederhana, bukan?
+        expressionSprite: {fileID: 0}
+    - choiceText: Dengan pengalamanmu yang sebanyak itu, bagaimana caramu membimbing
+        rekan kerja yang masih baru dan belum memiliki banyak pengalaman?
       scoreWeight: 15
-      reactionText: Konsistensi dan tanggung jawab adalah fondasi yang kokoh.
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-    - toneType: 2
-      choiceText: Saya ikut arahan saja pak, apa pun tugasnya akan saya kerjakan
-        semampu saya.
-      scoreWeight: 2
-      reactionText: Baik, yang penting ada kemauan untuk terus belajar ya.
-      reactionSprite: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-  - speakerName: Dimas Radit
-    dialogueText: Terima kasih banyak atas kesempatannya pak Rookie! Saya sangat
-      berharap bisa bergabung di tim ini.
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Dengan pengalamanmu yang sebanyak itu, bagaimana caramu membimbing
+          rekan kerja yang masih baru dan belum memiliki banyak pengalaman?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Membimbing? Ara ara... saya bukan guru TK.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Kalau hanya dengan melihat cara saya bekerja saja mereka masih
+          tidak mampu mengikuti standar saya, berarti sejak awal mereka memang tidak
+          cukup berguna.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Saya tidak punya kesabaran untuk orang yang lambat. Mau berkembang
+          atau tertinggal, itu urusan mereka.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau begitu, bagaimana kamu mendeskripsikan etos kerjamu sendiri
+        saat ini?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau begitu, bagaimana kamu mendeskripsikan etos kerjamu sendiri
+          saat ini?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Efisien secara mutlak. Saya benci bekerja keras kalau hasil
+          yang sama bisa dicapai tanpa membuang tenaga.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Saya bekerja dengan insting dan pengalaman. Jadi, sebelum kalian
+          sempat menyadarinya, pekerjaan itu biasanya sudah selesai.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Setelah itu? Tentu saja saya pulang. Untuk apa saya tetap di
+          kantor kalau sudah tidak ada yang perlu dikerjakan?
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Percaya diri dan sangat mengutamakan efisiensi, ya. Baiklah, aku
+      mulai memahami cara kerjamu.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Kalau begitu, kita masuk ke studi kasus.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Bagaimana kamu menghadapi klien besar yang marah dan mengancam
+        putus kontrak?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Misalkan salah satu klien terbesar kami marah karena merasa
+          tidak puas, lalu mengancam akan memutus kontrak.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Kalau kamu yang harus menghadapinya, apa yang akan kamu lakukan?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Biarkan saja mereka pergi. Klien yang terlalu rewel hanya membuang
+          waktu saya.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Dengan koneksi yang saya punya, saya bisa membawa masuk tiga
+          klien baru yang jauh lebih besar dalam hitungan jam.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Jadi untuk apa menghabiskan waktu mengemis agar satu klien
+          bertahan? Ara ara... mereka bukan satu-satunya yang punya uang.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau tiba-tiba ada pekerjaan mendesak yang harus diselesaikan
+        hari itu juga dan mengharuskan kita lembur, apa kamu bersedia?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau tiba-tiba ada pekerjaan mendesak yang harus diselesaikan
+          hari itu juga dan mengharuskan kita lembur, apa kamu bersedia?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Atau kamu tetap akan memilih pulang begitu jam kerja selesai?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Tentu saja tidak. Waktu santai saya jauh lebih berharga daripada
+          uang lembur yang kalian tawarkan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Kalau sebuah pekerjaan sampai mengharuskan saya lembur, berarti
+          ada yang salah dengan sistem kerja perusahaan ini.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Jadi jangan limpahkan kegagalan manajemen waktu kalian kepada
+          saya. Ara ara... itu bukan masalah saya.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau timmu menemui jalan buntu saat mengerjakan proyek yang sangat
+        krusial, apa yang akan kamu lakukan?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau timmu menemui jalan buntu saat mengerjakan proyek yang
+          sangat krusial, apa yang akan kamu lakukan?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Apakah kamu akan turun tangan langsung, atau membiarkan mereka
+          mencari solusinya sendiri?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Jalan buntu? Ara ara... istilah seperti itu hanya berlaku untuk
+          amatir.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Beri saya dua menit, dan saya akan tunjukkan solusinya.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Tapi untuk eksekusi kasarnya, biarkan mereka yang mengerjakan.
+          Tangan saya terlalu berharga untuk disibukkan dengan hal-hal sepele.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Aura yang cukup mengintimidasi... aku bahkan mulai merasa seperti
+      bukan aku yang sedang mewawancarai kamu.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Baiklah, Sania. Sekarang kita masuk ke pertanyaan terakhir.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Dengan semua pengalaman dan kemampuan yang kamu miliki, apa sebenarnya
+        motivasi utamamu untuk bekerja di perusahaan kami saat ini?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Dengan semua pengalaman dan kemampuan yang kamu miliki, apa
+          sebenarnya motivasi utamamu untuk bekerja di perusahaan kami saat ini?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Gaji besar dan kebebasan absolut. Sesederhana itu.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Saya akan memberikan profit yang kalian inginkan, bahkan lebih
+          cepat dari yang kalian harapkan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Tapi sebagai gantinya, jangan pernah mengatur cara saya bekerja...
+          dan yang paling penting, jangan ganggu waktu santai saya.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Selama kita sama-sama mendapatkan apa yang kita mau, saya rasa
+          tidak akan ada masalah. Ara ara... cukup adil, bukan?
+        expressionSprite: {fileID: 0}
+    - choiceText: Apakah kamu siap menerima arahan dari atasan yang mungkin pengalaman
+        dan jam terbangnya masih di bawahmu?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Apakah kamu siap menerima arahan dari atasan yang mungkin pengalaman
+          dan jam terbangnya masih di bawahmu?
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Selama arahannya masuk akal dan tidak mengganggu waktu istirahat
+          saya, silakan saja. Saya tidak keberatan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Tapi kalau atasan itu mulai sok pintar dan menceramahi saya
+          dengan teori murahan... ara ara, jangan salahkan saya kalau akhirnya saya
+          yang mengambil alih kendali.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Saya mengikuti kompetensi, bukan sekadar jabatan.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau hari ini kamu resmi diterima, gebrakan apa yang pertama kali
+        akan kamu lakukan dalam satu bulan ke depan?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau hari ini kamu resmi diterima, gebrakan apa yang pertama
+          kali akan kamu lakukan dalam satu bulan ke depan?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Aku ingin tahu seberapa cepat kamu bisa memberikan dampak nyata
+          untuk perusahaan ini.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Pertama-tama, saya akan membuang SOP kalian yang berantakan
+          ini. Sistemnya terlalu lambat dan penuh langkah yang tidak perlu.
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: Saya akan menggantinya dengan sistem kerja saya sendiri yang
+          jauh lebih efisien. Target tercapai lebih cepat, pekerjaan selesai tanpa
+          drama..
+        expressionSprite: {fileID: 0}
+      - speakerName: Sania Pawpaw
+        dialogueText: ...dan saya bisa pulang lebih awal setiap hari. Ara ara, semua
+          pihak diuntungkan, bukan?
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Baiklah, Sania. Kurasa cukup sampai di sini untuk sesi wawancaranya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Terima kasih sudah menjawab semua pertanyaanku. Nanti akan aku
+      kabari mengenai hasilnya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '"Gila... kemampuan dan pengalamannya benar-benar nggak masuk akal.
+      Kalau semua yang dia bilang benar, dia bisa bawa profit besar dengan mudah"'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '"Tapi sifatnya itu... sombong, seenaknya sendiri, dan malasnya
+      minta ampun. Belum kerja saja sudah mau membuang SOP dan mengambil alih kendali..."'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '"Hah... ini sebenarnya aku lagi merekrut staf atau calon bos baru,
+      sih? Diterima nggak, ya...?"'
     expressionSprite: {fileID: 0}
     isDecisionPoint: 0
     questionTitle: 
