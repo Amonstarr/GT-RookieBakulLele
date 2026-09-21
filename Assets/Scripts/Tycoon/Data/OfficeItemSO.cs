@@ -21,7 +21,12 @@ namespace Tycoon.Data
         public int levelIndex;
         public string levelName;
         public int upgradeCost;
+        [Tooltip("Single/Main sprite fallback")]
         public Sprite topdownSprite;
+        [Tooltip("Sprite layer depan (foreground, rendered in front of sitting worker)")]
+        public Sprite frontSprite;
+        [Tooltip("Sprite layer belakang (background, rendered behind sitting worker)")]
+        public Sprite backSprite;
         [TextArea(2, 4)]
         public string boostDescription;
     }

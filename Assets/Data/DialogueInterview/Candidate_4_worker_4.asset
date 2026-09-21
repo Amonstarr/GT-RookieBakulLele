@@ -1,0 +1,395 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c60c8e966f79564ba165beefdd93b01, type: 3}
+  m_Name: Candidate_4_worker_4
+  m_EditorClassIdentifier: Assembly-CSharp::GT.Dialogue.Data.CandidateInterviewScriptSO
+  candidateId: worker_4
+  candidateName: Jimny Pawapua
+  candidateBio: Pakar budidaya lele sangkuriang dengan insting tajam.
+  defaultPortrait: {fileID: -8961180997118601234, guid: 1fe3573a3da685f4184e4de7d8837bb0, type: 3}
+  dialogueLines:
+  - speakerName: Jimny Pawapua.
+    dialogueText: Selamat pagi. Saya Jimny Pawapua.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Jimny Pawapua.
+    dialogueText: Portofolio dan CV saya sudah tersedia di meja Bapak. Saya rasa
+      semua informasi dasar yang diperlukan sudah tercantum di sana.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Jimny Pawapua.
+    dialogueText: Kalau Bapak tidak keberatan, kita bisa langsung masuk ke inti wawancara
+      saja. Biar waktu kita sama-sama digunakan dengan efisien.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Baik, Jimny. Silakan duduk.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Kalau begitu, mari kita mulai dengan membahas beberapa hal yang
+      menarik dari CV kamu.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Bisa kamu jelaskan lebih spesifik? Efisien seperti apa yang kamu
+        maksud?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Di CV kamu tertulis bahwa kamu punya pengalaman dalam manajemen
+          yang efisien.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Bisa kamu jelaskan lebih spesifik? Efisien seperti apa yang
+          kamu maksud?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Efisiensi energi, Pak. Saya sangat terampil dalam memetakan
+          kekuatan setiap anggota tim.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Ketika ada proyek, saya delegasikan seluruh pekerjaan teknis
+          kepada staf yang memang ahli di bidangnya. Tidak ada gunanya saya ikut
+          mengerjakan sesuatu yang bisa mereka selesaikan dengan lebih baik.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Sementara itu, saya fokus mengawasi dari belakang meja dan
+          menjaga pikiran tetap jernih untuk menyusun strategi.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Prinsip saya sederhana, Pak. Seorang pemimpin tidak harus terlihat
+          sibuk untuk menghasilkan sesuatu.
+        expressionSprite: {fileID: 0}
+    - choiceText: Bisa ceritakan satu contoh saat tim kamu menghadapi masalah dan
+        bagaimana kamu menyelesaikannya?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Di CV kamu juga menuliskan problem solving sebagai salah satu
+          keahlian utama.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Bisa ceritakan satu contoh saat tim kamu menghadapi masalah
+          dan bagaimana kamu menyelesaikannya?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Ketika terjadi krisis, kebanyakan orang cenderung panik dan
+          ingin langsung turun tangan. Saya justru memilih mengambil satu langkah
+          mundur.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Saya tidak ikut mencampuri urusan teknis. Dengan tetap tenang
+          dan menjaga jarak, saya memberi ruang bagi tim untuk berpikir dan menemukan
+          solusi mereka sendiri.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Kalau saya terus berdiri di belakang mereka dan mengawasi setiap
+          gerakan, mereka justru akan tertekan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Kadang, Pak... cara terbaik menyelesaikan masalah adalah dengan
+          tidak mengganggu orang yang sedang menyelesaikannya.
+        expressionSprite: {fileID: 0}
+    - choiceText: Saya perhatikan bagian keahlian teknis di CV kamu kosong.
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Saya perhatikan bagian keahlian teknis di CV kamu kosong.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Memangnya ada alasan tertentu kenapa kamu tidak mencantumkan
+          satu pun kemampuan teknis di sana?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Saya tidak ingin membatasi potensi saya pada satu kemampuan
+          teknis yang suatu saat bisa menjadi usang.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Keahlian utama saya adalah komunikasi, Pak. Biarkan staf teknis
+          menangani pekerjaan kasarnya.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Saya akan fokus merangkai hasil kerja mereka menjadi laporan
+          dan narasi yang bisa dipahami semua pihak.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua.
+        dialogueText: Pada akhirnya, pekerjaan sehebat apa pun tidak akan terlihat
+          bernilai kalau tidak ada yang tahu cara menyampaikannya.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Menarik. Cara berpikir kamu memang sangat makro dan lebih berfokus
+      pada gambaran besar.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Baiklah, Jimny. Sekarang mari kita masuk ke beberapa skenario pekerjaan.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Kalau kantor pusat tiba-tiba memberikan target tinggi dengan tenggat
+        waktu yang sangat mendadak, apa yang akan kamu lakukan?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau kantor pusat tiba-tiba memberikan target tinggi dengan
+          tenggat waktu yang sangat mendadak, apa yang akan kamu lakukan?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Bagaimana caramu memastikan tim tetap bisa mengejar target
+          tanpa kehilangan kendali?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Saya akan mengumpulkan seluruh tim dan memberikan motivasi
+          sampai semangat mereka benar-benar terbakar.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Setelah itu, saya akan kembali ke ruangan saya dan memantau
+          semuanya dari jauh. Saya tidak ingin terlalu ikut campur dan mengganggu
+          ritme. kerja mereka.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Kalau motivasi sudah diberikan dan tugas sudah jelas, saya
+          percaya tim yang kompeten tahu apa yang harus mereka lakukan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Tugas saya tinggal memastikan api semangat itu tidak padam,
+          Pak
+        expressionSprite: {fileID: 0}
+    - choiceText: Di portofolio kamu ada foto pemandangan awan. Apa filosofinya dengan
+        pekerjaan kita?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Saya lihat ada foto pemandangan awan di portofolio kamu. Cukup
+          menarik, tapi saya penasaran...
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Apa filosofi di balik foto itu, dan apa hubungannya dengan
+          cara kamu bekerja?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Itu pengingat bahwa kita harus melihat segala sesuatu dari
+          atas, Pak.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Tim tidak akan maju kalau kita terus menunduk dan sibuk dengan
+          masalah-masalah teknis di bawah.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Kita harus melihat gambaran besarnya. Punya visi yang luas...
+          dan setinggi awan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Karena kalau pemimpinnya ikut sibuk melihat ke bawah, siapa
+          yang akan menunjukkan arah ke depan?
+        expressionSprite: {fileID: 0}
+    - choiceText: Bagaimana caramu menangani klien penting yang komplain?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Anggap saja perusahaan sedang berada dalam pengawasan ketat,
+          lalu salah satu klien penting tiba-tiba mengajukan komplain.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Dalam situasi seperti itu, bagaimana cara kamu menangani klien
+          tersebut tanpa memperburuk keadaan?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Kita alihkan fokusnya terlebih dahulu, Pak. Saya akan mengajak
+          klien itu berbicara santai tentang hal lain sampai emosinya mereda.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Kemampuan komunikasi saya bisa diandalkan. Selama saya menangani
+          klien di depan, staf teknis bisa langsung mengerjakan revisinya di belakang.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Jadi ketika obrolan kami selesai, emosinya sudah tenang...
+          dan masalahnya juga sudah dibereskan orang lain.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Cukup... berani dan penuh visi, ya?
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Baiklah, Jimny. Sekarang kita masuk ke sesi terakhir wawancara.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Kalau kandidat lain punya kemampuan teknis yang jauh lebih kuat,
+        kenapa saya harus memilih kamu dibandingkan mereka?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau kandidat lain punya kemampuan teknis yang jauh lebih
+          kuat, kenapa saya harus memilih kamu dibandingkan mereka?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Apa nilai yang bisa kamu tawarkan yang tidak mereka miliki?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Orang yang rajin dan ahli secara teknis selamanya hanya akan
+          menjadi pekerja, Pak.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Yang Bapak butuhkan adalah konseptor yang tahu cara melihat
+          gambaran besar... dan yang lebih penting, tahu cara menjualnya.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Biarkan staf Bapak berkeringat mengerjakan teknisnya. Saya
+          yang akan memastikan hasil kerja keras mereka terlihat berkilau di mata
+          bos besar.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Karena kerja keras saja tidak cukup, Pak. Harus ada orang yang
+          tahu cara membuatnya terlihat hebat.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau kamu resmi diterima, apa gebrakan pertama yang akan kamu
+        lakukan dalam satu bulan pertamamu di sini?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau kamu resmi diterima, apa gebrakan pertama yang akan kamu
+          lakukan dalam satu bulan pertamamu di sini?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Saya ingin tahu perubahan nyata seperti apa yang bisa kamu
+          bawa sejak awal.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Di bulan pertama, saya tidak akan menyentuh pekerjaan teknis
+          apa pun, Pak.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Saya akan duduk santai, minum kopi, dan mengamati bagaimana
+          alur kerja perusahaan ini berjalan dari kejauhan.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Kerja keras memang penting. Tapi bagi saya, kerja cerdas jauh
+          lebih penting.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Dan yang paling penting adalah tahu bagaimana merangkai semua
+          kerja keras itu menjadi narasi kesuksesan yang terdengar luar biasa.
+        expressionSprite: {fileID: 0}
+    - choiceText: Kalau ada satu hal yang ingin kamu ubah dari tim ini setelah bergabung
+        nanti, apa itu?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau ada satu hal yang ingin kamu ubah dari tim ini setelah
+          bergabung nanti, apa itu?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Menurut kamu, apa yang paling perlu dibenahi agar tim ini bisa
+          berkembang lebih jauh?
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Kultur kerjanya, Pak. Saya lihat kebanyakan staf terlalu sibuk
+          dan stres untuk terus membuktikan diri.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Saya akan mengusulkan jam istirahat yang lebih panjang dan
+          ruang santai yang nyaman.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Karena menurut saya, ide brilian tidak selalu muncul saat kita
+          sibuk bekerja.
+        expressionSprite: {fileID: 0}
+      - speakerName: Jimny Pawapua
+        dialogueText: Kadang justru muncul ketika kita sedang rebahan... dan tidak
+          melakukan apa-apa.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Baiklah, Jimny. Wawancara ini benar-benar... membuka wawasan saya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Terima kasih sudah meluangkan waktu. Nanti akan saya kabari mengenai
+      hasilnya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '"Cara bicaranya meyakinkan banget. Semua terdengar seperti strategi
+      tingkat tinggi kalau keluar dari mulutnya..."'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '"Tapi kenapa perasaanku bilang kalau dia diterima, ujung-ujungnya
+      staf lain yang kerja sementara dia cuma duduk di ruangan sambil ngopi, ya...?"'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: '"Ini orang visioner... atau cuma jago cari alasan buat santai?"'
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []

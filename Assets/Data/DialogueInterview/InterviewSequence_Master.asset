@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f273ecacc92f50c459f8117ca602b443, type: 3}
+  m_Name: InterviewSequence_Master
+  m_EditorClassIdentifier: Assembly-CSharp::GT.Dialogue.Data.InterviewStorySequenceSO
+  candidates:
+  - {fileID: 11400000, guid: 2f0fab7413376f24cab478af6fd31566, type: 2}
+  - {fileID: 11400000, guid: 6fa49e338417c654da9934013127f9ef, type: 2}
+  - {fileID: 11400000, guid: b376e9ab34ec1de428eb3f022218a701, type: 2}
+  - {fileID: 11400000, guid: f3e89ef5ddc017c4ab13b25478a70f2f, type: 2}
+  - {fileID: 11400000, guid: 5b29d18ddf674f64c8a28a7dab78865c, type: 2}
+  - {fileID: 11400000, guid: c8c2beefcbfd89741aa318b0daea8309, type: 2}

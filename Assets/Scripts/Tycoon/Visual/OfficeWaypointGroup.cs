@@ -59,17 +59,56 @@ namespace Tycoon.Visual
             return pacingWaypoints[idx];
         }
 
+        /// <summary>
+        /// Returns the pacing waypoint closest to the given world position.
+        /// Used by AI to align with main walking corridors before approaching desks/items.
+        /// </summary>
+        public Transform GetNearestPacingWaypoint(Vector3 position)
+        {
+            if (pacingWaypoints == null || pacingWaypoints.Count == 0) return transform;
+
+            Transform nearest = null;
+            float minDistance = float.MaxValue;
+
+            foreach (var wp in pacingWaypoints)
+            {
+                if (wp == null) continue;
+                float dist = Vector3.Distance(position, wp.position);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    nearest = wp;
+                }
+            }
+
+            return nearest != null ? nearest : transform;
+        }
+
+        private bool IsItemUnlockedForTarget(Transform target)
+        {
+            if (target == null) return false;
+            OfficeItemVisual itemVisual = target.GetComponent<OfficeItemVisual>();
+            if (itemVisual == null) itemVisual = target.GetComponentInParent<OfficeItemVisual>();
+
+            if (itemVisual != null)
+            {
+                return itemVisual.IsUnlocked;
+            }
+
+            return true;
+        }
+
         public Transform ClaimAvailableChair(Transform currentChair)
         {
-            if (currentChair != null && occupiedChairs.Contains(currentChair))
+            if (currentChair != null && occupiedChairs.Contains(currentChair) && IsItemUnlockedForTarget(currentChair))
             {
-                return currentChair; // Keep current chair if already owned
+                return currentChair; // Keep current chair if already owned & unlocked
             }
 
             List<Transform> freeChairs = new List<Transform>();
             foreach (var chair in chairTargets)
             {
-                if (chair != null && !occupiedChairs.Contains(chair))
+                if (chair != null && !occupiedChairs.Contains(chair) && IsItemUnlockedForTarget(chair))
                 {
                     freeChairs.Add(chair);
                 }
@@ -77,7 +116,7 @@ namespace Tycoon.Visual
 
             if (freeChairs.Count == 0)
             {
-                return GetRandomPacingWaypoint(); // Fallback if all chairs taken
+                return null; // Return null if no unlocked chairs available
             }
 
             Transform selected = freeChairs[Random.Range(0, freeChairs.Count)];
@@ -95,8 +134,8 @@ namespace Tycoon.Visual
 
         public Transform GetCoffeeTarget()
         {
-            if (coffeeTarget != null) return coffeeTarget;
-            return GetRandomPacingWaypoint();
+            if (coffeeTarget != null && IsItemUnlockedForTarget(coffeeTarget)) return coffeeTarget;
+            return null;
         }
 
         private void OnDrawGizmosSelected()

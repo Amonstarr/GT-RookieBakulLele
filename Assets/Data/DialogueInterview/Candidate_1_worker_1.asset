@@ -1,0 +1,294 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c60c8e966f79564ba165beefdd93b01, type: 3}
+  m_Name: Candidate_1_worker_1
+  m_EditorClassIdentifier: Assembly-CSharp::GT.Dialogue.Data.CandidateInterviewScriptSO
+  candidateId: worker_1
+  candidateName: 'Budiyon Los Hermanos '
+  candidateBio: Programmer senior yang hobi begadang minum kopi lele.
+  defaultPortrait: {fileID: 7598980446433480984, guid: f5aab459f21993d418e27d99016846c1, type: 3}
+  dialogueLines:
+  - speakerName: 'Budiyon Los Hermanos '
+    dialogueText: Halo, perkenalkan. Aku Budiyon Los Hermanos.
+    expressionSprite: {fileID: 7598980446433480984, guid: f5aab459f21993d418e27d99016846c1, type: 3}
+    isDecisionPoint: 0
+    questionTitle: ' '
+    choices: []
+  - speakerName: 'Budiyon Los Hermanos '
+    dialogueText: Aku mantan manajer band sekaligus rapper. Kulihat kau sedang membutuhkan
+      seorang staf.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: 'Budiyon Los Hermanos '
+    dialogueText: Mungkin aku memang belum terlalu berpengalaman di bidang ini, tapi
+      aku sudah cukup sering mengurus berbagai keperluan administrasi selama menjadi
+      manajer band.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Oh, begitu? Berarti kamu lumayan terkenal, dong. Menarik juga.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Kalau begitu, mari kita langsung mulai wawancaranya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Kalau boleh tahu, apa yang membuatmu yakin bahwa kemampuan administrasimu
+        sudah cukup baik?
+      scoreWeight: 25
+      reactionText: Ayolah, kau tahu Key Cenut, kan? Sebelum dia bersinar seperti
+        sekarang, akulah yang mengurusnya.
+      reactionSprite: {fileID: 0}
+      followUpDialogue: []
+    - choiceText: 'Hmm... tapi perlu kuingatkan, kami di sini sedang mencari seorang
+        staf, bukan manajer.
+
+'
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: 'Hmm... tapi perlu kuingatkan, kami di sini sedang mencari
+          seorang staf, bukan manajer.
+
+'
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: Rookie
+        dialogueText: Kamu yakin bisa menyesuaikan diri dengan posisi itu?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: "\u201CCih! Kau membentuk tim tanpa seorang pemimpin? Itu sama
+          saja seperti *chicken without a head*, Bung! Mau dibawa ke mana tim ini
+          kalau tak ada yang memimpin?\u201D"
+        expressionSprite: {fileID: -5727600292487652188, guid: fcd11e2049e7d6c4cb10786ebc8ba33a, type: 3}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+    - choiceText: 'Katanya kamu pernah mengurus sebuah band. Memangnya band apa?
+
+        Jangan-jangan
+        kamu cuma ngibul, ya?'
+      scoreWeight: 10
+      reactionText: Baca CV-ku dulu, Bro. Di situ jelas semuanya.
+      reactionSprite: {fileID: -7531385057789631053, guid: 4d41eec168fe9fb4eaddbaa11768500c, type: 3}
+      followUpDialogue:
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Aku pernah ngurus band-band besar kayak Oase, Dinginmain, sampai
+          beberapa streamer terkenal. Jadi jangan kira aku cuma asal ngomong, Bung.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+  - speakerName: Rookie
+    dialogueText: 'Menarik...
+
+
+      Baiklah, mari kita lanjut ke pertanyaan berikutnya.'
+    expressionSprite: {fileID: 7598980446433480984, guid: f5aab459f21993d418e27d99016846c1, type: 3}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Aku manajer di sini. Jadi, coba beri aku satu alasan yang bagus...
+        kenapa aku harus mempekerjakan kamu?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Aku manajer di sini. Jadi, coba beri aku satu alasan yang bagus...
+          kenapa aku harus mempekerjakan kamu?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Wah, ada yang mulai merasa tersaingi, nih?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Baiklah, Bos. Aku bisa lihat dari wajahmu, kamu sudah capek,
+          kan? Ngurus administrasi sekaligus memimpin tim pasti melelahkan.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Daripada kamu ambruk, bagaimana kalau salah satu pekerjaanmu
+          itu aku yang ambil alih?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+    - choiceText: Se-eksentrik kamu tertarik melamar jadi staf di sini? Aku penasaran,
+        kamu menemukan lowongan ini dari mana?
+      scoreWeight: 10
+      reactionText: Fine. Aku tahu lowongan ini dari postingan yang kamu unggah di
+        media sosial. Kebetulan lewat di berandaku, jadi aku pikir... kenapa nggak?
+      reactionSprite: {fileID: 0}
+      followUpDialogue: []
+    - choiceText: 'Kamu meminta gaji yang cukup tinggi, ya. Sementara itu, anggaran
+        kami cukup terbatas.
+
+        Apakah kamu bersedia menurunkan tuntutan gajimu?'
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rokiee
+        dialogueText: 'Kamu meminta gaji yang cukup tinggi, ya. Sementara itu, anggaran
+          kami cukup terbatas.
+
+          Apakah kamu bersedia menurunkan tuntutan
+          gajimu?'
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Value-ku banyak, Bos. Enak saja kalau aku digaji rendah.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Tapi... since your company is still small, aku masih bisa kompromi.
+          Dua digit, dan kita bisa mulai bicara.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+  - speakerName: Rookie
+    dialogueText: Cukup pedas juga jawabanmu... baiklah.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Sekarang, kita masuk ke pertanyaan terakhir.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Jujur saja, aku masih kurang yakin kamu akan cocok dengan tim ini
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Jujur saja, aku masih kurang yakin kamu akan cocok dengan tim
+          ini
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Fair enough. Lidah pedas dibalas lidah pedas, ya?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Kalau begitu, aku harap  my CV-ku cukup meyakinkanmu.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+    - choiceText: 'Kalau dilihat dari CV-mu, kamu sudah cukup sering memimpin berbagai
+        proyek.
+
+        Tapi aku juga melihat kamu cukup sering berpindah dari satu
+        perusahaan ke perusahaan lain.'
+      scoreWeight: 15
+      reactionText: 'Ayolah, aku bukan tipe orang yang bisa diam di satu tempat tanpa
+        berkembang. Aku selalu ingin terus grow dan mencari tantangan baru.
+
+        Selama
+        perusahaanmu bisa terus membuatku tertantang dan berkembang, tenang saja...
+        aku bakal tetap stay di sini.'
+      reactionSprite: {fileID: 0}
+      followUpDialogue: []
+    - choiceText: Dengan sifatmu yang seperti itu, aku jadi penasaran... bagaimana
+        caramu menangani dan memimpin sebuah tim?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Dengan sifatmu yang seperti itu, aku jadi penasaran... bagaimana
+          caramu menangani dan memimpin sebuah tim?
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: CV-ku sebenarnya sudah cukup membuktikan. Tapi kalau kamu penasaran
+          soal how I lead, aku tipe orang yang suka menyusun setiap kegiatan secara
+          terjadwal, bahkan sampai hitungan jam.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+      - speakerName: 'Budiyon Los Hermanos '
+        dialogueText: Dengan begitu, timku selalu tahu apa yang harus mereka kerjakan
+          dan nggak kelabakan kalau tiba-tiba ada tugas baru.
+        expressionSprite: {fileID: 0}
+        isDecisionPoint: 0
+        questionTitle: 
+        choices: []
+  - speakerName: Rookie
+    dialogueText: Baiklah, terima kasih. Kurasa itu saja yang ingin aku tanyakan.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Nanti akan aku kabari lagi mengenai hasil wawancaranya. Sampai
+      saat itu, tunggu kabar dariku, ya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices: []
