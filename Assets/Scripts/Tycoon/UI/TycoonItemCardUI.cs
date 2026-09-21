@@ -93,7 +93,7 @@ namespace Tycoon.UI
             // 2. Level Display
             if (levelText != null)
             {
-                levelText.text = currentLvl == 0 ? "Lvl 0 (Locked)" : $"Lvl {currentLvl} / {maxLvl}";
+                levelText.text = currentLvl == 0 ? "Lvl 0 (Belum Dibeli)" : $"Lvl {currentLvl} / {maxLvl}";
             }
 
             // 3. Boost Description

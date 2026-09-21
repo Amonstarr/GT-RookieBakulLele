@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using TMPro;
 using Tycoon.Core;
 using Tycoon.Data;
 
@@ -10,7 +11,7 @@ namespace Tycoon.UI
 {
     /// <summary>
     /// UI Controller Otomatis untuk Scene Pemilihan Karakter (SelectCharacter).
-    /// Karakter yang dipilih akan otomatis meredup (gelap) & tidak bisa diklik lagi.
+    /// Mengelola toggle pemilihan karakter, indikator jumlah pilihan (misal: 0/3), dan preview karakter besar di sebelah kanan.
     /// </summary>
     public class TycoonCharacterUI : MonoBehaviour
     {
@@ -20,12 +21,26 @@ namespace Tycoon.UI
         [SerializeField] private int maxSelectableCharacters = 2;
 
         [Header("Darken Visual Style")]
-        [Tooltip("Warna saat maskot sudah dipilih dan terkunci (gelap/dimmed)")]
+        [Tooltip("Warna saat maskot belum dipilih atau di-unselect (normal)")]
+        [SerializeField] private Color normalColor = Color.white;
+        [Tooltip("Warna saat maskot sudah dipilih (gelap/dimmed)")]
         [SerializeField] private Color selectedDarkColor = new Color(0.4f, 0.4f, 0.4f, 1f);
 
         [Header("Confirm Button Setup")]
-        [Tooltip("Tombol 'PILIH KARAKTER' untuk konfirmasi & masuk scene Tycoon")]
+        [Tooltip("Tombol 'PILIH KARAKTER' / 'NEXT' untuk konfirmasi & masuk scene Tycoon")]
         [SerializeField] private Button confirmButton;
+
+        [Header("Selection Indicator & Preview UI")]
+        [Tooltip("Teks indikator berapa karakter terpilih (contoh: 0/3)")]
+        [SerializeField] private TMP_Text selectionCountText;
+        [Tooltip("Fallback UI Text biasa untuk indikator jumlah jika tidak memakai TMPro")]
+        [SerializeField] private Text selectionCountLegacyText;
+
+        [Tooltip("Gambar preview besar karakter di sebelah kanan UI")]
+        [SerializeField] private Image characterPreviewImage;
+        [Tooltip("Teks nama karakter di area preview (opsional)")]
+        [SerializeField] private TMP_Text characterPreviewNameText;
+        [SerializeField] private Text characterPreviewNameLegacyText;
 
         [Header("Scene Navigation")]
         [Tooltip("Nama Scene kantor Tycoon (contoh: TycoonMiniGames)")]
@@ -41,34 +56,50 @@ namespace Tycoon.UI
                 confirmButton.onClick.AddListener(ConfirmAndLoadScene);
                 confirmButton.interactable = false;
             }
+
+            UpdateSelectionUI(null);
         }
 
         /// <summary>
         /// Dipanggil langsung dari Event OnClick () Button Maskot di Inspector Unity!
-        /// Karakter yang diklik akan otomatis menjadi GELAP dan TIDAK BISA DIKLIK LAGI.
+        /// Jika karakter belum dipilih: menambahkan karakter & menggelapkan tombol.
+        /// Jika karakter sudah dipilih: membatalkan pilihan (unselect) & mengembalikan warna tombol.
         /// </summary>
         public void SetSelectedCharacter(CharacterSO character)
         {
             if (character == null) return;
 
-            // Jika sudah mencapai batas maksimal pilihan, abaikan
-            if (selectedCharacters.Count >= maxSelectableCharacters)
+            // Cek apakah karakter sudah ada di daftar pilihan
+            int existingIndex = selectedCharacters.FindIndex(c => c != null && c.characterId == character.characterId);
+
+            if (existingIndex >= 0)
             {
-                Debug.LogWarning($"[TycoonCharacterUI] Batas maksimal ({maxSelectableCharacters}) karakter sudah tercapai!");
-                return;
+                // UNSELECT: Hapus dari daftar terpilih
+                selectedCharacters.RemoveAt(existingIndex);
+                Debug.Log($"[TycoonCharacterUI] Membatalkan pilihan '{character.characterName}'. ({selectedCharacters.Count}/{maxSelectableCharacters})");
+
+                // Kembalikan warna ke normal & pastikan interactable tetap true
+                ApplyButtonVisual(isSelected: false);
+            }
+            else
+            {
+                // Jika sudah mencapai batas maksimal pilihan, abaikan
+                if (selectedCharacters.Count >= maxSelectableCharacters)
+                {
+                    Debug.LogWarning($"[TycoonCharacterUI] Batas maksimal ({maxSelectableCharacters}) karakter sudah tercapai!");
+                    return;
+                }
+
+                // SELECT: Tambahkan ke daftar terpilih
+                selectedCharacters.Add(character);
+                Debug.Log($"[TycoonCharacterUI] Memilih '{character.characterName}'. ({selectedCharacters.Count}/{maxSelectableCharacters})");
+
+                // Ubah warna menjadi gelap & pastikan interactable tetap true agar bisa di-unselect nanti
+                ApplyButtonVisual(isSelected: true);
             }
 
-            // Cegah duplikasi jika karakter sudah dipilih
-            if (selectedCharacters.Exists(c => c != null && c.characterId == character.characterId))
-            {
-                return;
-            }
-
-            selectedCharacters.Add(character);
-            Debug.Log($"[TycoonCharacterUI] Memilih '{character.characterName}'. ({selectedCharacters.Count}/{maxSelectableCharacters})");
-
-            // Otomatis ubah tombol maskot yang diklik menjadi GELAP & Disable Click
-            ApplyDarkenToClickedButton();
+            // Perbarui Indikator (0/3) & Preview Karakter di Sebelah Kanan
+            UpdateSelectionUI(character);
 
             // Aktifkan tombol confirm jika minimal 1 karakter terpilih
             if (confirmButton != null)
@@ -78,9 +109,66 @@ namespace Tycoon.UI
         }
 
         /// <summary>
-        /// Mengubah visual tombol yang diklik di EventSystem menjadi gelap & non-aktif
+        /// Memperbarui indikator jumlah pilihan (misal 0/3) dan gambar preview karakter besar di sebelah kanan.
         /// </summary>
-        private void ApplyDarkenToClickedButton()
+        private void UpdateSelectionUI(CharacterSO lastClickedCharacter)
+        {
+            // 1. Indikator Jumlah Pilihan (contoh: 0/3)
+            string counterString = $"{selectedCharacters.Count}/{maxSelectableCharacters}";
+            if (selectionCountText != null) selectionCountText.text = counterString;
+            if (selectionCountLegacyText != null) selectionCountLegacyText.text = counterString;
+
+            // 2. Preview Karakter Sebelah Kanan
+            CharacterSO previewTarget = null;
+            if (lastClickedCharacter != null && selectedCharacters.Contains(lastClickedCharacter))
+            {
+                previewTarget = lastClickedCharacter;
+            }
+            else if (selectedCharacters.Count > 0)
+            {
+                previewTarget = selectedCharacters[selectedCharacters.Count - 1];
+            }
+
+            if (previewTarget != null)
+            {
+                Sprite previewSprite = previewTarget.avatarIcon != null ? previewTarget.avatarIcon : previewTarget.standingSprite;
+                if (characterPreviewImage != null)
+                {
+                    characterPreviewImage.sprite = previewSprite;
+                    characterPreviewImage.enabled = (previewSprite != null);
+                }
+
+                if (characterPreviewNameText != null) characterPreviewNameText.text = previewTarget.characterName;
+                if (characterPreviewNameLegacyText != null) characterPreviewNameLegacyText.text = previewTarget.characterName;
+            }
+            else
+            {
+                // Jika tidak ada karakter terpilih, sembunyikan preview
+                if (characterPreviewImage != null)
+                {
+                    characterPreviewImage.enabled = false;
+                }
+                if (characterPreviewNameText != null) characterPreviewNameText.text = "";
+                if (characterPreviewNameLegacyText != null) characterPreviewNameLegacyText.text = "";
+            }
+        }
+
+        /// <summary>
+        /// Opsional: Dipanggil jika ingin menampilkan preview karakter (misal hover/klik) tanpa langsung memilihnya.
+        /// </summary>
+        public void ShowCharacterPreview(CharacterSO character)
+        {
+            if (character != null)
+            {
+                UpdateSelectionUI(character);
+            }
+        }
+
+        /// <summary>
+        /// Mengubah visual tombol yang diklik di EventSystem (gelap saat dipilih, normal saat unselect).
+        /// Tombol tetap interaktif (`interactable = true`) agar pengguna bisa mengeklik kembali untuk unselect.
+        /// </summary>
+        private void ApplyButtonVisual(bool isSelected)
         {
             GameObject currentObj = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
             if (currentObj != null)
@@ -90,14 +178,14 @@ namespace Tycoon.UI
 
                 if (btn != null)
                 {
-                    // Matikan interactable agar tidak bisa diklik lagi
-                    btn.interactable = false;
+                    // Pastikan tombol tetap interactable agar bisa diklik lagi (unselect)
+                    btn.interactable = true;
 
-                    // Ubah warna menjadi agak gelap
+                    // Ubah warna sesuai status terpilih
                     Image img = btn.GetComponent<Image>();
                     if (img != null)
                     {
-                        img.color = selectedDarkColor;
+                        img.color = isSelected ? selectedDarkColor : normalColor;
                     }
                 }
             }
