@@ -98,6 +98,9 @@ namespace GT.Leaderboard
 
             PopulateTopRows(topEntries, selfEntry?.Rank ?? 0);
             UpdatePlayerSummary(selfEntry);
+
+            // Sembunyikan tombol retry setelah berhasil memuat
+            if (retryButton != null) retryButton.gameObject.SetActive(false);
         }
 
         private void PopulateTopRows(List<LeaderboardEntry> entries, int selfRank)
