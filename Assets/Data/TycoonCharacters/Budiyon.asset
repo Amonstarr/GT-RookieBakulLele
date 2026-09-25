@@ -17,9 +17,32 @@ MonoBehaviour:
   jobTitle: Lead Designer
   bio: 
   avatarIcon: {fileID: 7598980446433480984, guid: f5aab459f21993d418e27d99016846c1, type: 3}
-  standingSprite: {fileID: 0}
-  sittingSprite: {fileID: 0}
+  standingSprite: {fileID: 8370376713002296604, guid: bbf0a1dd882d92049ba0b2167018ea7d, type: 3}
+  sittingSprite: {fileID: -3169184200634750523, guid: 1ce61de76aa49bb4b8c1f5b6f5367cbd, type: 3}
+  idleSprites:
+  - {fileID: 8370376713002296604, guid: bbf0a1dd882d92049ba0b2167018ea7d, type: 3}
+  - {fileID: 8457389948681164551, guid: bbf0a1dd882d92049ba0b2167018ea7d, type: 3}
+  - {fileID: 1531649076831573881, guid: bbf0a1dd882d92049ba0b2167018ea7d, type: 3}
+  walkHorizontalSprites:
+  - {fileID: -964254136272817347, guid: ecf77bcf84421b24ead695b9b717d15f, type: 3}
+  - {fileID: 4947471906145977851, guid: ecf77bcf84421b24ead695b9b717d15f, type: 3}
+  - {fileID: 3581719993194814232, guid: ecf77bcf84421b24ead695b9b717d15f, type: 3}
+  - {fileID: -2747512293675909352, guid: ecf77bcf84421b24ead695b9b717d15f, type: 3}
+  - {fileID: -4999156721084197740, guid: ecf77bcf84421b24ead695b9b717d15f, type: 3}
+  walkUpSprites:
+  - {fileID: -4338607630531161427, guid: 77a189de12308c740a1a3d7915c15635, type: 3}
+  - {fileID: 2050514804417496790, guid: 77a189de12308c740a1a3d7915c15635, type: 3}
+  - {fileID: -9203625567729000293, guid: 77a189de12308c740a1a3d7915c15635, type: 3}
+  - {fileID: -8961544388131446849, guid: 77a189de12308c740a1a3d7915c15635, type: 3}
+  - {fileID: -4876324691810609680, guid: 77a189de12308c740a1a3d7915c15635, type: 3}
+  walkDownSprites:
+  - {fileID: 8609938457902225307, guid: c2e31d31c58d4314797a9a13dab07fe3, type: 3}
+  - {fileID: -7933532414128733340, guid: c2e31d31c58d4314797a9a13dab07fe3, type: 3}
+  - {fileID: -1666900151247738881, guid: c2e31d31c58d4314797a9a13dab07fe3, type: 3}
+  - {fileID: 2265672988804619170, guid: c2e31d31c58d4314797a9a13dab07fe3, type: 3}
+  - {fileID: -716479818328222253, guid: c2e31d31c58d4314797a9a13dab07fe3, type: 3}
   walkingSprites: []
+  animationFrameRate: 10
   baseWalkSpeed: 1.8
   maxStamina: 90
   staminaDepletionRate: 2

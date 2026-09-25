@@ -15,10 +15,28 @@ namespace Tycoon.Data
         public string bio;
         public Sprite avatarIcon;
 
-        [Header("2D Visual Sprites")]
+        [Header("2D Visual Sprites & Spritesheet Animations")]
         public Sprite standingSprite;
         public Sprite sittingSprite;
+
+        [Tooltip("Frame animasi saat karakter diam (Idle loop)")]
+        public List<Sprite> idleSprites = new List<Sprite>();
+
+        [Tooltip("Frame animasi saat karakter berjalan ke kanan/kiri (di-flip horizontal untuk kiri)")]
+        public List<Sprite> walkHorizontalSprites = new List<Sprite>();
+
+        [Tooltip("Frame animasi saat karakter berjalan ke atas")]
+        public List<Sprite> walkUpSprites = new List<Sprite>();
+
+        [Tooltip("Frame animasi saat karakter berjalan ke bawah (opsional)")]
+        public List<Sprite> walkDownSprites = new List<Sprite>();
+
+        [Tooltip("Legacy single direction walk sprites list")]
         public List<Sprite> walkingSprites = new List<Sprite>();
+
+        [Tooltip("Kecepatan frame rate animasi per detik (misal: 8-12 FPS)")]
+        [Range(1f, 30f)]
+        public float animationFrameRate = 10f;
 
         [Header("Movement & Stamina Stats (Non-Income)")]
         [Range(0.5f, 5.0f)]
