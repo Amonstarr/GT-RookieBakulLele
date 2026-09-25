@@ -92,7 +92,8 @@ namespace GT.Leaderboard
 
             if (topEntries == null)
             {
-                SetFeedback("Gagal memuat papan peringkat. Periksa koneksi internet lalu coba lagi.", true);
+                string message = LeaderboardManager.LastError ?? "Gagal memuat papan peringkat. Periksa koneksi internet lalu coba lagi.";
+                SetFeedback(message, true);
                 return;
             }
 

@@ -3175,7 +3175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79207f82ed4a43644a6e9e8e280176d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GT.Leaderboard.LeaderboardManager
-  leaderboardId: 1GT-RookieBakulLele
+  leaderboardId: Leaderboard_Rookie
   updatePlayerNameFromSession: 1
 --- !u!1 &1840860333
 GameObject:
