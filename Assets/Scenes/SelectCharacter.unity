@@ -370,7 +370,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 9ad590b7b3e043e4eb425d283fc88c2d, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 0329eee3c9c173648a94c99b07489a69, type: 2}
           m_ObjectArgumentAssemblyTypeName: Tycoon.Data.CharacterSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b9dc2324037a2464695e14a4944eea14, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 6fbf3dd7567ceb341bf882012913163d, type: 2}
           m_ObjectArgumentAssemblyTypeName: Tycoon.Data.CharacterSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1509,7 +1509,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 9ad590b7b3e043e4eb425d283fc88c2d, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: b9dc2324037a2464695e14a4944eea14, type: 2}
           m_ObjectArgumentAssemblyTypeName: Tycoon.Data.CharacterSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1753,10 +1753,10 @@ RectTransform:
   m_Children:
   - {fileID: 312913905}
   - {fileID: 954019710}
-  - {fileID: 109003906}
   - {fileID: 55478401}
-  - {fileID: 2067476190}
   - {fileID: 1998658072}
+  - {fileID: 109003906}
+  - {fileID: 2067476190}
   - {fileID: 148130944}
   - {fileID: 1353164631}
   - {fileID: 510669553}
@@ -2061,8 +2061,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 19.8}
+  m_SizeDelta: {x: 172.7546, y: 247.9344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1516731608
 MonoBehaviour:
@@ -2084,7 +2084,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 4484487495128855409, guid: 3a40ff5be94c45d4e86faf186354bf9b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2611,7 +2611,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: b9dc2324037a2464695e14a4944eea14, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: 9ad590b7b3e043e4eb425d283fc88c2d, type: 2}
           m_ObjectArgumentAssemblyTypeName: Tycoon.Data.CharacterSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2774,7 +2774,7 @@ MonoBehaviour:
         m_MethodName: SetSelectedCharacter
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 72433d3f544747649bfcec02244a1986, type: 2}
+          m_ObjectArgument: {fileID: 11400000, guid: e9fc6e520ae56744badec40c4388eb8a, type: 2}
           m_ObjectArgumentAssemblyTypeName: Tycoon.Data.CharacterSO, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0

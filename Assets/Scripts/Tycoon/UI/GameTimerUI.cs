@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using Tycoon.Core;
 
@@ -7,7 +8,7 @@ namespace Tycoon.UI
 {
     /// <summary>
     /// UI Controller for the Game Timer.
-    /// Updates digital clock text, visual clock hand rotation, and displays workday completion modal.
+    /// Updates digital clock text, visual clock hand rotation, and displays workday completion modal with next scene button.
     /// </summary>
     public class GameTimerUI : MonoBehaviour
     {
@@ -29,7 +30,9 @@ namespace Tycoon.UI
         [Header("Workday End UI (Optional)")]
         [SerializeField] private GameObject workdayEndPanel;
         [SerializeField] private TMP_Text workdayEndTitleText;
-        [SerializeField] private Button restartShiftButton;
+        [SerializeField] private Button nextSceneButton;
+        [Tooltip("Name of the scene to load when Next Scene Button is clicked. If empty, loads next scene index in Build Settings.")]
+        [SerializeField] private string nextSceneName = "";
 
         private void Start()
         {
@@ -38,10 +41,10 @@ namespace Tycoon.UI
                 workdayEndPanel.SetActive(false);
             }
 
-            if (restartShiftButton != null)
+            if (nextSceneButton != null)
             {
-                restartShiftButton.onClick.RemoveAllListeners();
-                restartShiftButton.onClick.AddListener(OnRestartShiftClicked);
+                nextSceneButton.onClick.RemoveAllListeners();
+                nextSceneButton.onClick.AddListener(OnNextSceneClicked);
             }
 
             if (GameTimerManager.Instance != null)
@@ -112,16 +115,30 @@ namespace Tycoon.UI
             }
         }
 
-        private void OnRestartShiftClicked()
+        private void OnNextSceneClicked()
         {
             if (workdayEndPanel != null)
             {
                 workdayEndPanel.SetActive(false);
             }
 
-            if (GameTimerManager.Instance != null)
+            if (!string.IsNullOrEmpty(nextSceneName))
             {
-                GameTimerManager.Instance.StartTimer();
+                Debug.Log($"[GameTimerUI] Loading next scene by name: '{nextSceneName}'");
+                SceneManager.LoadScene(nextSceneName);
+            }
+            else
+            {
+                int nextIndex = SceneManager.GetActiveScene().buildIndex + 1;
+                if (nextIndex < SceneManager.sceneCountInBuildSettings)
+                {
+                    Debug.Log($"[GameTimerUI] Loading next scene by build index: {nextIndex}");
+                    SceneManager.LoadScene(nextIndex);
+                }
+                else
+                {
+                    Debug.LogWarning("[GameTimerUI] nextSceneName is empty and current scene is the last scene in Build Settings!");
+                }
             }
         }
     }

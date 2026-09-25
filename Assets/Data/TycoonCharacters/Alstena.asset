@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360cda683691f8c42bde9ceb01ba5f5a, type: 3}
+  m_Name: Alstena
+  m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.CharacterSO
+  characterId: Alstena
+  characterName: Alstena
+  jobTitle: Staff
+  bio: 
+  avatarIcon: {fileID: -1377757999123886942, guid: e647347e3d99eab49944c8c689baf667, type: 3}
+  standingSprite: {fileID: 0}
+  sittingSprite: {fileID: 0}
+  walkingSprites: []
+  baseWalkSpeed: 2
+  maxStamina: 100
+  staminaDepletionRate: 2
+  staminaRecoveryRate: 10
+  pacingDurationMin: 2
+  pacingDurationMax: 8
+  sittingDurationMin: 5
+  sittingDurationMax: 15
