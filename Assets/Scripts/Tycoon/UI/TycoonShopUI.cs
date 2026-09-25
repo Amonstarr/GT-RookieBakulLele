@@ -1,14 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Tycoon.Core;
 using Tycoon.Data;
+using Tycoon.Economy;
 
 namespace Tycoon.UI
 {
     /// <summary>
     /// Manages the Office Upgrade Shop UI window.
     /// Spawns and populates item cards for all registered OfficeItemSO assets.
+    /// Supports left/right sidebar positioning and real-time top coin header display.
     /// </summary>
     public class TycoonShopUI : MonoBehaviour
     {
@@ -18,7 +21,13 @@ namespace Tycoon.UI
         [SerializeField] private GameObject itemCardPrefab;
         [SerializeField] private ScrollRect shopScrollRect;
 
+        [Header("Header / Currency Display")]
+        [SerializeField] private TMP_Text shopCoinsText;
+        [SerializeField] private Text uiShopCoinsText;
+        [SerializeField] private string coinsFormatString = "Koin: {0:N0}";
+
         [Header("Control Buttons")]
+        [SerializeField] private Button openShopButton;
         [SerializeField] private Button closeButton;
 
         [Header("Arrow Navigation Buttons (Optional)")]
@@ -30,6 +39,7 @@ namespace Tycoon.UI
         [Header("Options")]
         [SerializeField] private bool openOnStart = false;
         [SerializeField] private bool useVerticalSidebar = true;
+        [SerializeField] private bool placeOnLeftSide = true;
 
         private List<TycoonItemCardUI> spawnedCards = new List<TycoonItemCardUI>();
         private Coroutine scrollCoroutine;
@@ -41,6 +51,11 @@ namespace Tycoon.UI
                 shopPanel.SetActive(openOnStart);
             }
 
+            if (openShopButton != null && shopPanel != null)
+            {
+                openShopButton.gameObject.SetActive(!shopPanel.activeSelf);
+            }
+
             if (shopScrollRect == null && itemCardContainer != null)
             {
                 shopScrollRect = itemCardContainer.GetComponentInParent<ScrollRect>();
@@ -48,11 +63,86 @@ namespace Tycoon.UI
 
             SetupControlButtons();
             SetupArrowButtons();
+            SetupCurrencyDisplay();
             PopulateShop();
+        }
+
+        private void OnDestroy()
+        {
+            if (TycoonCurrencyManager.Instance != null)
+            {
+                TycoonCurrencyManager.Instance.OnCoinsChanged -= UpdateShopCoinsText;
+            }
+        }
+
+        private void SetupCurrencyDisplay()
+        {
+            if (shopCoinsText == null && uiShopCoinsText == null && shopPanel != null)
+            {
+                Transform foundText = shopPanel.transform.Find("Header/CoinsText");
+                if (foundText == null) foundText = shopPanel.transform.Find("CoinsText");
+                if (foundText == null) foundText = shopPanel.transform.Find("Header/TextCoins");
+                if (foundText == null) foundText = shopPanel.transform.Find("TextCoins");
+
+                if (foundText != null)
+                {
+                    shopCoinsText = foundText.GetComponent<TMP_Text>();
+                    if (shopCoinsText == null) uiShopCoinsText = foundText.GetComponent<Text>();
+                }
+            }
+
+            if (TycoonCurrencyManager.Instance != null)
+            {
+                TycoonCurrencyManager.Instance.OnCoinsChanged -= UpdateShopCoinsText;
+                TycoonCurrencyManager.Instance.OnCoinsChanged += UpdateShopCoinsText;
+                UpdateShopCoinsText(TycoonCurrencyManager.Instance.CurrentCoins);
+            }
+        }
+
+        private void UpdateShopCoinsText(int coins)
+        {
+            string formattedText = string.Format(coinsFormatString, coins);
+
+            if (shopCoinsText != null)
+            {
+                shopCoinsText.text = formattedText;
+            }
+
+            if (uiShopCoinsText != null)
+            {
+                uiShopCoinsText.text = formattedText;
+            }
+        }
+
+        public void RefreshCurrencyDisplay()
+        {
+            if (TycoonCurrencyManager.Instance != null)
+            {
+                UpdateShopCoinsText(TycoonCurrencyManager.Instance.CurrentCoins);
+            }
         }
 
         private void SetupControlButtons()
         {
+            if (openShopButton == null && shopPanel != null)
+            {
+                // Try finding open shop button in HUD / Canvas if unassigned in inspector
+                Transform parentCanvas = shopPanel.transform.parent;
+                if (parentCanvas != null)
+                {
+                    Transform foundOpen = parentCanvas.Find("OpenShopButton");
+                    if (foundOpen == null) foundOpen = parentCanvas.Find("ShopButton");
+                    if (foundOpen == null) foundOpen = parentCanvas.Find("ButtonShop");
+                    if (foundOpen != null) openShopButton = foundOpen.GetComponent<Button>();
+                }
+            }
+
+            if (openShopButton != null)
+            {
+                openShopButton.onClick.RemoveAllListeners();
+                openShopButton.onClick.AddListener(OpenShop);
+            }
+
             if (closeButton == null && shopPanel != null)
             {
                 // Try auto-finding a child button named CloseButton or ButtonClose if unassigned in inspector
@@ -228,6 +318,8 @@ namespace Tycoon.UI
         public void OpenShop()
         {
             if (shopPanel != null) shopPanel.SetActive(true);
+            if (openShopButton != null) openShopButton.gameObject.SetActive(false);
+            RefreshCurrencyDisplay();
             if (spawnedCards.Count == 0) PopulateShop();
             else RefreshAllCards();
         }
@@ -235,6 +327,7 @@ namespace Tycoon.UI
         public void CloseShop()
         {
             if (shopPanel != null) shopPanel.SetActive(false);
+            if (openShopButton != null) openShopButton.gameObject.SetActive(true);
         }
 
         public void ToggleShop()
@@ -243,8 +336,10 @@ namespace Tycoon.UI
             {
                 bool nextState = !shopPanel.activeSelf;
                 shopPanel.SetActive(nextState);
+                if (openShopButton != null) openShopButton.gameObject.SetActive(!nextState);
                 if (nextState)
                 {
+                    RefreshCurrencyDisplay();
                     if (spawnedCards.Count == 0) PopulateShop();
                     else RefreshAllCards();
                 }
@@ -305,25 +400,36 @@ namespace Tycoon.UI
             csf.verticalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize;
 
             EnsureScrollRect();
-            EnsureRightSideSidebar();
+            EnsureSidebarPosition();
         }
 
-        private void EnsureRightSideSidebar()
+        private void EnsureSidebarPosition()
         {
             if (shopPanel == null) return;
 
             RectTransform panelRt = shopPanel.GetComponent<RectTransform>();
             if (panelRt != null)
             {
-                // Anchor to Right-Stretch (Tepi kanan layar, tinggi penuh)
-                panelRt.anchorMin = new Vector2(1f, 0f);
-                panelRt.anchorMax = new Vector2(1f, 1f);
-                panelRt.pivot = new Vector2(1f, 0.5f);
-                panelRt.anchoredPosition = Vector2.zero;
+                if (placeOnLeftSide)
+                {
+                    // Anchor to Left-Stretch (Tepi kiri layar, tinggi penuh)
+                    panelRt.anchorMin = new Vector2(0f, 0f);
+                    panelRt.anchorMax = new Vector2(0f, 1f);
+                    panelRt.pivot = new Vector2(0f, 0.5f);
+                    panelRt.anchoredPosition = Vector2.zero;
+                }
+                else
+                {
+                    // Anchor to Right-Stretch (Tepi kanan layar, tinggi penuh)
+                    panelRt.anchorMin = new Vector2(1f, 0f);
+                    panelRt.anchorMax = new Vector2(1f, 1f);
+                    panelRt.pivot = new Vector2(1f, 0.5f);
+                    panelRt.anchoredPosition = Vector2.zero;
+                }
 
                 if (panelRt.rect.width < 50f)
                 {
-                    panelRt.sizeDelta = new Vector2(220f, 0f);
+                    panelRt.sizeDelta = new Vector2(240f, 0f);
                 }
             }
         }
@@ -368,3 +474,4 @@ namespace Tycoon.UI
         }
     }
 }
+

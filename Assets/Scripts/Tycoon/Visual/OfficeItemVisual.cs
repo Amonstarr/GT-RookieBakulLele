@@ -55,22 +55,28 @@ namespace Tycoon.Visual
                 }
             }
 
-            // Sembunyikan visual secara instan saat Awake() jika belum dibeli
-            RefreshVisual(0);
+            // Inisialisasi visual sesuai default level item (misal level 1 untuk Floor/Wall) agar tidak langsung mati saat Awake
+            RefreshVisual(GetInitialLevel());
         }
 
         private void Start()
         {
+            RefreshVisual(GetInitialLevel());
+
             if (TycoonManager.Instance != null)
             {
                 TycoonManager.Instance.OnItemUpgraded += HandleItemUpgraded;
-                // Refresh visual to match current saved/initial level
-                RefreshVisual(TycoonManager.Instance.GetItemLevel(targetItem));
             }
-            else
+        }
+
+        public int GetInitialLevel()
+        {
+            if (targetItem == null) return 0;
+            if (TycoonManager.Instance != null)
             {
-                RefreshVisual(0);
+                return TycoonManager.Instance.GetItemLevel(targetItem);
             }
+            return targetItem.defaultLevel;
         }
 
         private void OnDestroy()

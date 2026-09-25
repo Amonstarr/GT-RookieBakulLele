@@ -16,6 +16,10 @@ namespace Tycoon.UI
         [SerializeField] private TMP_Text timeText;
         [SerializeField] private TMP_Text statusText;
 
+        [Header("Clock Display Options")]
+        [Tooltip("If true, only digital clock text is shown (analog clock hand and radial fill are hidden/disabled).")]
+        [SerializeField] private bool showDigitalClockOnly = true;
+
         [Header("Visual Clock Display")]
         [Tooltip("Transform of the analog clock needle / hand that rotates as time progresses.")]
         [SerializeField] private RectTransform clockHandTransform;
@@ -36,6 +40,12 @@ namespace Tycoon.UI
 
         private void Start()
         {
+            if (showDigitalClockOnly)
+            {
+                if (clockHandTransform != null) clockHandTransform.gameObject.SetActive(false);
+                if (clockFillImage != null) clockFillImage.gameObject.SetActive(false);
+            }
+
             if (workdayEndPanel != null)
             {
                 workdayEndPanel.SetActive(false);
@@ -83,17 +93,19 @@ namespace Tycoon.UI
                 statusText.text = "JAM KERJA";
             }
 
-            // 3. Analog Clock Hand Rotation (Clockwise)
-            if (clockHandTransform != null)
+            // 3. Analog Clock Hand Rotation & Fill (only if showDigitalClockOnly is false)
+            if (!showDigitalClockOnly)
             {
-                float zRotation = -progress * 360f * totalHandRotations;
-                clockHandTransform.localRotation = Quaternion.Euler(0f, 0f, zRotation);
-            }
+                if (clockHandTransform != null)
+                {
+                    float zRotation = -progress * 360f * totalHandRotations;
+                    clockHandTransform.localRotation = Quaternion.Euler(0f, 0f, zRotation);
+                }
 
-            // 4. Clock Radial Fill Amount
-            if (clockFillImage != null)
-            {
-                clockFillImage.fillAmount = progress;
+                if (clockFillImage != null)
+                {
+                    clockFillImage.fillAmount = progress;
+                }
             }
         }
 

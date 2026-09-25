@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Tycoon.Data
 {
@@ -12,7 +13,9 @@ namespace Tycoon.Data
         AirConditioner,
         Decor,
         Breakroom,
-        Lighting
+        Lighting,
+        Wall,
+        Floor
     }
 
     [System.Serializable]
@@ -21,6 +24,16 @@ namespace Tycoon.Data
         public int levelIndex;
         public string levelName;
         public int upgradeCost;
+
+        [Header("Wall Tile Assets (Category = Wall)")]
+        public TileBase wallSampingTile;
+        public TileBase wallTile;
+        public TileBase wallBawahTile;
+
+        [Header("Floor Tile Asset (Category = Floor)")]
+        public TileBase floorTile;
+
+        [Header("2D Sprite Fallbacks")]
         [Tooltip("Single/Main sprite fallback")]
         public Sprite topdownSprite;
         [Tooltip("Sprite layer depan (foreground, rendered in front of sitting worker)")]
@@ -41,6 +54,10 @@ namespace Tycoon.Data
         public string itemDescription;
         public OfficeItemCategory category;
         public Sprite shopIcon;
+
+        [Header("Default Unlocked Settings")]
+        [Tooltip("Default level when game starts (Set to 1 for Wall & Floor so Level 1 is active on play).")]
+        public int defaultLevel = 0;
 
         [Header("Upgrade Levels")]
         public List<OfficeItemLevelData> levels = new List<OfficeItemLevelData>();
