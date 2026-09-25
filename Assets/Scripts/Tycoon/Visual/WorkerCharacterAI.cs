@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Tycoon.Data;
 
@@ -14,11 +15,19 @@ namespace Tycoon.Visual
         DrinkingCoffee
     }
 
+    public enum CharacterAnimState
+    {
+        Idle,
+        WalkHorizontal,
+        WalkUp,
+        WalkDown,
+        Sitting
+    }
+
     /// <summary>
     /// Autonomous 2D movement AI for office workers.
     /// Operates independently with individual randomized speed, decision timing, and route preferences.
-    /// Handles pacing around waypoints, sitting at chairs, and taking coffee breaks based on stamina.
-    /// NOTE: Stamina and stats are purely behavioral/visual and do NOT alter currency income.
+    /// Supports multi-directional frame-by-frame spritesheet animations (Idle, Walk H-Flip, Walk Up, Walk Down).
     /// </summary>
     public class WorkerCharacterAI : MonoBehaviour
     {
@@ -30,8 +39,14 @@ namespace Tycoon.Visual
 
         [Header("Runtime State Readout (Debug)")]
         [SerializeField] private WorkerAIState currentState = WorkerAIState.Idle;
+        [SerializeField] private CharacterAnimState currentAnimState = CharacterAnimState.Idle;
         [SerializeField] private float currentStamina = 100f;
         [SerializeField] private float currentMoveSpeed = 2f;
+
+        // Animation internal state
+        private float animTimer = 0f;
+        private int animFrameIndex = 0;
+        private CharacterAnimState lastAnimState = CharacterAnimState.Idle;
 
         // Individual variation factors
         private float speedMultiplier = 1f;
@@ -44,6 +59,7 @@ namespace Tycoon.Visual
         public float CurrentStamina => currentStamina;
         public float MaxStamina => characterData != null ? characterData.maxStamina : 100f;
         public WorkerAIState CurrentState => currentState;
+        public CharacterAnimState CurrentAnimState => currentAnimState;
 
         private void Awake()
         {
@@ -72,6 +88,11 @@ namespace Tycoon.Visual
             StartCoroutine(AIBehaviorRoutine());
         }
 
+        private void Update()
+        {
+            UpdateSpriteAnimation();
+        }
+
         public void SetupCharacter(CharacterSO data)
         {
             characterData = data;
@@ -83,6 +104,91 @@ namespace Tycoon.Visual
                 {
                     spriteRenderer.sprite = characterData.standingSprite;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Frame-by-frame animation tick according to current anim direction state.
+        /// </summary>
+        private void UpdateSpriteAnimation()
+        {
+            if (characterData == null || spriteRenderer == null) return;
+
+            // Reset frame index on state switch
+            if (currentAnimState != lastAnimState)
+            {
+                lastAnimState = currentAnimState;
+                animFrameIndex = 0;
+                animTimer = 0f;
+            }
+
+            // 1. Sitting State Check
+            if (currentState == WorkerAIState.SittingAtSeat)
+            {
+                if (characterData.sittingSprite != null)
+                {
+                    spriteRenderer.sprite = characterData.sittingSprite;
+                }
+                return;
+            }
+
+            // 2. Select target frame list by direction
+            List<Sprite> targetFrameList = null;
+
+            switch (currentAnimState)
+            {
+                case CharacterAnimState.WalkUp:
+                    targetFrameList = (characterData.walkUpSprites != null && characterData.walkUpSprites.Count > 0)
+                        ? characterData.walkUpSprites
+                        : (characterData.walkHorizontalSprites != null && characterData.walkHorizontalSprites.Count > 0
+                            ? characterData.walkHorizontalSprites
+                            : characterData.walkingSprites);
+                    break;
+
+                case CharacterAnimState.WalkDown:
+                    targetFrameList = (characterData.walkDownSprites != null && characterData.walkDownSprites.Count > 0)
+                        ? characterData.walkDownSprites
+                        : (characterData.walkHorizontalSprites != null && characterData.walkHorizontalSprites.Count > 0
+                            ? characterData.walkHorizontalSprites
+                            : characterData.walkingSprites);
+                    break;
+
+                case CharacterAnimState.WalkHorizontal:
+                    targetFrameList = (characterData.walkHorizontalSprites != null && characterData.walkHorizontalSprites.Count > 0)
+                        ? characterData.walkHorizontalSprites
+                        : characterData.walkingSprites;
+                    break;
+
+                case CharacterAnimState.Idle:
+                default:
+                    targetFrameList = (characterData.idleSprites != null && characterData.idleSprites.Count > 0)
+                        ? characterData.idleSprites
+                        : null;
+                    break;
+            }
+
+            // Fallback to static standingSprite if list is empty
+            if (targetFrameList == null || targetFrameList.Count == 0)
+            {
+                if (characterData.standingSprite != null)
+                {
+                    spriteRenderer.sprite = characterData.standingSprite;
+                }
+                return;
+            }
+
+            // Frame animation ticker
+            float fps = characterData.animationFrameRate > 0 ? characterData.animationFrameRate : 10f;
+            animTimer += Time.deltaTime;
+            if (animTimer >= 1f / fps)
+            {
+                animTimer -= 1f / fps;
+                animFrameIndex = (animFrameIndex + 1) % targetFrameList.Count;
+            }
+
+            if (animFrameIndex < targetFrameList.Count && targetFrameList[animFrameIndex] != null)
+            {
+                spriteRenderer.sprite = targetFrameList[animFrameIndex];
             }
         }
 
@@ -122,7 +228,6 @@ namespace Tycoon.Visual
         private IEnumerator RoutinePacingWander()
         {
             currentState = WorkerAIState.Wandering;
-            SetSprite(characterData != null ? characterData.standingSprite : null);
 
             Transform destination = OfficeWaypointGroup.Instance != null 
                 ? OfficeWaypointGroup.Instance.GetRandomPacingWaypoint() 
@@ -135,6 +240,8 @@ namespace Tycoon.Visual
 
             // Idle pacing pause at destination
             currentState = WorkerAIState.Idle;
+            currentAnimState = CharacterAnimState.Idle;
+
             float idleTime = Random.Range(1.5f, 4.5f) + decisionTimerOffset;
             float elapsed = 0f;
             while (elapsed < idleTime)
@@ -155,7 +262,6 @@ namespace Tycoon.Visual
             if (assignedChairTarget != null)
             {
                 currentState = WorkerAIState.MovingToSeat;
-                SetSprite(characterData != null ? characterData.standingSprite : null);
 
                 // Bergerak ke waypoint lorong terdekat dahulu agar tidak berjalan menyamping menabrak meja/objek
                 if (OfficeWaypointGroup.Instance != null)
@@ -171,7 +277,7 @@ namespace Tycoon.Visual
 
                 // Sit down and work
                 currentState = WorkerAIState.SittingAtSeat;
-                SetSprite(characterData != null && characterData.sittingSprite != null ? characterData.sittingSprite : characterData.standingSprite);
+                currentAnimState = CharacterAnimState.Sitting;
 
                 float sitDuration = (characterData != null 
                     ? Random.Range(characterData.sittingDurationMin, characterData.sittingDurationMax) 
@@ -213,7 +319,6 @@ namespace Tycoon.Visual
             if (coffeeSpot != null)
             {
                 currentState = WorkerAIState.MovingToCoffee;
-                SetSprite(characterData != null ? characterData.standingSprite : null);
 
                 // Bergerak ke waypoint lorong terdekat dahulu sebelum menuju mesin kopi
                 if (OfficeWaypointGroup.Instance != null)
@@ -229,6 +334,8 @@ namespace Tycoon.Visual
 
                 // Drinking coffee / break
                 currentState = WorkerAIState.DrinkingCoffee;
+                currentAnimState = CharacterAnimState.Idle;
+
                 float recoveryRate = characterData != null ? characterData.staminaRecoveryRate : 15f;
 
                 while (currentStamina < MaxStamina)
@@ -254,14 +361,27 @@ namespace Tycoon.Visual
 
             while (Vector3.Distance(transform.position, targetPos) > 0.05f)
             {
-                // Face walking direction
-                if (targetPos.x > transform.position.x + 0.02f)
+                Vector3 moveDelta = targetPos - transform.position;
+                float absX = Mathf.Abs(moveDelta.x);
+                float absY = Mathf.Abs(moveDelta.y);
+
+                // Determine directional animation state
+                if (absY > absX && absY > 0.05f)
                 {
-                    transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    currentAnimState = moveDelta.y > 0 ? CharacterAnimState.WalkUp : CharacterAnimState.WalkDown;
                 }
-                else if (targetPos.x < transform.position.x - 0.02f)
+                else if (absX >= absY && absX > 0.05f)
                 {
-                    transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    currentAnimState = CharacterAnimState.WalkHorizontal;
+                    // Face horizontal walking direction (flip scale X)
+                    if (moveDelta.x > 0.02f)
+                    {
+                        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    }
+                    else if (moveDelta.x < -0.02f)
+                    {
+                        transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                    }
                 }
 
                 transform.position = Vector3.MoveTowards(transform.position, targetPos, currentMoveSpeed * Time.deltaTime);
@@ -270,6 +390,7 @@ namespace Tycoon.Visual
             }
 
             transform.position = targetPos;
+            currentAnimState = CharacterAnimState.Idle;
         }
 
         private void DepleteStamina(float amount)

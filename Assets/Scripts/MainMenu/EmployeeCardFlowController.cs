@@ -68,9 +68,13 @@ public class EmployeeCardFlowController : MonoBehaviour
 
     private void OnNextPressed()
     {
-        // Optionally store the values before moving on, e.g.:
-        // PlayerSession.Nama = namaInput.text;
-        // PlayerSession.KodeCaas = kodeCaasInput.text;
+        PlayerSession.Nama = namaInput.text.Trim();
+        PlayerSession.KodeCaas = kodeCaasInput.text.Trim();
+
+        Debug.Log("===== PLAYER DATA =====");
+        Debug.Log("Nama     : " + PlayerSession.Nama);
+        Debug.Log("Kode CAAS: " + PlayerSession.KodeCaas);
+        Debug.Log("Player ID: " + PlayerSession.PlayerId);
 
         LoadCutscene();
     }

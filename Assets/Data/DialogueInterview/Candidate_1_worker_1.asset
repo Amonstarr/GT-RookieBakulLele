@@ -61,7 +61,7 @@ MonoBehaviour:
       scoreWeight: 25
       reactionText: Ayolah, kau tahu Key Cenut, kan? Sebelum dia bersinar seperti
         sekarang, akulah yang mengurusnya.
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       followUpDialogue: []
     - choiceText: 'Hmm... tapi perlu kuingatkan, kami di sini sedang mencari seorang
         staf, bukan manajer.
@@ -69,46 +69,34 @@ MonoBehaviour:
 '
       scoreWeight: 15
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: -3381088943218639438, guid: 939de30a02187e84b899ee3d5a83715b, type: 3}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: 'Hmm... tapi perlu kuingatkan, kami di sini sedang mencari
           seorang staf, bukan manajer.
 
 '
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: -3381088943218639438, guid: 939de30a02187e84b899ee3d5a83715b, type: 3}
       - speakerName: Rookie
         dialogueText: Kamu yakin bisa menyesuaikan diri dengan posisi itu?
         expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: "\u201CCih! Kau membentuk tim tanpa seorang pemimpin? Itu sama
           saja seperti *chicken without a head*, Bung! Mau dibawa ke mana tim ini
           kalau tak ada yang memimpin?\u201D"
-        expressionSprite: {fileID: -5727600292487652188, guid: fcd11e2049e7d6c4cb10786ebc8ba33a, type: 3}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: -3381088943218639438, guid: 939de30a02187e84b899ee3d5a83715b, type: 3}
     - choiceText: 'Katanya kamu pernah mengurus sebuah band. Memangnya band apa?
 
         Jangan-jangan
         kamu cuma ngibul, ya?'
       scoreWeight: 10
       reactionText: Baca CV-ku dulu, Bro. Di situ jelas semuanya.
-      reactionSprite: {fileID: -7531385057789631053, guid: 4d41eec168fe9fb4eaddbaa11768500c, type: 3}
+      reactionSprite: {fileID: 4357276053466186870, guid: fbf9f9893fdba2940917fb87759cd87d, type: 3}
       followUpDialogue:
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Aku pernah ngurus band-band besar kayak Oase, Dinginmain, sampai
           beberapa streamer terkenal. Jadi jangan kira aku cuma asal ngomong, Bung.
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 4357276053466186870, guid: fbf9f9893fdba2940917fb87759cd87d, type: 3}
   - speakerName: Rookie
     dialogueText: 'Menarik...
 
@@ -128,41 +116,29 @@ MonoBehaviour:
         kenapa aku harus mempekerjakan kamu?
       scoreWeight: 15
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Aku manajer di sini. Jadi, coba beri aku satu alasan yang bagus...
           kenapa aku harus mempekerjakan kamu?
         expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Wah, ada yang mulai merasa tersaingi, nih?
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Baiklah, Bos. Aku bisa lihat dari wajahmu, kamu sudah capek,
           kan? Ngurus administrasi sekaligus memimpin tim pasti melelahkan.
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Daripada kamu ambruk, bagaimana kalau salah satu pekerjaanmu
           itu aku yang ambil alih?
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
     - choiceText: Se-eksentrik kamu tertarik melamar jadi staf di sini? Aku penasaran,
         kamu menemukan lowongan ini dari mana?
       scoreWeight: 10
       reactionText: Fine. Aku tahu lowongan ini dari postingan yang kamu unggah di
         media sosial. Kebetulan lewat di berandaku, jadi aku pikir... kenapa nggak?
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       followUpDialogue: []
     - choiceText: 'Kamu meminta gaji yang cukup tinggi, ya. Sementara itu, anggaran
         kami cukup terbatas.
@@ -170,7 +146,7 @@ MonoBehaviour:
         Apakah kamu bersedia menurunkan tuntutan gajimu?'
       scoreWeight: 25
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: -3381088943218639438, guid: 939de30a02187e84b899ee3d5a83715b, type: 3}
       followUpDialogue:
       - speakerName: Rokiee
         dialogueText: 'Kamu meminta gaji yang cukup tinggi, ya. Sementara itu, anggaran
@@ -178,23 +154,14 @@ MonoBehaviour:
 
           Apakah kamu bersedia menurunkan tuntutan
           gajimu?'
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: -3381088943218639438, guid: 939de30a02187e84b899ee3d5a83715b, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Value-ku banyak, Bos. Enak saja kalau aku digaji rendah.
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: -3381088943218639438, guid: 939de30a02187e84b899ee3d5a83715b, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Tapi... since your company is still small, aku masih bisa kompromi.
           Dua digit, dan kita bisa mulai bicara.
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
   - speakerName: Rookie
     dialogueText: Cukup pedas juga jawabanmu... baiklah.
     expressionSprite: {fileID: 0}
@@ -216,27 +183,18 @@ MonoBehaviour:
     - choiceText: Jujur saja, aku masih kurang yakin kamu akan cocok dengan tim ini
       scoreWeight: 10
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 4357276053466186870, guid: fbf9f9893fdba2940917fb87759cd87d, type: 3}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Jujur saja, aku masih kurang yakin kamu akan cocok dengan tim
           ini
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 4357276053466186870, guid: fbf9f9893fdba2940917fb87759cd87d, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Fair enough. Lidah pedas dibalas lidah pedas, ya?
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 4357276053466186870, guid: fbf9f9893fdba2940917fb87759cd87d, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Kalau begitu, aku harap  my CV-ku cukup meyakinkanmu.
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
     - choiceText: 'Kalau dilihat dari CV-mu, kamu sudah cukup sering memimpin berbagai
         proyek.
 
@@ -249,36 +207,27 @@ MonoBehaviour:
         Selama
         perusahaanmu bisa terus membuatku tertantang dan berkembang, tenang saja...
         aku bakal tetap stay di sini.'
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       followUpDialogue: []
     - choiceText: Dengan sifatmu yang seperti itu, aku jadi penasaran... bagaimana
         caramu menangani dan memimpin sebuah tim?
       scoreWeight: 25
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Dengan sifatmu yang seperti itu, aku jadi penasaran... bagaimana
           caramu menangani dan memimpin sebuah tim?
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: CV-ku sebenarnya sudah cukup membuktikan. Tapi kalau kamu penasaran
           soal how I lead, aku tipe orang yang suka menyusun setiap kegiatan secara
           terjadwal, bahkan sampai hitungan jam.
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
       - speakerName: 'Budiyon Los Hermanos '
         dialogueText: Dengan begitu, timku selalu tahu apa yang harus mereka kerjakan
           dan nggak kelabakan kalau tiba-tiba ada tugas baru.
-        expressionSprite: {fileID: 0}
-        isDecisionPoint: 0
-        questionTitle: 
-        choices: []
+        expressionSprite: {fileID: 5128709073670217574, guid: 054989b96cf87e24d85d4cc4aa41554b, type: 3}
   - speakerName: Rookie
     dialogueText: Baiklah, terima kasih. Kurasa itu saja yang ingin aku tanyakan.
     expressionSprite: {fileID: 0}

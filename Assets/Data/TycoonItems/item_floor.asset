@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47e53b5c88189044a5343832dc32650, type: 3}
+  m_Name: item_floor
+  m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
+  itemId: item_floor
+  itemName: Floor
+  itemDescription: Upgrade lantai kantor untuk meningkatkan kenyamanan kerja.
+  category: 8
+  shopIcon: {fileID: 3586087900285728792, guid: a99bdaf574de9ce40af56bfc6a99b815, type: 3}
+  defaultLevel: 1
+  levels:
+  - levelIndex: 1
+    levelName: Floor Lvl 1
+    upgradeCost: 0
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 11400000, guid: 62ca97859f74a1a42983f659e17f7267, type: 2}
+    topdownSprite: {fileID: 0}
+    frontSprite: {fileID: 0}
+    backSprite: {fileID: 0}
+    boostDescription: Default Floor
+  - levelIndex: 2
+    levelName: Floor Lvl 2
+    upgradeCost: 500
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 11400000, guid: 893d9eefb968c8a489a6615da9cf514e, type: 2}
+    topdownSprite: {fileID: 0}
+    frontSprite: {fileID: 0}
+    backSprite: {fileID: 0}
+    boostDescription: Karpet Premium (+15% HR Multiplier)
+  useFormulaCost: 1
+  baseCost: 500
+  costMultiplier: 1.5
