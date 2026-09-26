@@ -489,11 +489,11 @@ namespace GT.Dialogue.Core
 
                 if (data != null)
                 {
-                    data.coins += totalScore;
+                    data.coins = totalScore;
                     string updatedJson = JsonUtility.ToJson(data);
                     PlayerPrefs.SetString(TYCOON_SAVE_KEY, updatedJson);
                     PlayerPrefs.Save();
-                    Debug.Log($"[DialogueInterviewManager] Berhasil menambahkan {totalScore} ke kas awal Tycoon! Saldo koin baru: {data.coins}");
+                    Debug.Log($"[DialogueInterviewManager] Berhasil mengatur {totalScore} sebagai kas awal Tycoon! Saldo koin baru: {data.coins}");
                 }
             }
         }

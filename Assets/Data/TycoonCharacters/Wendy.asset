@@ -16,7 +16,7 @@ MonoBehaviour:
   characterName: Wendy
   jobTitle: Staff
   bio: 
-  avatarIcon: {fileID: 4484487495128855409, guid: 3a40ff5be94c45d4e86faf186354bf9b, type: 3}
+  avatarIcon: {fileID: 4484487495128855409, guid: 382fa15454216fe46a90143eafd9217e, type: 3}
   selectionBonusScore: 120
   standingSprite: {fileID: 0}
   sittingSprite: {fileID: 5737678598621188351, guid: 3cecd8f40259a4c44b8e6df44aaae6b0, type: 3}

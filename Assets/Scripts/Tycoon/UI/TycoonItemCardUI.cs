@@ -87,6 +87,7 @@ namespace Tycoon.UI
 
             // 1. Basic Info & Next-Level Preview Icon Display
             int targetPreviewLvl = currentLvl >= maxLvl ? maxLvl : currentLvl + 1;
+
             if (iconImage != null) iconImage.sprite = currentItem.GetShopIconForLevel(targetPreviewLvl);
             if (nameText != null) nameText.text = currentItem.itemName;
             if (descriptionText != null) descriptionText.text = currentItem.itemDescription;
