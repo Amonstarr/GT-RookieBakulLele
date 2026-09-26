@@ -15,11 +15,11 @@ MonoBehaviour:
   candidateId: worker_2
   candidateName: Wendy
   candidateBio: Designer perfeksionis yang alergi layout miring.
-  defaultPortrait: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
+  defaultPortrait: {fileID: 340493152281059553, guid: 11183fa3942edbc44a1138532b1352e0, type: 3}
   dialogueLines:
   - speakerName: Wendy
     dialogueText: Permisi... araa, kamu kelihatan agak lelah. Kamu sudah sempat istirahat?
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: 3a40ff5be94c45d4e86faf186354bf9b, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -27,7 +27,7 @@ MonoBehaviour:
     dialogueText: Mungkin aku percepat saja perkenalannya, ya. Namaku Wendy. Aku
       memang masih baru di bidang ini, tapi aku cukup bersemangat untuk belajar dan
       menekuninya
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 340493152281059553, guid: 15e689f2002973248a67cc9b2cd931e3, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -57,11 +57,11 @@ MonoBehaviour:
       - speakerName: Wendy
         dialogueText: Anuuu... aku punya semangat belajar yang tinggi dan juga cukup
           mudah bergaul dengan orang baru.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 4484487495128855409, guid: 382fa15454216fe46a90143eafd9217e, type: 3}
       - speakerName: Wendy
         dialogueText: Walaupun masih pemula, sebelumnya aku pernah ikut bootcamp,
           kok. Jadi... aku nggak benar-benar mulai dari nol, hehe.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 340493152281059553, guid: 15e689f2002973248a67cc9b2cd931e3, type: 3}
     - choiceText: Kalau dilihat dari CV-mu, sepertinya kamu agak salah melamar posisi,
         deh. Pengalamanmu lebih banyak mengarah ke marketing. Sementara saat ini,
         kami sedang nggak mencari marketing crew.
@@ -76,12 +76,12 @@ MonoBehaviour:
         expressionSprite: {fileID: 0}
       - speakerName: Wendy
         dialogueText: Waduhhh... aku salah kasih CV! Maaf banget, ya!
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: c0d3412e321644d468bdd8dbe5aad8c9, type: 3}
       - speakerName: Wendy
         dialogueText: Yang ini CV-ku untuk posisi staf di sini. Memang pengalamanku
           masih kelihatan sedikit, tapi aku sudah ikut beberapa bootcamp yang berkaitan
           dengan posisi ini, kok.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 340493152281059553, guid: 11183fa3942edbc44a1138532b1352e0, type: 3}
     - choiceText: Kamu kelihatannya cukup ceria, ya. Apa memang selalu seperti ini?
       scoreWeight: 10
       reactionText: 
@@ -94,11 +94,11 @@ MonoBehaviour:
       - speakerName: Wendy
         dialogueText: Biasanya aku nggak selalu seceria ini, kok. Tapi entah kenapa,
           pas lihat kamu rasanya jadi lebih santai aja, hehe.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1351012151645836446, guid: 6a3767ae0e53b034cb17e01a4a8f2cc4, type: 3}
       - speakerName: Wendy
         dialogueText: Oh, iya! Aku tadi bawa beberapa kue. Kamu mau? Anggap saja
           teman buat nemenin interview kita.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
   - speakerName: Rookie
     dialogueText: Baiklah, mungkin kita lanjutkan wawancara dulu, ya?
     expressionSprite: {fileID: 0}
@@ -127,19 +127,19 @@ MonoBehaviour:
         expressionSprite: {fileID: 0}
       - speakerName: Wendy
         dialogueText: Aduh... aku kelupaan lagi. Maaf banget, ya!
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: c0d3412e321644d468bdd8dbe5aad8c9, type: 3}
       - speakerName: Wendy
         dialogueText: Tapi aku punya foto bareng teman-temanku waktu kami ikut bootcamp.
           Mungkin itu bisa jadi bukti sementara?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
       - speakerName: Wendy
         dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
           tadi kelihatannya kamu capek banget.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
       - speakerName: Wendy
         dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
           sampai kamu merasa cukup baikan buat lanjut interview-nya.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
     - choiceText: 'Kamu yakin dengan nominal gaji yang kamu ajukan ini?
 
         Bukannya
@@ -157,16 +157,16 @@ MonoBehaviour:
       - speakerName: Wendy
         dialogueText: Aku cukup sadar diri, kok. Aku masih pemula dan masih banyak
           yang harus aku pelajari.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: 36f8c7b832c5feb42aa7ae4647d9ce6c, type: 3}
       - speakerName: Wendy
         dialogueText: Lagipula, aku nggak mau terlalu membebani kamu dengan meminta
           gaji yang tinggi. Buatku, mendapat kesempatan untuk belajar dan berkembang
           di sini saja sudah berarti banyak
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 340493152281059553, guid: 15e689f2002973248a67cc9b2cd931e3, type: 3}
       - speakerName: Wendy
         dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
           tadi kelihatannya kamu capek banget.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
       - speakerName: Wendy
         dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
           sampai kamu merasa cukup baikan buat lanjut interview-nya.
@@ -188,26 +188,26 @@ MonoBehaviour:
       - speakerName: Wendy
         dialogueText: Oh, soal itu... aku merasa mereka sudah seperti keluarga sendiri.
           Makanya sampai sekarang aku masih tetap terlibat.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
       - speakerName: Wendy
         dialogueText: Tapi karena sekarang statusku sudah alumni, aku nggak terlalu
           sering ikut kegiatan mereka, kok.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
       - speakerName: Wendy
         dialogueText: Jadi tenang saja. Aku tetap bisa membagi waktu dan bersikap
           profesional saat mengerjakan proyek di perusahaanmu.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
       - speakerName: Wendy
         dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
           tadi kelihatannya kamu capek banget.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
       - speakerName: Wendy
         dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
           sampai kamu merasa cukup baikan buat lanjut interview-nya.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
   - speakerName: Rookie
     dialogueText: Ehm... aku masih aman, kok. Nggak perlu terlalu khawatir.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 1195984569339986040, guid: 0e5fa172c719b4d40bbd420aeee14385, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -234,14 +234,14 @@ MonoBehaviour:
       - speakerName: Wendy
         dialogueText: Mouuuh... jangan kasih pertanyaan kayak gitu, dong! Ini cuma
           buang-buang waktumu. Lebih baik kamu istirahat dulu.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: 36f8c7b832c5feb42aa7ae4647d9ce6c, type: 3}
       - speakerName: Wendy
         dialogueText: Kalau soal jawabannya... entah kenapa, aku merasa kayak sudah
           kenal kamu sejak lama.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: c0d3412e321644d468bdd8dbe5aad8c9, type: 3}
       - speakerName: Wendy
         dialogueText: A-aaa... udah, ya! Jangan tanya lebih jauh lagi... aku malu.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
     - choiceText: Kalau kamu diterima bekerja di sini, apa yang sebenarnya kamu harapkan?
       scoreWeight: 15
       reactionText: 
@@ -254,16 +254,16 @@ MonoBehaviour:
       - speakerName: Wendy
         dialogueText: Hmm... aku sendiri masih belum terlalu tahu, sih. Tapi aku
           berharap bisa bertemu rekan-rekan yang sefrekuensi denganku.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
       - speakerName: Wendy
         dialogueText: Terus, aku juga berharap bisa bekerja di lingkungan yang mendukungku
           untuk terus belajar dan berkembang. Apalagi aku masih cukup awam di bidang
           staf ini.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 4484487495128855409, guid: 382fa15454216fe46a90143eafd9217e, type: 3}
       - speakerName: Wendy
         dialogueText: Jadi... mungkin aku bakal banyak bertanya nanti. Jangan bosan
           ngajarin aku, ya? Hehe.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
     - choiceText: Boleh ceritakan salah satu pengalamanmu saat mengerjakan sebuah
         proyek bersama tim?
       scoreWeight: 25

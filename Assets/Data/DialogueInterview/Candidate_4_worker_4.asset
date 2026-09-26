@@ -15,38 +15,38 @@ MonoBehaviour:
   candidateId: worker_4
   candidateName: Jimny Pawapua
   candidateBio: Pakar budidaya lele sangkuriang dengan insting tajam.
-  defaultPortrait: {fileID: -8961180997118601234, guid: 1fe3573a3da685f4184e4de7d8837bb0, type: 3}
+  defaultPortrait: {fileID: 21300000, guid: 0f383cb9f92a2ca47a78f5c8e0150e4f, type: 3}
   dialogueLines:
   - speakerName: Jimny Pawapua.
     dialogueText: Selamat pagi. Saya Jimny Pawapua.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Jimny Pawapua.
     dialogueText: Portofolio dan CV saya sudah tersedia di meja Bapak. Saya rasa
       semua informasi dasar yang diperlukan sudah tercantum di sana.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Jimny Pawapua.
     dialogueText: Kalau Bapak tidak keberatan, kita bisa langsung masuk ke inti wawancara
       saja. Biar waktu kita sama-sama digunakan dengan efisien.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Rookie
     dialogueText: Baik, Jimny. Silakan duduk.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: 0f383cb9f92a2ca47a78f5c8e0150e4f, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Rookie
     dialogueText: Kalau begitu, mari kita mulai dengan membahas beberapa hal yang
       menarik dari CV kamu.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -260,7 +260,7 @@ MonoBehaviour:
     choices: []
   - speakerName: Rookie
     dialogueText: Baiklah, Jimny. Sekarang kita masuk ke sesi terakhir wawancara.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: 0f383cb9f92a2ca47a78f5c8e0150e4f, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -274,62 +274,62 @@ MonoBehaviour:
         kenapa saya harus memilih kamu dibandingkan mereka?
       scoreWeight: 10
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 1244442677905626411, guid: 2b7742304d2dc814087d5298f399a53b, type: 3}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Kalau kandidat lain punya kemampuan teknis yang jauh lebih
           kuat, kenapa saya harus memilih kamu dibandingkan mereka?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 1244442677905626411, guid: 2b7742304d2dc814087d5298f399a53b, type: 3}
       - speakerName: Rookie
         dialogueText: Apa nilai yang bisa kamu tawarkan yang tidak mereka miliki?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Orang yang rajin dan ahli secara teknis selamanya hanya akan
           menjadi pekerja, Pak.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 9011582848430908446, guid: c7aef09b45cd56d46957b090ce4ce9fd, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Yang Bapak butuhkan adalah konseptor yang tahu cara melihat
           gambaran besar... dan yang lebih penting, tahu cara menjualnya.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Biarkan staf Bapak berkeringat mengerjakan teknisnya. Saya
           yang akan memastikan hasil kerja keras mereka terlihat berkilau di mata
           bos besar.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: 0168759358d6dc846b1666060c3cc7dc, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Karena kerja keras saja tidak cukup, Pak. Harus ada orang yang
           tahu cara membuatnya terlihat hebat.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 9011582848430908446, guid: c7aef09b45cd56d46957b090ce4ce9fd, type: 3}
     - choiceText: Kalau kamu resmi diterima, apa gebrakan pertama yang akan kamu
         lakukan dalam satu bulan pertamamu di sini?
       scoreWeight: 15
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: 21300000, guid: fd8446f05959f484ca054bbd9c6e98e0, type: 3}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Kalau kamu resmi diterima, apa gebrakan pertama yang akan kamu
           lakukan dalam satu bulan pertamamu di sini?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: fd8446f05959f484ca054bbd9c6e98e0, type: 3}
       - speakerName: Rookie
         dialogueText: Saya ingin tahu perubahan nyata seperti apa yang bisa kamu
           bawa sejak awal.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Di bulan pertama, saya tidak akan menyentuh pekerjaan teknis
           apa pun, Pak.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Saya akan duduk santai, minum kopi, dan mengamati bagaimana
           alur kerja perusahaan ini berjalan dari kejauhan.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Kerja keras memang penting. Tapi bagi saya, kerja cerdas jauh
           lebih penting.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Dan yang paling penting adalah tahu bagaimana merangkai semua
           kerja keras itu menjadi narasi kesuksesan yang terdengar luar biasa.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
     - choiceText: Kalau ada satu hal yang ingin kamu ubah dari tim ini setelah bergabung
         nanti, apa itu?
       scoreWeight: 25
@@ -339,15 +339,15 @@ MonoBehaviour:
       - speakerName: Rookie
         dialogueText: Kalau ada satu hal yang ingin kamu ubah dari tim ini setelah
           bergabung nanti, apa itu?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Rookie
         dialogueText: Menurut kamu, apa yang paling perlu dibenahi agar tim ini bisa
           berkembang lebih jauh?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Kultur kerjanya, Pak. Saya lihat kebanyakan staf terlalu sibuk
           dan stres untuk terus membuktikan diri.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
       - speakerName: Jimny Pawapua
         dialogueText: Saya akan mengusulkan jam istirahat yang lebih panjang dan
           ruang santai yang nyaman.
@@ -362,14 +362,14 @@ MonoBehaviour:
         expressionSprite: {fileID: 0}
   - speakerName: Rookie
     dialogueText: Baiklah, Jimny. Wawancara ini benar-benar... membuka wawasan saya.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Rookie
     dialogueText: Terima kasih sudah meluangkan waktu. Nanti akan saya kabari mengenai
       hasilnya.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
