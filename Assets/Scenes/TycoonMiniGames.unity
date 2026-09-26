@@ -5164,7 +5164,7 @@ MonoBehaviour:
   workdayEndPanel: {fileID: 0}
   workdayEndTitleText: {fileID: 0}
   nextSceneButton: {fileID: 0}
-  nextSceneName: 
+  nextSceneName: Credits 
 --- !u!1 &414535530
 GameObject:
   m_ObjectHideFlags: 0
