@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 360cda683691f8c42bde9ceb01ba5f5a, type: 3}
-  m_Name: worker_pm_1
+  m_Name: Nathania
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.CharacterSO
-  characterId: worker_pm_1
-  characterName: Andi PM
-  jobTitle: Project Manager
-  bio: Pengatur jadwal sprint & reminder deadline.
-  avatarIcon: {fileID: 0}
+  characterId: Nathania
+  characterName: Nathania
+  jobTitle: Senior Developer
+  bio: 
+  avatarIcon: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
   standingSprite: {fileID: 0}
   sittingSprite: {fileID: 0}
   walkingSprites: []
-  baseWalkSpeed: 2
-  maxStamina: 110
+  baseWalkSpeed: 2.2
+  maxStamina: 100
   staminaDepletionRate: 2
   staminaRecoveryRate: 10
   pacingDurationMin: 2

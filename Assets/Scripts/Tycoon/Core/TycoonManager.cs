@@ -57,11 +57,13 @@ namespace Tycoon.Core
 
         /// <summary>
         /// Overload using OfficeItemSO.
+        /// Accounts for item.defaultLevel (e.g. Wall & Floor Level 1 active on play).
         /// </summary>
         public int GetItemLevel(OfficeItemSO item)
         {
             if (item == null) return 0;
-            return GetItemLevel(item.itemId);
+            int current = GetItemLevel(item.itemId);
+            return Mathf.Max(current, item.defaultLevel);
         }
 
         /// <summary>

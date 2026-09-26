@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c47e53b5c88189044a5343832dc32650, type: 3}
+  m_Name: item_wall
+  m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
+  itemId: item_wall
+  itemName: 
+  itemDescription: 
+  category: 7
+  shopIcon: {fileID: 0}
+  defaultLevel: 1
+  levels:
+  - levelIndex: 1
+    levelName: 1
+    upgradeCost: 0
+    wallSampingTile: {fileID: 11400000, guid: 9ceb300c7fbd4624b90dcfcc4b84046e, type: 2}
+    wallTile: {fileID: 11400000, guid: 063435d4e71bf0743ba9771eb0d53afb, type: 2}
+    wallBawahTile: {fileID: 11400000, guid: 3d4843fde464abf4d98e9b0715ba5051, type: 2}
+    floorTile: {fileID: 0}
+    topdownSprite: {fileID: 0}
+    frontSprite: {fileID: 0}
+    backSprite: {fileID: 0}
+    boostDescription: 
+  - levelIndex: 2
+    levelName: 2
+    upgradeCost: 0
+    wallSampingTile: {fileID: 11400000, guid: 9ceb300c7fbd4624b90dcfcc4b84046e, type: 2}
+    wallTile: {fileID: 11400000, guid: 063435d4e71bf0743ba9771eb0d53afb, type: 2}
+    wallBawahTile: {fileID: 11400000, guid: 3d4843fde464abf4d98e9b0715ba5051, type: 2}
+    floorTile: {fileID: 0}
+    topdownSprite: {fileID: 0}
+    frontSprite: {fileID: 0}
+    backSprite: {fileID: 0}
+    boostDescription: 
+  useFormulaCost: 1
+  baseCost: 100
+  costMultiplier: 1.5
