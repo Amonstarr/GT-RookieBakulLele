@@ -18,8 +18,31 @@ MonoBehaviour:
   bio: Pengatur jadwal sprint & reminder deadline.
   avatarIcon: {fileID: 4534523224128987913, guid: 56c3829efa2f4f6448a239aba4c3b139, type: 3}
   standingSprite: {fileID: 0}
-  sittingSprite: {fileID: 0}
+  sittingSprite: {fileID: 4156235558638478746, guid: 27bc4e6474e792c4d919539bd08febd7, type: 3}
+  idleSprites:
+  - {fileID: 7705915221498388331, guid: 3669fbdca3b9d1e4a9299e9ea514dd16, type: 3}
+  - {fileID: -6928444765254601632, guid: 3669fbdca3b9d1e4a9299e9ea514dd16, type: 3}
+  - {fileID: -7846857484772082410, guid: 3669fbdca3b9d1e4a9299e9ea514dd16, type: 3}
+  walkHorizontalSprites:
+  - {fileID: -3272337165992741886, guid: 969d5948fbca0144c9a4257e9c6df9eb, type: 3}
+  - {fileID: 4374232666349726104, guid: 969d5948fbca0144c9a4257e9c6df9eb, type: 3}
+  - {fileID: 9067319653883691764, guid: 969d5948fbca0144c9a4257e9c6df9eb, type: 3}
+  - {fileID: 8693644325467579739, guid: 969d5948fbca0144c9a4257e9c6df9eb, type: 3}
+  - {fileID: 2891754048301708362, guid: 969d5948fbca0144c9a4257e9c6df9eb, type: 3}
+  walkUpSprites:
+  - {fileID: -824014960225445070, guid: 4ed3093a847e9274e847ed1b6e9525fa, type: 3}
+  - {fileID: -6681956972765476833, guid: 4ed3093a847e9274e847ed1b6e9525fa, type: 3}
+  - {fileID: -1178969632337680570, guid: 4ed3093a847e9274e847ed1b6e9525fa, type: 3}
+  - {fileID: -1834580420497364876, guid: 4ed3093a847e9274e847ed1b6e9525fa, type: 3}
+  - {fileID: 5199259311947731298, guid: 4ed3093a847e9274e847ed1b6e9525fa, type: 3}
+  walkDownSprites:
+  - {fileID: 8469400718093147044, guid: bbb62a60baba8e742b0c9d18daaf5f1a, type: 3}
+  - {fileID: 4427699966975164578, guid: bbb62a60baba8e742b0c9d18daaf5f1a, type: 3}
+  - {fileID: 2380658793300418080, guid: bbb62a60baba8e742b0c9d18daaf5f1a, type: 3}
+  - {fileID: -1838005241427231598, guid: bbb62a60baba8e742b0c9d18daaf5f1a, type: 3}
+  - {fileID: 266190537357928616, guid: bbb62a60baba8e742b0c9d18daaf5f1a, type: 3}
   walkingSprites: []
+  animationFrameRate: 10
   baseWalkSpeed: 2
   maxStamina: 110
   staminaDepletionRate: 2

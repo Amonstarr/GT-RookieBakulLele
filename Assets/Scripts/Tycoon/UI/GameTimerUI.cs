@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,7 @@ namespace Tycoon.UI
 {
     /// <summary>
     /// UI Controller for the Game Timer.
-    /// Updates digital clock text, visual clock hand rotation, and displays workday completion modal with next scene button.
+    /// Updates digital clock text, visual clock hand rotation, and handles auto transition or workday completion modal.
     /// </summary>
     public class GameTimerUI : MonoBehaviour
     {
@@ -35,8 +36,15 @@ namespace Tycoon.UI
         [SerializeField] private GameObject workdayEndPanel;
         [SerializeField] private TMP_Text workdayEndTitleText;
         [SerializeField] private Button nextSceneButton;
-        [Tooltip("Name of the scene to load when Next Scene Button is clicked. If empty, loads next scene index in Build Settings.")]
-        [SerializeField] private string nextSceneName = "";
+        [Tooltip("Name of the scene to load when timer finishes. Defaults to 'Credits'.")]
+        [SerializeField] private string nextSceneName = "Credits";
+
+        [Header("Auto Transition Options")]
+        [Tooltip("If true, automatically loads nextSceneName when workday timer ends.")]
+        [SerializeField] private bool autoLoadNextSceneOnFinish = true;
+
+        [Tooltip("Delay in seconds before automatically loading the next scene after timer ends.")]
+        [SerializeField] private float autoLoadDelaySeconds = 1.0f;
 
         private void Start()
         {
@@ -116,15 +124,28 @@ namespace Tycoon.UI
                 statusText.text = "SHIFT SELESAI";
             }
 
-            if (workdayEndPanel != null)
-            {
-                workdayEndPanel.SetActive(true);
-            }
-
             if (workdayEndTitleText != null)
             {
                 workdayEndTitleText.text = "Waktu Kerja Selesai! (05:00 PM)";
             }
+
+            if (autoLoadNextSceneOnFinish)
+            {
+                StartCoroutine(AutoLoadNextSceneRoutine());
+            }
+            else if (workdayEndPanel != null)
+            {
+                workdayEndPanel.SetActive(true);
+            }
+        }
+
+        private IEnumerator AutoLoadNextSceneRoutine()
+        {
+            if (autoLoadDelaySeconds > 0f)
+            {
+                yield return new WaitForSecondsRealtime(autoLoadDelaySeconds);
+            }
+            LoadNextScene();
         }
 
         private void OnNextSceneClicked()
@@ -133,7 +154,11 @@ namespace Tycoon.UI
             {
                 workdayEndPanel.SetActive(false);
             }
+            LoadNextScene();
+        }
 
+        private void LoadNextScene()
+        {
             if (!string.IsNullOrEmpty(nextSceneName))
             {
                 Debug.Log($"[GameTimerUI] Loading next scene by name: '{nextSceneName}'");

@@ -13,15 +13,17 @@ namespace GT.Dialogue.Core
 {
     public enum InterviewState
     {
-        ShowingDialogue,
-        AwaitingChoice,
-        ShowingChoiceDialogue,
-        Finished
+        WaitingForCVInspection, // Menunggu pemain mengklik kertas berkas CV di meja (kiri bawah)
+        ViewingCV,              // Sedang membuka pop-up gambar berkas CV kandidat
+        ShowingDialogue,        // Percakapan wawancara aktif berlangsung
+        AwaitingChoice,         // Menunggu pemain memilih 1 dari opsi pertanyaan/tanggapan
+        ShowingChoiceDialogue,  // Menampilkan tindak lanjut dialog setelah opsi dipilih
+        Finished                // Seluruh rangkaian 6 kandidat telah tuntas
     }
 
     /// <summary>
     /// Core manager yang mengendalikan alur wawancara berurutan untuk seluruh kandidat (Visual Novel).
-    /// Mengelola state machine, input klik cerita, pemilihan titik keputusan, akumulasi skor, dan bridge ke Tycoon.
+    /// Mengelola berkas CV pra-wawancara, state machine, input klik cerita, pemilihan titik keputusan, akumulasi skor, dan bridge ke Tycoon.
     /// </summary>
     public class DialogueInterviewManager : MonoBehaviour
     {
@@ -53,7 +55,7 @@ namespace GT.Dialogue.Core
         [System.NonSerialized]
         private List<ChoiceDialogueLine> activeChoiceDialogue = null;
         private int choiceDialogueIndex = 0;
-        private InterviewState currentState = InterviewState.ShowingDialogue;
+        private InterviewState currentState = InterviewState.WaitingForCVInspection;
 
         public int CurrentScore => totalScore;
         public InterviewState CurrentState => currentState;
@@ -116,10 +118,10 @@ namespace GT.Dialogue.Core
 
         private void Update()
         {
-            // Input klik kiri mouse: memajukan dialog jika tidak sedang menunggu pilihan
+            // Input klik kiri mouse: memajukan dialog jika sedang dalam fase percakapan aktif
             if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
             {
-                if (currentState != InterviewState.AwaitingChoice)
+                if (currentState == InterviewState.ShowingDialogue || currentState == InterviewState.ShowingChoiceDialogue)
                 {
                     OnAdvanceClicked();
                 }
@@ -132,7 +134,10 @@ namespace GT.Dialogue.Core
                     Keyboard.current.enterKey.wasPressedThisFrame ||
                     Keyboard.current.numpadEnterKey.wasPressedThisFrame)
                 {
-                    OnAdvanceClicked();
+                    if (currentState == InterviewState.ShowingDialogue || currentState == InterviewState.ShowingChoiceDialogue)
+                    {
+                        OnAdvanceClicked();
+                    }
                 }
             }
         }
@@ -151,8 +156,11 @@ namespace GT.Dialogue.Core
                 return;
             }
 
-            // Jika sedang menunggu pemain memilih tombol pilihan, abaikan klik layar
-            if (currentState == InterviewState.AwaitingChoice)
+            // Jika sedang menunggu pemain memilih tombol pilihan atau berkas CV, abaikan klik dialog
+            if (currentState == InterviewState.AwaitingChoice ||
+                currentState == InterviewState.WaitingForCVInspection ||
+                currentState == InterviewState.ViewingCV ||
+                currentState == InterviewState.Finished)
             {
                 return;
             }
@@ -202,14 +210,61 @@ namespace GT.Dialogue.Core
 
             currentLineIndex = 0;
             currentQuestionCount = 0;
-            currentState = InterviewState.ShowingDialogue;
 
-            // Update UI Header & Profil Kandidat (tanpa roleTitle)
+            // Sembunyikan karakter dan kotak dialog sebelum wawancara dimulai (ruangan masih kosong)
             if (interviewUI != null)
             {
                 interviewUI.UpdateHeader(index + 1, storySequence.candidates.Count, totalScore);
                 interviewUI.UpdateQuestionTracker(0, candidate.TotalDecisionPoints);
+                interviewUI.SetCharacterVisible(false);
+                interviewUI.SetDialogueBoxVisible(false);
+                interviewUI.HideChoices();
+
+                // Munculkan kertas CV di kiri bawah meja
+                currentState = InterviewState.WaitingForCVInspection;
+                interviewUI.ShowCVPaperButton(() => OnCVPaperClicked(candidate));
+            }
+            else
+            {
+                // Fallback jika tidak ada UI
+                BeginInterviewConversation(candidate);
+            }
+        }
+
+        private void OnCVPaperClicked(CandidateInterviewScriptSO candidate)
+        {
+            currentState = InterviewState.ViewingCV;
+            if (interviewUI != null)
+            {
+                interviewUI.ShowCVModal(
+                    candidate.cvDocumentSprite,
+                    onStartInterview: () =>
+                    {
+                        // Pemain menekan tombol "Mulai Wawancara"
+                        BeginInterviewConversation(candidate);
+                    },
+                    onClose: () =>
+                    {
+                        // Pemain menutup dokumen dan kembali melihat meja
+                        currentState = InterviewState.WaitingForCVInspection;
+                    }
+                );
+            }
+        }
+
+        private void BeginInterviewConversation(CandidateInterviewScriptSO candidate)
+        {
+            currentState = InterviewState.ShowingDialogue;
+
+            if (interviewUI != null)
+            {
+                interviewUI.CloseCVModal();
+                interviewUI.HideCVPaperButton();
+
+                // Kandidat dipersilakan masuk ke ruangan (karakter muncul) dan kotak dialog aktif
                 interviewUI.SetCandidateProfile(candidate.candidateName, candidate.defaultPortrait);
+                interviewUI.SetCharacterVisible(true);
+                interviewUI.SetDialogueBoxVisible(true);
             }
 
             PlayCurrentDialogueLine();
@@ -252,7 +307,7 @@ namespace GT.Dialogue.Core
                     interviewUI.UpdateQuestionTracker(currentQuestionCount, candidate.TotalDecisionPoints);
                     interviewUI.DisplayDialogue(speaker, line.dialogueText, line.expressionSprite, () =>
                     {
-                        // Begitu typewriter selesai, munculkan 3 tombol pilihan
+                        // Begitu typewriter selesai, munculkan pilihan
                         PresentChoices(line.choices);
                     });
                 }
@@ -312,8 +367,6 @@ namespace GT.Dialogue.Core
             Debug.Log($"[DialogueInterviewManager] Opsi '{selectedChoice.choiceText}' dipilih (+{selectedChoice.scoreWeight} pts). Total: {totalScore}");
 
             // Siapkan rangkaian percakapan pilihan (mini-conversation):
-            // Jika followUpDialogue diisi, gunakan naskah multi-baris tersebut.
-            // Jika tidak, gunakan mode 2 langkah bawaan (Rookie bertanya -> Kandidat menjawab).
             if (selectedChoice.followUpDialogue != null && selectedChoice.followUpDialogue.Count > 0)
             {
                 activeChoiceDialogue = selectedChoice.followUpDialogue;
@@ -353,6 +406,13 @@ namespace GT.Dialogue.Core
         private void OnCandidateFinished()
         {
             currentCandidateIndex++;
+
+            // Sembunyikan karakter dan kotak dialog saat kandidat selesai
+            if (interviewUI != null)
+            {
+                interviewUI.SetCharacterVisible(false);
+                interviewUI.SetDialogueBoxVisible(false);
+            }
 
             if (currentCandidateIndex < storySequence.candidates.Count)
             {
@@ -418,7 +478,7 @@ namespace GT.Dialogue.Core
                     {
                         try
                         {
-                            data = JsonUtility.FromJson<TycoonSaveData>(json) ?? new TycoonSaveData();
+                            data = JsonUtility.FromJson<TycoonSaveData>(json);
                         }
                         catch
                         {
@@ -427,32 +487,21 @@ namespace GT.Dialogue.Core
                     }
                 }
 
-                // Tambahkan modal awal koin Tycoon dari skor interview
-                data.coins += totalScore;
-
-                string updatedJson = JsonUtility.ToJson(data, true);
-                PlayerPrefs.SetString(TYCOON_SAVE_KEY, updatedJson);
-                PlayerPrefs.Save();
-
-                Debug.Log($"[DialogueInterviewManager] Berhasil menyimpan bonus modal koin Tycoon sebesar +{totalScore}! Total Koin Tycoon sekarang: {data.coins}");
-            }
-            else
-            {
-                PlayerPrefs.Save();
+                if (data != null)
+                {
+                    data.coins += totalScore;
+                    string updatedJson = JsonUtility.ToJson(data);
+                    PlayerPrefs.SetString(TYCOON_SAVE_KEY, updatedJson);
+                    PlayerPrefs.Save();
+                    Debug.Log($"[DialogueInterviewManager] Berhasil menambahkan {totalScore} ke kas awal Tycoon! Saldo koin baru: {data.coins}");
+                }
             }
         }
 
         private void OnSummaryContinueClicked()
         {
-            if (!string.IsNullOrEmpty(targetNextSceneName))
-            {
-                Debug.Log($"[DialogueInterviewManager] Memuat scene berikutnya: '{targetNextSceneName}'...");
-                SceneManager.LoadScene(targetNextSceneName);
-            }
-            else
-            {
-                Debug.LogWarning("[DialogueInterviewManager] targetNextSceneName belum diisi.");
-            }
+            Debug.Log($"[DialogueInterviewManager] Memuat scene berikutnya: {targetNextSceneName}");
+            SceneManager.LoadScene(targetNextSceneName);
         }
     }
 }

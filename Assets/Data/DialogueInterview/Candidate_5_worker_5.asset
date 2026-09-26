@@ -16,6 +16,8 @@ MonoBehaviour:
   candidateName: Nathania Alietashya
   candidateBio: Pemalu, tidak malas tidak pula rajin, cepat dalam pekerjaan, tsundere
   defaultPortrait: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
+  defaultPortrait: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
+  cvDocumentSprite: {fileID: -6177258175572825773, guid: 8d78b87807c7a004a918bce6be5a2cbe, type: 3}
   dialogueLines:
   - speakerName: Nathania Alietashya
     dialogueText: Halo... perkenalkan, saya Nathania Alietashya.
@@ -55,11 +57,12 @@ MonoBehaviour:
     isDecisionPoint: 1
     questionTitle: 
     choices:
-    - choiceText: 
-      scoreWeight: 25
-      reactionText: Kalau kamu diminta menyebutkan satu keunggulan yang paling kamu
+    - choiceText: Kalau kamu diminta menyebutkan satu keunggulan yang paling kamu
         percaya dari dirimu, apa itu?
       reactionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Kalau kamu diminta menyebutkan satu keunggulan yang paling

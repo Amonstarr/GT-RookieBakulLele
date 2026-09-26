@@ -10,7 +10,7 @@ namespace GT.Dialogue.UI
 {
     /// <summary>
     /// Controller tampilan UI Visual Novel untuk scene DialogueInterview.
-    /// Mengelola teks typewriter, animasi mikro-bounce portrait, tombol pilihan, dan modal rekapitulasi.
+    /// Mengelola berkas CV pra-wawancara, teks typewriter, animasi mikro-bounce portrait, tombol pilihan, dan modal rekapitulasi.
     /// </summary>
     public class DialogueInterviewUI : MonoBehaviour
     {
@@ -38,6 +38,16 @@ namespace GT.Dialogue.UI
         [SerializeField] private List<Button> choiceButtons = new List<Button>();
         [SerializeField] private List<TMP_Text> choiceButtonTexts = new List<TMP_Text>();
 
+        [Header("CV Paper Trigger (Kiri Bawah)")]
+        [SerializeField] private GameObject cvPaperContainer;
+        [SerializeField] private Button cvPaperButton;
+
+        [Header("CV Document Modal (Tengah Layar)")]
+        [SerializeField] private GameObject cvModalPanel;
+        [SerializeField] private Image cvDisplayImage;
+        [SerializeField] private Button startInterviewButton;
+        [SerializeField] private Button closeCVButton;
+
         [Header("Summary Modal")]
         [SerializeField] private GameObject summaryModalPanel;
         [SerializeField] private TMP_Text summaryTotalScoreText;
@@ -63,6 +73,7 @@ namespace GT.Dialogue.UI
             if (choicesPanel != null) choicesPanel.SetActive(false);
             if (summaryModalPanel != null) summaryModalPanel.SetActive(false);
             if (nextArrowIndicator != null) nextArrowIndicator.SetActive(false);
+            if (cvModalPanel != null) cvModalPanel.SetActive(false);
 
             if (advanceDialogueButton != null)
             {
@@ -113,7 +124,31 @@ namespace GT.Dialogue.UI
 
         #endregion
 
-        #region Candidate Portrait & Bio
+        #region Candidate Visibility, Portrait & Bio
+
+        public void SetCharacterVisible(bool visible)
+        {
+            if (candidatePortraitImage != null)
+            {
+                candidatePortraitImage.gameObject.SetActive(visible);
+            }
+            if (candidateNameText != null)
+            {
+                candidateNameText.gameObject.SetActive(visible);
+            }
+            if (candidateRoleText != null)
+            {
+                candidateRoleText.gameObject.SetActive(false);
+            }
+        }
+
+        public void SetDialogueBoxVisible(bool visible)
+        {
+            if (dialogueBoxPanel != null)
+            {
+                dialogueBoxPanel.SetActive(visible);
+            }
+        }
 
         public void SetCandidateProfile(string name, Sprite defaultPortrait)
         {
@@ -178,10 +213,89 @@ namespace GT.Dialogue.UI
 
         #endregion
 
+        #region CV Paper Trigger & Document Modal
+
+        public void ShowCVPaperButton(Action onPaperClicked)
+        {
+            if (cvPaperContainer != null) cvPaperContainer.SetActive(true);
+            else if (cvPaperButton != null) cvPaperButton.gameObject.SetActive(true);
+
+            if (cvPaperButton != null)
+            {
+                cvPaperButton.onClick.RemoveAllListeners();
+                cvPaperButton.onClick.AddListener(() => onPaperClicked?.Invoke());
+            }
+        }
+
+        public void HideCVPaperButton()
+        {
+            if (cvPaperContainer != null) cvPaperContainer.SetActive(false);
+            else if (cvPaperButton != null) cvPaperButton.gameObject.SetActive(false);
+        }
+
+        public void ShowCVModal(Sprite cvSprite, Action onStartInterview, Action onClose = null)
+        {
+            if (cvModalPanel == null)
+            {
+                // Fallback jika panel belum terpasang di Inspector
+                onStartInterview?.Invoke();
+                return;
+            }
+
+            cvModalPanel.SetActive(true);
+
+            if (cvDisplayImage != null)
+            {
+                if (cvSprite != null)
+                {
+                    cvDisplayImage.sprite = cvSprite;
+                    cvDisplayImage.color = Color.white;
+                    cvDisplayImage.gameObject.SetActive(true);
+                }
+                else
+                {
+                    cvDisplayImage.gameObject.SetActive(false);
+                }
+            }
+
+            if (startInterviewButton != null)
+            {
+                startInterviewButton.onClick.RemoveAllListeners();
+                startInterviewButton.onClick.AddListener(() =>
+                {
+                    CloseCVModal();
+                    onStartInterview?.Invoke();
+                });
+            }
+
+            if (closeCVButton != null)
+            {
+                closeCVButton.onClick.RemoveAllListeners();
+                closeCVButton.onClick.AddListener(() =>
+                {
+                    CloseCVModal();
+                    onClose?.Invoke();
+                });
+            }
+        }
+
+        public void CloseCVModal()
+        {
+            if (cvModalPanel != null)
+            {
+                cvModalPanel.SetActive(false);
+            }
+        }
+
+        #endregion
+
         #region Typewriter Dialogue
 
         public void DisplayDialogue(string speaker, string text, Sprite expressionSprite = null, Action onTypewriterComplete = null)
         {
+            // Pastikan dialogue box aktif saat menampilkan dialog
+            SetDialogueBoxVisible(true);
+
             // Update speaker name
             if (speakerNameText != null)
             {

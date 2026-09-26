@@ -33,6 +33,10 @@ namespace Tycoon.Data
         [Header("Floor Tile Asset (Category = Floor)")]
         public TileBase floorTile;
 
+        [Header("UI Display")]
+        [Tooltip("Custom shop icon sprite for this level. If empty, falls back to topdownSprite/frontSprite or main SO shopIcon.")]
+        public Sprite levelIcon;
+
         [Header("2D Sprite Fallbacks")]
         [Tooltip("Single/Main sprite fallback")]
         public Sprite topdownSprite;
@@ -70,6 +74,23 @@ namespace Tycoon.Data
         public float costMultiplier = 1.5f;
 
         public int MaxLevel => levels != null && levels.Count > 0 ? levels.Count : 10;
+
+        /// <summary>
+        /// Returns the shop icon sprite for a given level (1-indexed).
+        /// Fallbacks: levelIcon -> topdownSprite -> frontSprite -> SO shopIcon.
+        /// </summary>
+        public Sprite GetShopIconForLevel(int level)
+        {
+            int targetIndex = level > 0 ? level : 1;
+            if (levels != null && targetIndex <= levels.Count)
+            {
+                var lvlData = levels[targetIndex - 1];
+                if (lvlData.levelIcon != null) return lvlData.levelIcon;
+                if (lvlData.topdownSprite != null) return lvlData.topdownSprite;
+                if (lvlData.frontSprite != null) return lvlData.frontSprite;
+            }
+            return shopIcon;
+        }
 
         /// <summary>
         /// Gets data for a specific level (1-indexed). Returns default if out of bounds.

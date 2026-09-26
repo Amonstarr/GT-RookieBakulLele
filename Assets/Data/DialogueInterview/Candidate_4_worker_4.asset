@@ -16,6 +16,8 @@ MonoBehaviour:
   candidateName: Jimny Pawapua
   candidateBio: Pakar budidaya lele sangkuriang dengan insting tajam.
   defaultPortrait: {fileID: 21300000, guid: 0f383cb9f92a2ca47a78f5c8e0150e4f, type: 3}
+  defaultPortrait: {fileID: -8961180997118601234, guid: 1fe3573a3da685f4184e4de7d8837bb0, type: 3}
+  cvDocumentSprite: {fileID: -1384224957554588902, guid: a641dddf94e6ca0418d5a9eb5b96fd42, type: 3}
   dialogueLines:
   - speakerName: Jimny Pawapua.
     dialogueText: Selamat pagi. Saya Jimny Pawapua.
