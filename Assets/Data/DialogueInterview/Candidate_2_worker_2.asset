@@ -15,7 +15,12 @@ MonoBehaviour:
   candidateId: worker_2
   candidateName: Wendy
   candidateBio: Designer perfeksionis yang alergi layout miring.
+<<<<<<< HEAD
   defaultPortrait: {fileID: 340493152281059553, guid: 11183fa3942edbc44a1138532b1352e0, type: 3}
+=======
+  defaultPortrait: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
+  cvDocumentSprite: {fileID: 368163786862667617, guid: a221734b402e4cc40976a43c21069e44, type: 3}
+>>>>>>> c4212c65bcccb7433a2baca2a72570c68914e762
   dialogueLines:
   - speakerName: Wendy
     dialogueText: Permisi... araa, kamu kelihatan agak lelah. Kamu sudah sempat istirahat?
