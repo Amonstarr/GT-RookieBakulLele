@@ -15,6 +15,10 @@ namespace Tycoon.Data
         public string bio;
         public Sprite avatarIcon;
 
+        [Header("Selection Score Bonus")]
+        [Tooltip("Skor bonus yang didapat pemain saat memilih karakter ini untuk bergabung")]
+        public int selectionBonusScore = 150;
+
         [Header("2D Visual Sprites & Spritesheet Animations")]
         public Sprite standingSprite;
         public Sprite sittingSprite;
