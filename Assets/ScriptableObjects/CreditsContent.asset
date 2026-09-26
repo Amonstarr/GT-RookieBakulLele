@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3203ce6b6a013542a5b3c65980eb35c, type: 3}
+  m_Name: CreditsContent
+  m_EditorClassIdentifier: Assembly-CSharp::GT.Credits.CreditsContentSO
+  gameTitle: ROOKIE BAKUL LELE
+  thanksMessage: TERIMA KASIH SUDAH BERMAIN!
+  sections:
+  - sectionTitle: Tim Pengembang
+    entries:
+    - name: Hammam Amanullah
+      role: Game Programmer
+    - name: Muhammad Dzakhwan Azizan
+      role: Game Programmer

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TycoonMiniGames.unity
     guid: f2f94fcdd5f7bec4b8ca5c6f1b7b90c5
   - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: c8faa6a6d4e3cc54b9669583d658a900
+  - enabled: 1
     path: Assets/Scenes/Leaderboard.unity
     guid: 3b7f8492a644a71438c960e62bdac2fb
   m_configObjects:
