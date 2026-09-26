@@ -28,27 +28,49 @@ public class CutsceneController : MonoBehaviour
     public float wordDelay = 0.15f;
     public float fadeDuration = 0.5f;
 
+    [Header("Audio")]
+    [Tooltip("Played once per word as the narration types out (e.g. ketik.mp3).")]
+    public AudioClip typingSound;
+
     private int currentIndex = 0;
     private bool isTyping = false;
     private Coroutine typingCoroutine;
 
     void Start()
     {
-        nextButton.onClick.AddListener(OnNextButtonPressed);
+        nextButton.onClick.AddListener(Advance);
         ShowSlide(0);
     }
 
     void Update()
     {
-        
-        if (!isTyping) return;
-
         bool mouseClicked = Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
         bool keyPressed = Keyboard.current != null && Keyboard.current.anyKey.wasPressedThisFrame;
 
+        // Click/tap anywhere - except directly on the Next button, which already
+        // calls Advance() via its own onClick, so we skip it here to avoid firing twice.
         if ((mouseClicked || keyPressed) && !IsPointerOverNextButton())
         {
+            Advance();
+        }
+    }
+
+    /// <summary>
+    /// Single entry point for moving the cutscene forward:
+    ///  - if a line is still typing, instantly complete it (skip animation)
+    ///  - otherwise, move to the next slide
+    /// Called by the Next button's onClick, by clicking anywhere else on screen,
+    /// or by pressing any key.
+    /// </summary>
+    void Advance()
+    {
+        if (isTyping)
+        {
             CompleteTyping();
+        }
+        else
+        {
+            ShowSlide(currentIndex + 1);
         }
     }
 
@@ -59,7 +81,6 @@ public class CutsceneController : MonoBehaviour
         RectTransform rect = nextButton.GetComponent<RectTransform>();
         Vector2 mousePos = Mouse.current.position.ReadValue();
 
-      
         return RectTransformUtility.RectangleContainsScreenPoint(rect, mousePos, null);
     }
 
@@ -107,6 +128,12 @@ public class CutsceneController : MonoBehaviour
         for (int i = 0; i < words.Length; i++)
         {
             narrationText.text += (i == 0 ? "" : " ") + words[i];
+
+            if (typingSound != null && GameSettingsManager.Instance != null)
+            {
+                GameSettingsManager.Instance.PlaySFX(typingSound);
+            }
+
             yield return new WaitForSeconds(wordDelay);
         }
         isTyping = false;
@@ -117,18 +144,5 @@ public class CutsceneController : MonoBehaviour
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
         narrationText.text = slides[currentIndex].narration;
         isTyping = false;
-    }
-
-    void OnNextButtonPressed()
-    {
-        if (isTyping)
-        {
-           
-            CompleteTyping();
-        }
-        else
-        {
-            ShowSlide(currentIndex + 1);
-        }
     }
 }

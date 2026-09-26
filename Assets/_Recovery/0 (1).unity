@@ -296,7 +296,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543237981}
   - component: {fileID: 543237980}
-  - component: {fileID: 543237982}
   m_Layer: 0
   m_Name: CutSceneManager
   m_TagString: Untagged
@@ -348,7 +347,6 @@ MonoBehaviour:
   nextSceneName: DialogueInterview
   wordDelay: 0.15
   fadeDuration: 0.5
-  typingSound: {fileID: 8300000, guid: 54ec4833ee28c354bb928a5c5be00404, type: 3}
 --- !u!4 &543237981
 Transform:
   m_ObjectHideFlags: 0
@@ -364,28 +362,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &543237982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543237979}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dca732d45beb7649aca6f8b55bdeb1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueTypewriter
-  dialogueText: {fileID: 1522785025}
-  nextButton: {fileID: 662940704}
-  lines:
-  - 
-  - 
-  - 
-  - 
-  charactersPerSecond: 40
-  currentLineIndex: -1
-  isTyping: 0
 --- !u!1 &662940702
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,7 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5018867, g: 0.48389456, b: 0.48389456, a: 0.9764706}
+  m_Color: {r: 0.5018867, g: 0.48389456, b: 0.48389456, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
