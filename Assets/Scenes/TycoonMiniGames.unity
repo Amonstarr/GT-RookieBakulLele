@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411f941ee32e6f742a0c21723a60b1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Visual.OfficeItemVisual
-  targetItem: {fileID: 11400000, guid: 091f1d9e47f88d0419d29fd765f50759, type: 2}
+  targetItem: {fileID: 11400000, guid: ec9b73b85651fec4e82783e6bf495675, type: 2}
   useSpriteRenderer: 0
-  targetSpriteRenderer: {fileID: 0}
+  targetSpriteRenderer: {fileID: 22121822}
   frontSpriteRenderer: {fileID: 0}
   levelVisualGameObjects:
   - {fileID: 1617620316}
@@ -13149,7 +13149,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1832171584

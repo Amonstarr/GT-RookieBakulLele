@@ -17,6 +17,7 @@ MonoBehaviour:
   jobTitle: Staff
   bio: 
   avatarIcon: {fileID: 9011582848430908446, guid: c7aef09b45cd56d46957b090ce4ce9fd, type: 3}
+  selectionBonusScore: 60
   standingSprite: {fileID: 0}
   sittingSprite: {fileID: 2895782360174483970, guid: c946887a60e3b2e4a874e9aa2b64850c, type: 3}
   idleSprites:

@@ -13,20 +13,35 @@ MonoBehaviour:
   m_Name: item_chair
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
   itemId: item_chair
-  itemName: Ergonomic Chair
+  itemName: Chair
   itemDescription: Kursi kerja nyaman
   category: 1
   shopIcon: {fileID: 0}
+  defaultLevel: 0
   levels:
   - levelIndex: 1
     levelName: Kursi Plastik
-    upgradeCost: 100
+    upgradeCost: 45
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: -8450649767191371574, guid: f074f8fa21d84344d8747e1b2f568422, type: 3}
     topdownSprite: {fileID: -8450649767191371574, guid: f074f8fa21d84344d8747e1b2f568422, type: 3}
+    frontSprite: {fileID: 0}
+    backSprite: {fileID: 0}
     boostDescription: +2% Comfort
   - levelIndex: 2
     levelName: Kursi Busa Putar
-    upgradeCost: 350
+    upgradeCost: 85
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: 1782350145459984053, guid: 8a8585badcb480d47a058df4301941e4, type: 3}
     topdownSprite: {fileID: 1782350145459984053, guid: 8a8585badcb480d47a058df4301941e4, type: 3}
+    frontSprite: {fileID: 0}
+    backSprite: {fileID: 0}
     boostDescription: +10% Ergonomics
   useFormulaCost: 0
   baseCost: 100

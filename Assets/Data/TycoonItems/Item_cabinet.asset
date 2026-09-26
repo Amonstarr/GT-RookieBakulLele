@@ -13,25 +13,36 @@ MonoBehaviour:
   m_Name: Item_cabinet
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
   itemId: item_cabinet
-  itemName: 
-  itemDescription: 
+  itemName: Cabinet
+  itemDescription: Kabinet penyimpanan berkas & dokumen kantor.
   category: 4
   shopIcon: {fileID: 0}
+  defaultLevel: 0
   levels:
   - levelIndex: 1
-    levelName: 
-    upgradeCost: 0
+    levelName: Kabinet Kayu
+    upgradeCost: 55
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: 21300000, guid: 05441caaa81253e4ca66bfbb71ebdc7c, type: 3}
     topdownSprite: {fileID: 3774272932702319956, guid: 05441caaa81253e4ca66bfbb71ebdc7c, type: 3}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
-    boostDescription: 
+    boostDescription: +5% Storage
   - levelIndex: 2
-    levelName: 
-    upgradeCost: 0
+    levelName: Lemari Baja Modern
+    upgradeCost: 95
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: -3266765643022796465, guid: 24484c43e5f94df49a02f3cd96fe6cf8, type: 3}
     topdownSprite: {fileID: -3266765643022796465, guid: 24484c43e5f94df49a02f3cd96fe6cf8, type: 3}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
-    boostDescription: 
-  useFormulaCost: 1
+    boostDescription: +15% Storage & Organization
+  useFormulaCost: 0
   baseCost: 300
   costMultiplier: 1.5
