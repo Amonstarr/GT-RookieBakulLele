@@ -17,10 +17,16 @@ MonoBehaviour:
   itemDescription: Meja kerja utama kantor
   category: 0
   shopIcon: {fileID: 0}
+  defaultLevel: 0
   levels:
   - levelIndex: 1
     levelName: Meja Kayu Standard
     upgradeCost: 200
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: 7442119372556542788, guid: bc2c6253e187e6549bfd14258798f8a2, type: 3}
     topdownSprite: {fileID: 7442119372556542788, guid: bc2c6253e187e6549bfd14258798f8a2, type: 3}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
@@ -28,6 +34,11 @@ MonoBehaviour:
   - levelIndex: 2
     levelName: Meja Ergonomis Modern
     upgradeCost: 500
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: -8642378989369045141, guid: d687c30ffbc9616409dd9c01391825c2, type: 3}
     topdownSprite: {fileID: -8642378989369045141, guid: d687c30ffbc9616409dd9c01391825c2, type: 3}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
@@ -35,6 +46,11 @@ MonoBehaviour:
   - levelIndex: 3
     levelName: Meja Direktur Glass Top
     upgradeCost: 1200
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: -5215388391695264072, guid: 4b902364ee7ccef4d9f4ab017032c908, type: 3}
     topdownSprite: {fileID: -5215388391695264072, guid: 4b902364ee7ccef4d9f4ab017032c908, type: 3}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}

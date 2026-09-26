@@ -17,11 +17,19 @@ MonoBehaviour:
   itemDescription: Mesin kopi area istirahat
   category: 5
   shopIcon: {fileID: 2531523630291291641, guid: 6558335c44f608b4cbd0c283a2aeb5d3, type: 3}
+  defaultLevel: 0
   levels:
   - levelIndex: 1
     levelName: Tekh & Tekan Manual
     upgradeCost: 150
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: 2531523630291291641, guid: 6558335c44f608b4cbd0c283a2aeb5d3, type: 3}
     topdownSprite: {fileID: 2531523630291291641, guid: 6558335c44f608b4cbd0c283a2aeb5d3, type: 3}
+    frontSprite: {fileID: 0}
+    backSprite: {fileID: 0}
     boostDescription: +5% Energy
   useFormulaCost: 0
   baseCost: 100

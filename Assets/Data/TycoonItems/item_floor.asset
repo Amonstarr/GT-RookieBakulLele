@@ -26,6 +26,7 @@ MonoBehaviour:
     wallTile: {fileID: 0}
     wallBawahTile: {fileID: 0}
     floorTile: {fileID: 11400000, guid: 62ca97859f74a1a42983f659e17f7267, type: 2}
+    levelIcon: {fileID: 3586087900285728792, guid: a99bdaf574de9ce40af56bfc6a99b815, type: 3}
     topdownSprite: {fileID: 0}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
@@ -37,6 +38,7 @@ MonoBehaviour:
     wallTile: {fileID: 0}
     wallBawahTile: {fileID: 0}
     floorTile: {fileID: 11400000, guid: 893d9eefb968c8a489a6615da9cf514e, type: 2}
+    levelIcon: {fileID: 5315073545871111437, guid: 3bdc41ee91584584ca3158b86de2839b, type: 3}
     topdownSprite: {fileID: 0}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}

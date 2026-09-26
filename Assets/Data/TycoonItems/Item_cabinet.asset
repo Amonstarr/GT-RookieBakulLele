@@ -17,10 +17,16 @@ MonoBehaviour:
   itemDescription: 
   category: 4
   shopIcon: {fileID: 0}
+  defaultLevel: 0
   levels:
   - levelIndex: 1
     levelName: 
     upgradeCost: 0
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: 21300000, guid: 05441caaa81253e4ca66bfbb71ebdc7c, type: 3}
     topdownSprite: {fileID: 3774272932702319956, guid: 05441caaa81253e4ca66bfbb71ebdc7c, type: 3}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
@@ -28,6 +34,11 @@ MonoBehaviour:
   - levelIndex: 2
     levelName: 
     upgradeCost: 0
+    wallSampingTile: {fileID: 0}
+    wallTile: {fileID: 0}
+    wallBawahTile: {fileID: 0}
+    floorTile: {fileID: 0}
+    levelIcon: {fileID: -3266765643022796465, guid: 24484c43e5f94df49a02f3cd96fe6cf8, type: 3}
     topdownSprite: {fileID: -3266765643022796465, guid: 24484c43e5f94df49a02f3cd96fe6cf8, type: 3}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
