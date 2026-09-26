@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: item_floor
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
   itemId: item_floor
-  itemName: Floor
+  itemName: Floor Office
   itemDescription: Upgrade lantai kantor untuk meningkatkan kenyamanan kerja.
   category: 8
   shopIcon: {fileID: 3586087900285728792, guid: a99bdaf574de9ce40af56bfc6a99b815, type: 3}
@@ -33,7 +33,7 @@ MonoBehaviour:
     boostDescription: Default Floor
   - levelIndex: 2
     levelName: Floor Lvl 2
-    upgradeCost: 500
+    upgradeCost: 60
     wallSampingTile: {fileID: 0}
     wallTile: {fileID: 0}
     wallBawahTile: {fileID: 0}
@@ -43,6 +43,6 @@ MonoBehaviour:
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
     boostDescription: Karpet Premium (+15% HR Multiplier)
-  useFormulaCost: 1
+  useFormulaCost: 0
   baseCost: 500
   costMultiplier: 1.5

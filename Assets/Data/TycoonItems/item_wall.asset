@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: item_wall
   m_EditorClassIdentifier: Assembly-CSharp::Tycoon.Data.OfficeItemSO
   itemId: item_wall
-  itemName: 
-  itemDescription: 
+  itemName: Wall Office
+  itemDescription: Upgrade dinding kantor untuk tampilan kerja yang lebih profesional.
   category: 7
   shopIcon: {fileID: 0}
   defaultLevel: 1
   levels:
   - levelIndex: 1
-    levelName: 1
+    levelName: Dinding Standar
     upgradeCost: 0
     wallSampingTile: {fileID: 11400000, guid: 9ceb300c7fbd4624b90dcfcc4b84046e, type: 2}
     wallTile: {fileID: 11400000, guid: 063435d4e71bf0743ba9771eb0d53afb, type: 2}
@@ -30,10 +30,10 @@ MonoBehaviour:
     topdownSprite: {fileID: 0}
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
-    boostDescription: 
+    boostDescription: Dinding Standar Kantor
   - levelIndex: 2
-    levelName: 2
-    upgradeCost: 0
+    levelName: Dinding Modern
+    upgradeCost: 50
     wallSampingTile: {fileID: 11400000, guid: 9ceb300c7fbd4624b90dcfcc4b84046e, type: 2}
     wallTile: {fileID: 11400000, guid: 063435d4e71bf0743ba9771eb0d53afb, type: 2}
     wallBawahTile: {fileID: 11400000, guid: 3d4843fde464abf4d98e9b0715ba5051, type: 2}
@@ -43,6 +43,6 @@ MonoBehaviour:
     frontSprite: {fileID: 0}
     backSprite: {fileID: 0}
     boostDescription: 
-  useFormulaCost: 1
+  useFormulaCost: 0
   baseCost: 100
   costMultiplier: 1.5

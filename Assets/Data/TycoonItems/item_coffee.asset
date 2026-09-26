@@ -21,7 +21,7 @@ MonoBehaviour:
   levels:
   - levelIndex: 1
     levelName: Tekh & Tekan Manual
-    upgradeCost: 150
+    upgradeCost: 50
     wallSampingTile: {fileID: 0}
     wallTile: {fileID: 0}
     wallBawahTile: {fileID: 0}
