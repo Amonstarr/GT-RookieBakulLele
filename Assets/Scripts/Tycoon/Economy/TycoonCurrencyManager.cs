@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Tycoon.Data;
 
 namespace Tycoon.Economy
 {
@@ -37,8 +38,36 @@ namespace Tycoon.Economy
 
         private void Start()
         {
+            LoadSavedCoins();
             // Trigger initial UI update
             OnCoinsChanged?.Invoke(currentCoins);
+        }
+
+        /// <summary>
+        /// Loads saved coins balance from PlayerPrefs ('Tycoon_SaveData') if available.
+        /// </summary>
+        public void LoadSavedCoins()
+        {
+            if (PlayerPrefs.HasKey("Tycoon_SaveData"))
+            {
+                string json = PlayerPrefs.GetString("Tycoon_SaveData");
+                if (!string.IsNullOrEmpty(json))
+                {
+                    try
+                    {
+                        var data = JsonUtility.FromJson<TycoonSaveData>(json);
+                        if (data != null)
+                        {
+                            currentCoins = data.coins;
+                            Debug.Log($"[TycoonCurrencyManager] Loaded coins from save ('Tycoon_SaveData'): {currentCoins}");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.LogWarning($"[TycoonCurrencyManager] Could not parse save data coins: {ex.Message}");
+                    }
+                }
+            }
         }
 
         /// <summary>
