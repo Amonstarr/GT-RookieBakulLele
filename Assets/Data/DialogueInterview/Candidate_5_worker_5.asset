@@ -16,7 +16,7 @@ MonoBehaviour:
   candidateName: Nathania Alietashya
   candidateBio: Pemalu, tidak malas tidak pula rajin, cepat dalam pekerjaan, tsundere
   defaultPortrait: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
-  cvDocumentSprite: {fileID: -6177258175572825773, guid: 8d78b87807c7a004a918bce6be5a2cbe, type: 3}
+  cvDocumentSprite: {fileID: -6177258175572825773, guid: d332540b80c8a4449b91e8bc08c774a0, type: 3}
   dialogueLines:
   - speakerName: Nathania Alietashya
     dialogueText: Halo... perkenalkan, saya Nathania Alietashya.
