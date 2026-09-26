@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Tycoon.Core;
 using Tycoon.Data;
+using GT.Leaderboard;
 
 namespace Tycoon.UI
 {
@@ -16,9 +17,9 @@ namespace Tycoon.UI
     public class TycoonCharacterUI : MonoBehaviour
     {
         [Header("Selection Limit Settings")]
-        [Tooltip("Batas jumlah karakter yang bisa dipilih (Misal: 2 sekarang, ubah ke 4 nanti lewat Inspector)")]
+        [Tooltip("Batas jumlah karakter yang harus dipilih (Default: 3 karakter, bisa disesuaikan lewat Inspector)")]
         [Range(1, 10)]
-        [SerializeField] private int maxSelectableCharacters = 2;
+        [SerializeField] private int maxSelectableCharacters = 3;
 
         [Header("Darken Visual Style")]
         [Tooltip("Warna saat maskot belum dipilih atau di-unselect (normal)")]
@@ -101,10 +102,10 @@ namespace Tycoon.UI
             // Perbarui Indikator (0/3) & Preview Karakter di Sebelah Kanan
             UpdateSelectionUI(character);
 
-            // Aktifkan tombol confirm jika minimal 1 karakter terpilih
+            // Aktifkan tombol confirm HANYA JIKA pemain sudah memilih tepat sesuai kuota (misal: 3/3)
             if (confirmButton != null)
             {
-                confirmButton.interactable = (selectedCharacters.Count > 0);
+                confirmButton.interactable = (selectedCharacters.Count == maxSelectableCharacters);
             }
         }
 
@@ -193,17 +194,21 @@ namespace Tycoon.UI
 
         /// <summary>
         /// Dipanggil saat tombol Confirm ("PILIH KARAKTER") diklik.
-        /// Mengunci seluruh karakter yang dipilih dan berpindah ke scene Tycoon!
+        /// Menambahkan skor bonus karakter ke Total Skor & Tycoon Coins, mengunci pilihan karakter, dan berpindah ke scene Tycoon!
         /// </summary>
         public void ConfirmAndLoadScene()
         {
-            if (selectedCharacters.Count == 0)
+            // Validasi: Wajib memilih tepat sesuai batas (misal: 3 karakter)
+            if (selectedCharacters.Count < maxSelectableCharacters)
             {
-                Debug.LogWarning("[TycoonCharacterUI] Belum ada karakter yang dipilih!");
+                Debug.LogWarning($"[TycoonCharacterUI] Pemilihan belum lengkap! Wajib memilih {maxSelectableCharacters} karakter sebelum lanjut. (Saat ini: {selectedCharacters.Count})");
                 return;
             }
 
-            // Simpan semua karakter terpilih agar KEDUANYA muncul di Tycoon!
+            // 1. Tambahkan akumulasi skor bonus dari setiap karakter yang dipilih
+            ApplyCharacterScoreBonus(selectedCharacters);
+
+            // 2. Simpan semua karakter terpilih agar muncul di Tycoon
             if (CharacterManager.Instance != null)
             {
                 CharacterManager.Instance.SelectChosenCharacters(selectedCharacters);
@@ -218,6 +223,74 @@ namespace Tycoon.UI
             if (!string.IsNullOrEmpty(targetSceneOnSelect))
             {
                 SceneManager.LoadScene(targetSceneOnSelect);
+            }
+        }
+
+        /// <summary>
+        /// Menghitung bonus skor dari setiap karakter terpilih, lalu mengakumulasikannya ke PlayerPrefs (Total Score),
+        /// kas koin Tycoon, dan papan peringkat (Leaderboard).
+        /// </summary>
+        private void ApplyCharacterScoreBonus(List<CharacterSO> characters)
+        {
+            if (characters == null || characters.Count == 0) return;
+
+            int totalBonus = 0;
+            foreach (var c in characters)
+            {
+                if (c != null)
+                {
+                    totalBonus += c.selectionBonusScore;
+                }
+            }
+
+            if (totalBonus <= 0) return;
+
+            // 1. Akumulasi ke Total Skor Permainan (Dialogue_TotalScore)
+            int currentScore = PlayerPrefs.GetInt("Dialogue_TotalScore", 0);
+            int newTotalScore = currentScore + totalBonus;
+            PlayerPrefs.SetInt("Dialogue_TotalScore", newTotalScore);
+
+            // 2. Akumulasi ke Modal Koin Tycoon (Tycoon_SaveData -> coins)
+            TycoonSaveData data = new TycoonSaveData();
+            if (PlayerPrefs.HasKey("Tycoon_SaveData"))
+            {
+                string json = PlayerPrefs.GetString("Tycoon_SaveData");
+                if (!string.IsNullOrEmpty(json))
+                {
+                    try
+                    {
+                        data = JsonUtility.FromJson<TycoonSaveData>(json) ?? new TycoonSaveData();
+                    }
+                    catch
+                    {
+                        data = new TycoonSaveData();
+                    }
+                }
+            }
+
+            data.coins += totalBonus;
+            string updatedJson = JsonUtility.ToJson(data, true);
+            PlayerPrefs.SetString("Tycoon_SaveData", updatedJson);
+            PlayerPrefs.Save();
+
+            Debug.Log($"[TycoonCharacterUI] Bonus pemilihan {characters.Count} karakter: +{totalBonus} pts! Total skor: {newTotalScore}, Kas koin Tycoon: {data.coins}");
+
+            // 3. Submit ke Leaderboard jika LeaderboardManager tersedia di scene
+            SubmitScoreToLeaderboard(newTotalScore);
+        }
+
+        private async void SubmitScoreToLeaderboard(int finalScore)
+        {
+            if (LeaderboardManager.Instance == null)
+            {
+                Debug.Log("[TycoonCharacterUI] LeaderboardManager tidak ada di scene SelectCharacter, skor tetap tersimpan aman di PlayerPrefs.");
+                return;
+            }
+
+            var entry = await LeaderboardManager.Instance.SubmitScoreAsync(finalScore);
+            if (entry != null)
+            {
+                Debug.Log($"[TycoonCharacterUI] Skor total baru {finalScore} (setelah bonus karakter) terdaftar di leaderboard dengan rank #{entry.Rank}.");
             }
         }
 
