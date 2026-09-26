@@ -155,11 +155,27 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collections": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "version": "2.6.6",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.8.28",
+=======
+      "version": "2.6.5",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.8.27",
+>>>>>>> c4212c65bcccb7433a2baca2a72570c68914e762
+=======
       "version": "2.6.2",
       "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.8.23",
+>>>>>>> d13faaa8c54b2d4ea000ae7ad8fbf44ab665efd8
         "com.unity.mathematics": "1.3.2",
         "com.unity.test-framework": "1.4.6",
         "com.unity.nuget.mono-cecil": "1.11.5",
@@ -310,7 +326,15 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.splines": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+      "version": "2.9.0",
+=======
+      "version": "2.8.4",
+>>>>>>> c4212c65bcccb7433a2baca2a72570c68914e762
+=======
       "version": "2.8.3",
+>>>>>>> d13faaa8c54b2d4ea000ae7ad8fbf44ab665efd8
       "depth": 1,
       "source": "registry",
       "dependencies": {
