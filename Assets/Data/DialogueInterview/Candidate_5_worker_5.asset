@@ -15,24 +15,26 @@ MonoBehaviour:
   candidateId: worker_5
   candidateName: Nathania Alietashya
   candidateBio: Pemalu, tidak malas tidak pula rajin, cepat dalam pekerjaan, tsundere
+  defaultPortrait: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
   defaultPortrait: {fileID: 2607499583252603074, guid: d50bd8bfa2cbd29488a4fe5a10023e85, type: 3}
+  cvDocumentSprite: {fileID: -6177258175572825773, guid: 8d78b87807c7a004a918bce6be5a2cbe, type: 3}
   dialogueLines:
   - speakerName: Nathania Alietashya
     dialogueText: Halo... perkenalkan, saya Nathania Alietashya.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Nathania Alietashya
     dialogueText: Saya banyak berkecimpung di bidang seni dan desain. Senang bisa
       mendapat kesempatan untuk wawancara di sini hari ini.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Nathania Alietashya
     dialogueText: Mohon bantuannya.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -55,19 +57,20 @@ MonoBehaviour:
     isDecisionPoint: 1
     questionTitle: 
     choices:
-    - choiceText: 
-      scoreWeight: 25
-      reactionText: Kalau kamu diminta menyebutkan satu keunggulan yang paling kamu
+    - choiceText: Kalau kamu diminta menyebutkan satu keunggulan yang paling kamu
         percaya dari dirimu, apa itu?
+      reactionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
+      scoreWeight: 25
+      reactionText: 
       reactionSprite: {fileID: 0}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Kalau kamu diminta menyebutkan satu keunggulan yang paling
           kamu percaya dari dirimu, apa itu?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Saya cukup responsif dan cepat dalam menghadapi berbagai situasi.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Biasanya saya bisa memahami apa yang perlu dilakukan dan langsung
           mengerjakannya lebih cepat dibanding kebanyakan orang... termasuk kolega
@@ -76,7 +79,7 @@ MonoBehaviour:
       - speakerName: Nathania Alietashya
         dialogueText: B-bukan bermaksud menyombongkan diri, ya. Memang biasanya seperti
           itu.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     - choiceText: Menurut kamu sendiri, apa kelemahan terbesar yang kamu punya dalam
         bekerja?
       scoreWeight: 15
@@ -89,14 +92,14 @@ MonoBehaviour:
       - speakerName: Nathania Alietashya
         dialogueText: Sejujurnya... saya agak pemalu. Ada beberapa situasi yang membuat
           saya merasa canggung, terutama kalau harus berhadapan dengan orang baru.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 209101240785239822, guid: 71b894e327048b140972ea36e852d99c, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Tapi saya selalu berusaha melewatinya. Saya tidak mau rasa
           canggung itu sampai mengganggu pekerjaan saya.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Jadi... ya, saya masih belajar membiasakan diri
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     - choiceText: Kalau boleh tahu, apa yang membuat kamu tertarik untuk bergabung
         dengan perusahaan ini?
       scoreWeight: 10
@@ -153,12 +156,12 @@ MonoBehaviour:
       - speakerName: Nathania Alietashya
         dialogueText: Saya rasa... saya akan menerimanya dan mencoba mengerjakannya
           sebisa mungkin.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 209101240785239822, guid: 71b894e327048b140972ea36e852d99c, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Kalau memang ada hal yang belum saya pahami, saya akan pelajari
           dulu. Selama masih bisa saya kerjakan, saya tidak keberatan mencoba sesuatu
           di luar bidang saya.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 209101240785239822, guid: 71b894e327048b140972ea36e852d99c, type: 3}
     - choiceText: Jadi, sekadar untuk memastikan... sebenarnya kamu ini femboy atau
         tomboy?
       scoreWeight: 10
@@ -179,10 +182,10 @@ MonoBehaviour:
       - speakerName: Rookie
         dialogueText: Anu... Mas, jadi begini... coba diperhatikan lagi baik-baik.
           Di CV saya sudah tertulis jelas, kan...?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 209101240785239822, guid: 71b894e327048b140972ea36e852d99c, type: 3}
       - speakerName: Rookie
         dialogueText: Kenapa malah tanya langsung begitu sih... b-baka...
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 209101240785239822, guid: 71b894e327048b140972ea36e852d99c, type: 3}
     - choiceText: Menurut kamu, dengan kondisi perusahaan saat ini, apakah kita bisa
         terus berada di posisi yang aman?
       scoreWeight: 25
@@ -192,31 +195,31 @@ MonoBehaviour:
       - speakerName: Rookie
         dialogueText: Menurut kamu, dengan kondisi perusahaan saat ini, apakah kita
           bisa terus berada di posisi yang aman?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Rookie
         dialogueText: Atau ada sesuatu yang menurutmu perlu mulai kita waspadai?
         expressionSprite: {fileID: 0}
       - speakerName: Nathania Alietashya
         dialogueText: Sejujurnya... tidak. Menurut saya, kondisi perusahaan saat
           ini belum bisa dibilang aman.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Arah marketing, branding, bahkan profil perusahaannya sendiri
           masih belum terlihat jelas.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Tapi... justru itu yang membuat saya tertarik. Saya yakin dengan
           kemampuan yang saya punya, saya bisa membantu membalik keadaan.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
   - speakerName: Rookie
     dialogueText: Baiklah, Nathania. Sepertinya kita sudah sampai di penghujung wawancara.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Rookie
     dialogueText: Sekarang, satu pertanyaan terakhir...
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -229,7 +232,7 @@ MonoBehaviour:
     - choiceText: Nathania, tipe kamu itu apa ya?
       scoreWeight: 10
       reactionText: 
-      reactionSprite: {fileID: 0}
+      reactionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
       followUpDialogue:
       - speakerName: Rookie
         dialogueText: Nathania... boleh saya tanya sesuatu yang sedikit di luar topik
@@ -240,16 +243,16 @@ MonoBehaviour:
         expressionSprite: {fileID: 0}
       - speakerName: Nathania Alietashya
         dialogueText: H-heeehhh?! A-anu... kenapa tiba-tiba tanya begitu?!
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 209101240785239822, guid: 71b894e327048b140972ea36e852d99c, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: E-eh... tipe saya itu... p-pokoknya...
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: B-bukan kamu! Jelas bukan kamu!
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: ...Heee-heee... a-aduh, kenapa saya malah jawab begini sih...
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: 209101240785239822, guid: 71b894e327048b140972ea36e852d99c, type: 3}
     - choiceText: Nathania, kalau kamu harus bekerja dalam sebuah tim dengan tugas
         yang berbeda-beda dan deadline yang cukup ketat, apakah kamu sanggup menghadapinya?
       scoreWeight: 15
@@ -260,18 +263,18 @@ MonoBehaviour:
         dialogueText: Nathania, kalau kamu harus bekerja dalam sebuah tim dengan
           tugas yang berbeda-beda dan deadline yang cukup ketat, apakah kamu sanggup
           menghadapinya?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Rookie
         dialogueText: Bagaimana biasanya kamu menyesuaikan diri dalam situasi seperti
           itu?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Dengan kemampuan saya saat ini, saya rasa saya sanggup.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Selama pembagian tugas dan deadline-nya jelas, saya bisa menyesuaikan
           diri dan menyelesaikan bagian saya tepat waktu.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     - choiceText: Nathania, kalau kamu diterima di sini dan diberi kesempatan untuk
         mengubah satu hal dari perusahaan ini, apa yang ingin kamu ubah?
       scoreWeight: 25
@@ -281,13 +284,13 @@ MonoBehaviour:
       - speakerName: Rookie
         dialogueText: Nathania, kalau kamu diterima di sini dan diberi kesempatan
           untuk mengubah satu hal dari perusahaan ini, apa yang ingin kamu ubah?
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
       - speakerName: Rookie
         dialogueText: Jelaskan juga kenapa kamu memilih hal tersebut.
         expressionSprite: {fileID: 0}
       - speakerName: Nathania Alietashya
         dialogueText: Kamu.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Cara pandang kamu soal branding perusahaan masih terasa sangat...
           blur. Padahal kamu leader-nya, jadi seharusnya kamu punya arah yang lebih
@@ -296,15 +299,15 @@ MonoBehaviour:
       - speakerName: Nathania Alietashya
         dialogueText: T-tapi bukan berarti semuanya buruk, ya! Justru karena itu...
           saya ingin membantu.
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -3759278052453944194, guid: 571486a783edd3b47a7af5eccbe5fd01, type: 3}
       - speakerName: Nathania Alietashya
         dialogueText: Kalau saya diterima, saya akan bantu kamu membangun branding
           perusahaan ini sampai punya identitas yang lebih kuat!
-        expressionSprite: {fileID: 0}
+        expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
   - speakerName: Rookie
     dialogueText: Baiklah... saya rasa cukup sampai di sini, Nathania. Terima kasih
       atas jawabannya.
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []

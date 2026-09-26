@@ -16,6 +16,7 @@ MonoBehaviour:
   candidateName: 'Budiyon Los Hermanos '
   candidateBio: Programmer senior yang hobi begadang minum kopi lele.
   defaultPortrait: {fileID: 7598980446433480984, guid: f5aab459f21993d418e27d99016846c1, type: 3}
+  cvDocumentSprite: {fileID: 6625764144035500990, guid: 2b1faca44290df64aa80c3f24f01ee86, type: 3}
   dialogueLines:
   - speakerName: 'Budiyon Los Hermanos '
     dialogueText: Halo, perkenalkan. Aku Budiyon Los Hermanos.

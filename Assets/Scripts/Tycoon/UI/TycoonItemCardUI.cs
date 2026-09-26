@@ -82,13 +82,14 @@ namespace Tycoon.UI
         {
             if (currentItem == null) return;
 
-            // 1. Basic Info
-            if (iconImage != null) iconImage.sprite = currentItem.shopIcon;
-            if (nameText != null) nameText.text = currentItem.itemName;
-            if (descriptionText != null) descriptionText.text = currentItem.itemDescription;
-
             int currentLvl = TycoonManager.Instance != null ? TycoonManager.Instance.GetItemLevel(currentItem) : 0;
             int maxLvl = currentItem.MaxLevel;
+
+            // 1. Basic Info & Next-Level Preview Icon Display
+            int targetPreviewLvl = currentLvl >= maxLvl ? maxLvl : currentLvl + 1;
+            if (iconImage != null) iconImage.sprite = currentItem.GetShopIconForLevel(targetPreviewLvl);
+            if (nameText != null) nameText.text = currentItem.itemName;
+            if (descriptionText != null) descriptionText.text = currentItem.itemDescription;
 
             // 2. Level Display
             if (levelText != null)

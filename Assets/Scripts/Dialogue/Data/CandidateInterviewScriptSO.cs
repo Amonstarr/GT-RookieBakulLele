@@ -25,6 +25,10 @@ namespace GT.Dialogue.Data
         [Tooltip("Pose/portrait netral default saat kandidat pertama kali masuk ruangan wawancara")]
         public Sprite defaultPortrait;
 
+        [Header("Dokumen CV")]
+        [Tooltip("Sprite/gambar berkas CV lengkap kandidat ini yang ditampilkan saat pemain memeriksa kertas di meja")]
+        public Sprite cvDocumentSprite;
+
         [Header("Naskah Dialog & Pertanyaan")]
         [Tooltip("Daftar dialog mengalir kalimat demi kalimat lengkap dengan 3 titik keputusan")]
         public List<DialogueLine> dialogueLines = new List<DialogueLine>();
