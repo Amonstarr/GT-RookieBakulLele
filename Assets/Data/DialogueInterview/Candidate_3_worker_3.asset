@@ -16,7 +16,7 @@ MonoBehaviour:
   candidateName: Sania Pawpaw
   candidateBio: 
   defaultPortrait: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
-  cvDocumentSprite: {fileID: -4419818383429107244, guid: b8a5ce46d5914d3489ad8b987b47a009, type: 3}
+  cvDocumentSprite: {fileID: -4419818383429107244, guid: dcb48ff9a12b9c34985938e12d0305ec, type: 3}
   dialogueLines:
   - speakerName: Sania Pawpaw
     dialogueText: Permisi. Ara ara... postur dudukmu kaku sekali. Kelihatan sekali
