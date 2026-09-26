@@ -17,6 +17,7 @@ MonoBehaviour:
   jobTitle: Senior Developer
   bio: 
   avatarIcon: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
+  selectionBonusScore: 98
   standingSprite: {fileID: 0}
   sittingSprite: {fileID: 4094725881293303353, guid: f4543cce37305a6469942401d6a222cb, type: 3}
   idleSprites:

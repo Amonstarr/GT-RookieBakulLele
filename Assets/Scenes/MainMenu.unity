@@ -1871,7 +1871,10 @@ MonoBehaviour:
   audioMixer: {fileID: 24100000, guid: 2116a07d01a84724ba2cff2845f6abdd, type: 2}
   bgmParam: BGMVolume
   sfxParam: SFXVolume
+  bgmMixerGroupName: BGM
   sfxMixerGroupName: SFX
+  bgmClip: {fileID: 8300000, guid: 45cd82da60bdb91478a18ae121dde0a3, type: 3}
+  autoPlayBGM: 1
   defaultButtonClickClip: {fileID: 8300000, guid: 740191ad8b27a9c42a3fb80166a4476c, type: 3}
 --- !u!114 &633957825
 MonoBehaviour:
