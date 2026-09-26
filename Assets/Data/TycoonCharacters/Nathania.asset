@@ -18,8 +18,31 @@ MonoBehaviour:
   bio: 
   avatarIcon: {fileID: -1564283867416368561, guid: 864b1f993533d664c94e04aba1bdb7c4, type: 3}
   standingSprite: {fileID: 0}
-  sittingSprite: {fileID: 0}
+  sittingSprite: {fileID: 4094725881293303353, guid: f4543cce37305a6469942401d6a222cb, type: 3}
+  idleSprites:
+  - {fileID: 2775072521437872244, guid: 7510f1b2b27083c45bdfe50034418f72, type: 3}
+  - {fileID: -3746898687314489135, guid: 7510f1b2b27083c45bdfe50034418f72, type: 3}
+  - {fileID: 8270928285788466936, guid: 7510f1b2b27083c45bdfe50034418f72, type: 3}
+  walkHorizontalSprites:
+  - {fileID: 8795608652920213377, guid: 5b2016260e7e1e342937ebc6a1da2ff2, type: 3}
+  - {fileID: -1042752522289218972, guid: 5b2016260e7e1e342937ebc6a1da2ff2, type: 3}
+  - {fileID: 51223931582811127, guid: 5b2016260e7e1e342937ebc6a1da2ff2, type: 3}
+  - {fileID: 5504222930760996925, guid: 5b2016260e7e1e342937ebc6a1da2ff2, type: 3}
+  - {fileID: -77970978497884454, guid: 5b2016260e7e1e342937ebc6a1da2ff2, type: 3}
+  walkUpSprites:
+  - {fileID: -2991979034574515621, guid: 0808ffac5c774cc4d9ee3cafe27ee9a3, type: 3}
+  - {fileID: -133299225117137794, guid: 0808ffac5c774cc4d9ee3cafe27ee9a3, type: 3}
+  - {fileID: -6630429042768499723, guid: 0808ffac5c774cc4d9ee3cafe27ee9a3, type: 3}
+  - {fileID: 7861747877327353991, guid: 0808ffac5c774cc4d9ee3cafe27ee9a3, type: 3}
+  - {fileID: -8425662042186036768, guid: 0808ffac5c774cc4d9ee3cafe27ee9a3, type: 3}
+  walkDownSprites:
+  - {fileID: 1790057757100615909, guid: bcbc8604ef3c1d542abb0a7b4bac308f, type: 3}
+  - {fileID: -2341038615350533445, guid: bcbc8604ef3c1d542abb0a7b4bac308f, type: 3}
+  - {fileID: 3934013892131807418, guid: bcbc8604ef3c1d542abb0a7b4bac308f, type: 3}
+  - {fileID: 8912063630902006496, guid: bcbc8604ef3c1d542abb0a7b4bac308f, type: 3}
+  - {fileID: 1868505694, guid: bcbc8604ef3c1d542abb0a7b4bac308f, type: 3}
   walkingSprites: []
+  animationFrameRate: 10
   baseWalkSpeed: 2.2
   maxStamina: 100
   staminaDepletionRate: 2

@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 77a189de12308c740a1a3d7915c15635
+guid: 027621f48509eee40b1e2a6afe0b161b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4338607630531161427
-    second: Budiyon Walk Up_0
+      213: -3016985419893698695
+    second: Alstena Walk Down_0
   - first:
-      213: 2050514804417496790
-    second: Budiyon Walk Up_1
+      213: 2869758777639277022
+    second: Alstena Walk Down_1
   - first:
-      213: -9203625567729000293
-    second: Budiyon Walk Up_2
+      213: -2421228835941983642
+    second: Alstena Walk Down_2
   - first:
-      213: -8961544388131446849
-    second: Budiyon Walk Up_3
+      213: 261585994120171211
+    second: Alstena Walk Down_3
   - first:
-      213: -4876324691810609680
-    second: Budiyon Walk Up_4
+      213: -1462634883235146677
+    second: Alstena Walk Down_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,79 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Budiyon Walk Up_0
+      name: Alstena Walk Down_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 32
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da21462d85b2ac3c0800000000000000
-      internalID: -4338607630531161427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 8
-        width: 31
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d60cfbb954e47c10800000000000000
-      internalID: 2050514804417496790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_2
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 7
-        width: 33
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b906fcd1f47264080800000000000000
-      internalID: -9203625567729000293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_3
-      rect:
-        serializedVersion: 2
-        x: 120
+        x: 0
         y: 6
-        width: 35
-        height: 51
+        width: 42
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbf978afbd232a380800000000000000
-      internalID: -8961544388131446849
+      spriteID: 97f04baceb38126d0800000000000000
+      internalID: -3016985419893698695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_4
+      name: Alstena Walk Down_1
       rect:
         serializedVersion: 2
-        x: 158
-        y: 7
-        width: 32
-        height: 51
+        x: 38
+        y: 6
+        width: 42
+        height: 54
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +175,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f599275780d35cb0800000000000000
-      internalID: -4876324691810609680
+      spriteID: ed19f34576e63d720800000000000000
+      internalID: 2869758777639277022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alstena Walk Down_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 6
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66adeb1b331166ed0800000000000000
+      internalID: -2421228835941983642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alstena Walk Down_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 6
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce00c1631751a300800000000000000
+      internalID: 261585994120171211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alstena Walk Down_4
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 6
+        width: 37
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b449ca4b25da3bbe0800000000000000
+      internalID: -1462634883235146677
       vertices: []
       indices: 
       edges: []
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c2859d60828fab4ea485c532e31cdea
+    spriteID: 504fb2e6905c89d4f9d6f1ac2c26c28f
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Budiyon Walk Up_0: -4338607630531161427
-      Budiyon Walk Up_1: 2050514804417496790
-      Budiyon Walk Up_2: -9203625567729000293
-      Budiyon Walk Up_3: -8961544388131446849
-      Budiyon Walk Up_4: -4876324691810609680
+      Alstena Walk Down_0: -3016985419893698695
+      Alstena Walk Down_1: 2869758777639277022
+      Alstena Walk Down_2: -2421228835941983642
+      Alstena Walk Down_3: 261585994120171211
+      Alstena Walk Down_4: -1462634883235146677
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

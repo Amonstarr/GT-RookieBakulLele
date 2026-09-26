@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 77a189de12308c740a1a3d7915c15635
+guid: 01f29b7a20af1f14587dc3bd41803a66
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4338607630531161427
-    second: Budiyon Walk Up_0
+      213: -3138879023593550673
+    second: Jimny Walk Up_0
   - first:
-      213: 2050514804417496790
-    second: Budiyon Walk Up_1
+      213: 5496970315198782599
+    second: Jimny Walk Up_1
   - first:
-      213: -9203625567729000293
-    second: Budiyon Walk Up_2
+      213: 8099351865896111683
+    second: Jimny Walk Up_2
   - first:
-      213: -8961544388131446849
-    second: Budiyon Walk Up_3
+      213: 6286013330464521920
+    second: Jimny Walk Up_3
   - first:
-      213: -4876324691810609680
-    second: Budiyon Walk Up_4
+      213: -7949261728276138755
+    second: Jimny Walk Up_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,57 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Budiyon Walk Up_0
+      name: Jimny Walk Up_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 32
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da21462d85b2ac3c0800000000000000
-      internalID: -4338607630531161427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 8
-        width: 31
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d60cfbb954e47c10800000000000000
-      internalID: 2050514804417496790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_2
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 7
+        x: 7
+        y: 3
         width: 33
-        height: 51
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b906fcd1f47264080800000000000000
-      internalID: -9203625567729000293
+      spriteID: fac08c598267074d0800000000000000
+      internalID: -3138879023593550673
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_3
+      name: Jimny Walk Up_1
       rect:
         serializedVersion: 2
-        x: 120
-        y: 6
-        width: 35
-        height: 51
+        x: 44
+        y: 3
+        width: 33
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbf978afbd232a380800000000000000
-      internalID: -8961544388131446849
+      spriteID: 78c5a42a069294c40800000000000000
+      internalID: 5496970315198782599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_4
+      name: Jimny Walk Up_2
       rect:
         serializedVersion: 2
-        x: 158
-        y: 7
-        width: 32
-        height: 51
+        x: 82
+        y: 3
+        width: 33
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +197,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f599275780d35cb0800000000000000
-      internalID: -4876324691810609680
+      spriteID: 34e82ad1c9da66070800000000000000
+      internalID: 8099351865896111683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jimny Walk Up_3
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 3
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce35bfb1d76c3750800000000000000
+      internalID: 6286013330464521920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jimny Walk Up_4
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 3
+        width: 33
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df43e7b339c8ea190800000000000000
+      internalID: -7949261728276138755
       vertices: []
       indices: 
       edges: []
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c2859d60828fab4ea485c532e31cdea
+    spriteID: 33e9add5fca2ec840855b29049b85055
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Budiyon Walk Up_0: -4338607630531161427
-      Budiyon Walk Up_1: 2050514804417496790
-      Budiyon Walk Up_2: -9203625567729000293
-      Budiyon Walk Up_3: -8961544388131446849
-      Budiyon Walk Up_4: -4876324691810609680
+      Jimny Walk Up_0: -3138879023593550673
+      Jimny Walk Up_1: 5496970315198782599
+      Jimny Walk Up_2: 8099351865896111683
+      Jimny Walk Up_3: 6286013330464521920
+      Jimny Walk Up_4: -7949261728276138755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

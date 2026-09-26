@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 77a189de12308c740a1a3d7915c15635
+guid: 3b7aeafeadc234843905e59db38c2493
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4338607630531161427
-    second: Budiyon Walk Up_0
+      213: 2567175483361071666
+    second: Jimny Walk Horizontal_0
   - first:
-      213: 2050514804417496790
-    second: Budiyon Walk Up_1
+      213: 5929866801100728511
+    second: Jimny Walk Horizontal_1
   - first:
-      213: -9203625567729000293
-    second: Budiyon Walk Up_2
+      213: -7630950788771468285
+    second: Jimny Walk Horizontal_2
   - first:
-      213: -8961544388131446849
-    second: Budiyon Walk Up_3
+      213: 4266277417768063501
+    second: Jimny Walk Horizontal_3
   - first:
-      213: -4876324691810609680
-    second: Budiyon Walk Up_4
+      213: 3910441754904013615
+    second: Jimny Walk Horizontal_4
+  - first:
+      213: -4543638908367199756
+    second: Jimny Walk Horizontal_5
+  - first:
+      213: -3619962822819885228
+    second: Jimny Walk Horizontal_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,13 +144,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Budiyon Walk Up_0
+      name: Jimny Walk Horizontal_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 32
-        height: 51
+        x: 2
+        y: 3
+        width: 41
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +159,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da21462d85b2ac3c0800000000000000
-      internalID: -4338607630531161427
+      spriteID: 23214d9208070a320800000000000000
+      internalID: 2567175483361071666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_1
+      name: Jimny Walk Horizontal_3
       rect:
         serializedVersion: 2
-        x: 42
-        y: 8
-        width: 31
-        height: 51
+        x: 116
+        y: 3
+        width: 41
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,42 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d60cfbb954e47c10800000000000000
-      internalID: 2050514804417496790
+      spriteID: d02165f25bcd43b30800000000000000
+      internalID: 4266277417768063501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_2
+      name: Jimny Walk Horizontal_4
       rect:
         serializedVersion: 2
-        x: 79
-        y: 7
-        width: 33
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b906fcd1f47264080800000000000000
-      internalID: -9203625567729000293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 6
+        x: 156
+        y: 3
         width: 35
-        height: 51
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbf978afbd232a380800000000000000
-      internalID: -8961544388131446849
+      spriteID: f2ba8e3ce0ea44630800000000000000
+      internalID: 3910441754904013615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_4
+      name: Jimny Walk Horizontal_5
       rect:
         serializedVersion: 2
-        x: 158
-        y: 7
-        width: 32
-        height: 51
+        x: 41
+        y: 2
+        width: 36
+        height: 57
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,8 +225,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f599275780d35cb0800000000000000
-      internalID: -4876324691810609680
+      spriteID: 4f1212f6c70c1f0c0800000000000000
+      internalID: -4543638908367199756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jimny Walk Horizontal_6
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 3
+        width: 36
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45f43b5fdfe43cdc0800000000000000
+      internalID: -3619962822819885228
       vertices: []
       indices: 
       edges: []
@@ -251,7 +257,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c2859d60828fab4ea485c532e31cdea
+    spriteID: 2a098a254e0624547ac2bb24ad70566d
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +267,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Budiyon Walk Up_0: -4338607630531161427
-      Budiyon Walk Up_1: 2050514804417496790
-      Budiyon Walk Up_2: -9203625567729000293
-      Budiyon Walk Up_3: -8961544388131446849
-      Budiyon Walk Up_4: -4876324691810609680
+      Jimny Walk Horizontal_0: 2567175483361071666
+      Jimny Walk Horizontal_1: 5929866801100728511
+      Jimny Walk Horizontal_2: -7630950788771468285
+      Jimny Walk Horizontal_3: 4266277417768063501
+      Jimny Walk Horizontal_4: 3910441754904013615
+      Jimny Walk Horizontal_5: -4543638908367199756
+      Jimny Walk Horizontal_6: -3619962822819885228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

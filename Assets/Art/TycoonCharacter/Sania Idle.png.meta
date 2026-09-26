@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: 77a189de12308c740a1a3d7915c15635
+guid: 3669fbdca3b9d1e4a9299e9ea514dd16
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4338607630531161427
-    second: Budiyon Walk Up_0
+      213: 7705915221498388331
+    second: Sania Idle_0
   - first:
-      213: 2050514804417496790
-    second: Budiyon Walk Up_1
+      213: -6928444765254601632
+    second: Sania Idle_1
   - first:
-      213: -9203625567729000293
-    second: Budiyon Walk Up_2
-  - first:
-      213: -8961544388131446849
-    second: Budiyon Walk Up_3
-  - first:
-      213: -4876324691810609680
-    second: Budiyon Walk Up_4
+      213: -7846857484772082410
+    second: Sania Idle_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Budiyon Walk Up_0
+      name: Sania Idle_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 32
-        height: 51
+        x: 26
+        y: 2
+        width: 46
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +147,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da21462d85b2ac3c0800000000000000
-      internalID: -4338607630531161427
+      spriteID: b6fdfa6f019e0fa60800000000000000
+      internalID: 7705915221498388331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_1
+      name: Sania Idle_1
       rect:
         serializedVersion: 2
-        x: 42
-        y: 8
-        width: 31
-        height: 51
+        x: 74
+        y: 2
+        width: 44
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,20 +169,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d60cfbb954e47c10800000000000000
-      internalID: 2050514804417496790
+      spriteID: 064b519c13839df90800000000000000
+      internalID: -6928444765254601632
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_2
+      name: Sania Idle_2
       rect:
         serializedVersion: 2
-        x: 79
-        y: 7
-        width: 33
-        height: 51
+        x: 119
+        y: 2
+        width: 46
+        height: 58
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,52 +191,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b906fcd1f47264080800000000000000
-      internalID: -9203625567729000293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 6
-        width: 35
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbf978afbd232a380800000000000000
-      internalID: -8961544388131446849
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_4
-      rect:
-        serializedVersion: 2
-        x: 158
-        y: 7
-        width: 32
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f599275780d35cb0800000000000000
-      internalID: -4876324691810609680
+      spriteID: 61d7b0921bc5a1390800000000000000
+      internalID: -7846857484772082410
       vertices: []
       indices: 
       edges: []
@@ -251,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c2859d60828fab4ea485c532e31cdea
+    spriteID: 5f00cc6391f60444e89c31827387f6cb
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Budiyon Walk Up_0: -4338607630531161427
-      Budiyon Walk Up_1: 2050514804417496790
-      Budiyon Walk Up_2: -9203625567729000293
-      Budiyon Walk Up_3: -8961544388131446849
-      Budiyon Walk Up_4: -4876324691810609680
+      Sania Idle_0: 7705915221498388331
+      Sania Idle_1: -6928444765254601632
+      Sania Idle_2: -7846857484772082410
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

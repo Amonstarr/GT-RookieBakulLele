@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 77a189de12308c740a1a3d7915c15635
+guid: c58c7e665e9348b43946efb71a1fccb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4338607630531161427
-    second: Budiyon Walk Up_0
+      213: -1504104596376132046
+    second: Wendy Walk_0
   - first:
-      213: 2050514804417496790
-    second: Budiyon Walk Up_1
+      213: 3214257827081502389
+    second: Wendy Walk_1
   - first:
-      213: -9203625567729000293
-    second: Budiyon Walk Up_2
+      213: -6235059967120596403
+    second: Wendy Walk_2
   - first:
-      213: -8961544388131446849
-    second: Budiyon Walk Up_3
+      213: -3895348555983579353
+    second: Wendy Walk_3
   - first:
-      213: -4876324691810609680
-    second: Budiyon Walk Up_4
+      213: -164320552697275405
+    second: Wendy Walk_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,111 +138,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Budiyon Walk Up_0
+      name: Wendy Walk_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 32
-        height: 51
+        x: 2
+        y: 3
+        width: 38
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da21462d85b2ac3c0800000000000000
-      internalID: -4338607630531161427
+      spriteID: 236e7f3b6d8502be0800000000000000
+      internalID: -1504104596376132046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_1
+      name: Wendy Walk_1
       rect:
         serializedVersion: 2
-        x: 42
-        y: 8
-        width: 31
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d60cfbb954e47c10800000000000000
-      internalID: 2050514804417496790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_2
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 7
-        width: 33
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b906fcd1f47264080800000000000000
-      internalID: -9203625567729000293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 6
+        x: 39
+        y: 5
         width: 35
-        height: 51
+        height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbf978afbd232a380800000000000000
-      internalID: -8961544388131446849
+      spriteID: 5be36bfb6765b9c20800000000000000
+      internalID: 3214257827081502389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_4
+      name: Wendy Walk_2
       rect:
         serializedVersion: 2
-        x: 158
-        y: 7
-        width: 32
-        height: 51
+        x: 78
+        y: 5
+        width: 34
+        height: 50
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f599275780d35cb0800000000000000
-      internalID: -4876324691810609680
+      spriteID: d42a482aefd9879a0800000000000000
+      internalID: -6235059967120596403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wendy Walk_3
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 5
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72794447021f0f9c0800000000000000
+      internalID: -3895348555983579353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wendy Walk_4
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 6
+        width: 34
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fbde23f35738bdf0800000000000000
+      internalID: -164320552697275405
       vertices: []
       indices: 
       edges: []
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c2859d60828fab4ea485c532e31cdea
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Budiyon Walk Up_0: -4338607630531161427
-      Budiyon Walk Up_1: 2050514804417496790
-      Budiyon Walk Up_2: -9203625567729000293
-      Budiyon Walk Up_3: -8961544388131446849
-      Budiyon Walk Up_4: -4876324691810609680
+      Wendy Walk_0: -1504104596376132046
+      Wendy Walk_1: 3214257827081502389
+      Wendy Walk_2: -6235059967120596403
+      Wendy Walk_3: -3895348555983579353
+      Wendy Walk_4: -164320552697275405
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

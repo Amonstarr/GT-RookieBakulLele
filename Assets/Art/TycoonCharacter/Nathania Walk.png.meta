@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: 77a189de12308c740a1a3d7915c15635
+guid: 5b2016260e7e1e342937ebc6a1da2ff2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4338607630531161427
-    second: Budiyon Walk Up_0
+      213: 8795608652920213377
+    second: Nathania Walk_0
   - first:
-      213: 2050514804417496790
-    second: Budiyon Walk Up_1
+      213: -1042752522289218972
+    second: Nathania Walk_1
   - first:
-      213: -9203625567729000293
-    second: Budiyon Walk Up_2
+      213: 51223931582811127
+    second: Nathania Walk_2
   - first:
-      213: -8961544388131446849
-    second: Budiyon Walk Up_3
+      213: 5504222930760996925
+    second: Nathania Walk_3
   - first:
-      213: -4876324691810609680
-    second: Budiyon Walk Up_4
+      213: -77970978497884454
+    second: Nathania Walk_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,111 +138,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Budiyon Walk Up_0
+      name: Nathania Walk_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 32
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da21462d85b2ac3c0800000000000000
-      internalID: -4338607630531161427
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_1
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 8
-        width: 31
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d60cfbb954e47c10800000000000000
-      internalID: 2050514804417496790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_2
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 7
-        width: 33
-        height: 51
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b906fcd1f47264080800000000000000
-      internalID: -9203625567729000293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Budiyon Walk Up_3
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 6
+        x: 4
+        y: 2
         width: 35
         height: 51
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fbf978afbd232a380800000000000000
-      internalID: -8961544388131446849
+      spriteID: 18f49acf777401a70800000000000000
+      internalID: 8795608652920213377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Budiyon Walk Up_4
+      name: Nathania Walk_1
       rect:
         serializedVersion: 2
-        x: 158
-        y: 7
-        width: 32
-        height: 51
+        x: 41
+        y: 2
+        width: 35
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0f599275780d35cb0800000000000000
-      internalID: -4876324691810609680
+      spriteID: 46afe401b166781f0800000000000000
+      internalID: -1042752522289218972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nathania Walk_2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 2
+        width: 37
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fb0ef5f4ebf5b000800000000000000
+      internalID: 51223931582811127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nathania Walk_3
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 1
+        width: 37
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d389198c79de26c40800000000000000
+      internalID: 5504222930760996925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nathania Walk_4
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 2
+        width: 36
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade08d3eecdfaeef0800000000000000
+      internalID: -77970978497884454
       vertices: []
       indices: 
       edges: []
@@ -251,7 +251,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5c2859d60828fab4ea485c532e31cdea
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -261,11 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Budiyon Walk Up_0: -4338607630531161427
-      Budiyon Walk Up_1: 2050514804417496790
-      Budiyon Walk Up_2: -9203625567729000293
-      Budiyon Walk Up_3: -8961544388131446849
-      Budiyon Walk Up_4: -4876324691810609680
+      Nathania Walk_0: 8795608652920213377
+      Nathania Walk_1: -1042752522289218972
+      Nathania Walk_2: 51223931582811127
+      Nathania Walk_3: 5504222930760996925
+      Nathania Walk_4: -77970978497884454
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
