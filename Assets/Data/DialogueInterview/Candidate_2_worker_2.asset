@@ -1,660 +1,312 @@
-{
-  "dependencies": {
-    "com.unity.2d.animation": {
-      "version": "13.0.5",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.3",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.collections": "2.4.3",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.uielements": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.aseprite": {
-      "version": "3.0.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.3",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.mathematics": "1.2.6",
-        "com.unity.modules.animation": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.common": {
-      "version": "12.0.4",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.burst": "1.8.4",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.collections": "2.4.3",
-        "com.unity.mathematics": "1.1.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.uielements": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.pixel-perfect": {
-      "version": "5.1.1",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.imgui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.psdimporter": {
-      "version": "12.0.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.3",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.tilemap": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.sprite": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.2d.spriteshape": {
-      "version": "13.0.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.0",
-        "com.unity.mathematics": "1.1.0",
-        "com.unity.modules.physics2d": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.tilemap": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.tilemap": "1.0.0",
-        "com.unity.modules.uielements": "1.0.0"
-      }
-    },
-    "com.unity.2d.tilemap.extras": {
-      "version": "6.0.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.modules.tilemap": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.2d.tooling": {
-      "version": "1.0.4",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.common": "12.0.4",
-        "com.unity.modules.uielements": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ai.navigation": {
-      "version": "2.0.13",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.ai": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.analytics": {
-      "version": "3.8.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.services.analytics": "1.0.4"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.burst": {
-      "version": "1.8.28",
-      "depth": 3,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.1",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.cinemachine": {
-      "version": "3.1.7",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.splines": "2.0.0",
-        "com.unity.modules.imgui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.collab-proxy": {
-      "version": "2.12.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.collections": {
-      "version": "2.6.6",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.burst": "1.8.28",
-        "com.unity.mathematics": "1.3.2",
-        "com.unity.test-framework": "1.4.6",
-        "com.unity.nuget.mono-cecil": "1.11.5",
-        "com.unity.test-framework.performance": "3.0.3"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ext.nunit": {
-      "version": "2.0.5",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.feature.2d": {
-      "version": "2.0.2",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.2d.animation": "13.0.5",
-        "com.unity.2d.pixel-perfect": "5.1.1",
-        "com.unity.2d.psdimporter": "12.0.2",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.spriteshape": "13.0.0",
-        "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.2d.tilemap.extras": "6.0.2",
-        "com.unity.2d.aseprite": "3.0.2",
-        "com.unity.2d.tooling": "1.0.4"
-      }
-    },
-    "com.unity.ide.rider": {
-      "version": "3.0.40",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ext.nunit": "1.0.6"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ide.visualstudio": {
-      "version": "2.0.26",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.test-framework": "1.1.33"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.inputsystem": {
-      "version": "1.19.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.uielements": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.mathematics": {
-      "version": "1.3.3",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.multiplayer.center": {
-      "version": "1.0.1",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.uielements": "1.0.0"
-      }
-    },
-    "com.unity.nuget.mono-cecil": {
-      "version": "1.11.6",
-      "depth": 3,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.nuget.newtonsoft-json": {
-      "version": "3.2.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.purchasing": {
-      "version": "4.15.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.services.core": "1.12.5",
-        "com.unity.modules.androidjni": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.services.analytics": {
-      "version": "6.2.2",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.services.core": "1.16.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.services.authentication": {
-      "version": "3.8.0",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.services.core": "1.18.0",
-        "com.unity.nuget.newtonsoft-json": "3.2.2",
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.services.core": {
-      "version": "1.18.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.androidjni": "1.0.0",
-        "com.unity.nuget.newtonsoft-json": "3.2.2",
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.services.leaderboards": {
-      "version": "2.3.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.services.core": "1.15.1",
-        "com.unity.services.authentication": "3.3.3"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.settings-manager": {
-      "version": "2.1.1",
-      "depth": 2,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.splines": {
-      "version": "2.9.0",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.mathematics": "1.2.1",
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.settings-manager": "1.0.3"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.test-framework": {
-      "version": "1.6.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.ext.nunit": "2.0.3",
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      }
-    },
-    "com.unity.test-framework.performance": {
-      "version": "3.2.0",
-      "depth": 3,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.test-framework": "1.1.33",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.timeline": {
-      "version": "1.8.12",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.director": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.particlesystem": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.ugui": {
-      "version": "2.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.ui": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0"
-      }
-    },
-    "com.unity.visualscripting": {
-      "version": "1.9.11",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.legacyinputhelpers": {
-      "version": "2.1.13",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.vr": "1.0.0",
-        "com.unity.modules.xr": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.modules.accessibility": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.adaptiveperformance": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.subsystems": "1.0.0"
-      }
-    },
-    "com.unity.modules.ai": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.androidjni": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.animation": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.assetbundle": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.audio": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.cloth": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0"
-      }
-    },
-    "com.unity.modules.director": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.animation": "1.0.0"
-      }
-    },
-    "com.unity.modules.hierarchycore": {
-      "version": "1.0.0",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.imageconversion": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.imgui": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.jsonserialize": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.particlesystem": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.physics": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.physics2d": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.screencapture": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.imageconversion": "1.0.0"
-      }
-    },
-    "com.unity.modules.subsystems": {
-      "version": "1.0.0",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.jsonserialize": "1.0.0"
-      }
-    },
-    "com.unity.modules.terrain": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.terrainphysics": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.terrain": "1.0.0"
-      }
-    },
-    "com.unity.modules.tilemap": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics2d": "1.0.0"
-      }
-    },
-    "com.unity.modules.ui": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.uielements": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.ui": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.hierarchycore": "1.0.0",
-        "com.unity.modules.physics": "1.0.0"
-      }
-    },
-    "com.unity.modules.umbra": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.unityanalytics": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0"
-      }
-    },
-    "com.unity.modules.unitywebrequest": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.unitywebrequestassetbundle": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.assetbundle": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      }
-    },
-    "com.unity.modules.unitywebrequestaudio": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.audio": "1.0.0"
-      }
-    },
-    "com.unity.modules.unitywebrequesttexture": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0"
-      }
-    },
-    "com.unity.modules.unitywebrequestwww": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.unitywebrequest": "1.0.0",
-        "com.unity.modules.unitywebrequestassetbundle": "1.0.0",
-        "com.unity.modules.unitywebrequestaudio": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.assetbundle": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0"
-      }
-    },
-    "com.unity.modules.vectorgraphics": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.uielements": "1.0.0",
-        "com.unity.modules.imageconversion": "1.0.0",
-        "com.unity.modules.imgui": "1.0.0"
-      }
-    },
-    "com.unity.modules.vehicles": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0"
-      }
-    },
-    "com.unity.modules.video": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.ui": "1.0.0",
-        "com.unity.modules.unitywebrequest": "1.0.0"
-      }
-    },
-    "com.unity.modules.vr": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.xr": "1.0.0"
-      }
-    },
-    "com.unity.modules.wind": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.xr": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.subsystems": "1.0.0"
-      }
-    }
-  }
-}
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c60c8e966f79564ba165beefdd93b01, type: 3}
+  m_Name: Candidate_2_worker_2
+  m_EditorClassIdentifier: Assembly-CSharp::GT.Dialogue.Data.CandidateInterviewScriptSO
+  candidateId: worker_2
+  candidateName: Wendy
+  candidateBio: Designer perfeksionis yang alergi layout miring.
+  defaultPortrait: {fileID: 340493152281059553, guid: 11183fa3942edbc44a1138532b1352e0, type: 3}
+  cvDocumentSprite: {fileID: 368163786862667617, guid: a221734b402e4cc40976a43c21069e44, type: 3}
+  dialogueLines:
+  - speakerName: Wendy
+    dialogueText: Permisi... araa, kamu kelihatan agak lelah. Kamu sudah sempat istirahat?
+    expressionSprite: {fileID: 21300000, guid: 3a40ff5be94c45d4e86faf186354bf9b, type: 3}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Wendy
+    dialogueText: Mungkin aku percepat saja perkenalannya, ya. Namaku Wendy. Aku
+      memang masih baru di bidang ini, tapi aku cukup bersemangat untuk belajar dan
+      menekuninya
+    expressionSprite: {fileID: 340493152281059553, guid: 15e689f2002973248a67cc9b2cd931e3, type: 3}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Terima kasih sudah mengerti. Kalau begitu, mungkin kita bisa langsung
+      mulai saja, ya?
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Kalau boleh tahu, kontribusi apa yang bisa kamu berikan untuk perusahaan
+        ini, mengingat kamu masih cukup awam di bidang yang kamu lamar?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau boleh tahu, kontribusi apa yang bisa kamu berikan untuk
+          perusahaan ini, mengingat kamu masih cukup awam di bidang yang kamu lamar?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Anuuu... aku punya semangat belajar yang tinggi dan juga cukup
+          mudah bergaul dengan orang baru.
+        expressionSprite: {fileID: 4484487495128855409, guid: 382fa15454216fe46a90143eafd9217e, type: 3}
+      - speakerName: Wendy
+        dialogueText: Walaupun masih pemula, sebelumnya aku pernah ikut bootcamp,
+          kok. Jadi... aku nggak benar-benar mulai dari nol, hehe.
+        expressionSprite: {fileID: 340493152281059553, guid: 15e689f2002973248a67cc9b2cd931e3, type: 3}
+    - choiceText: Kalau dilihat dari CV-mu, sepertinya kamu agak salah melamar posisi,
+        deh. Pengalamanmu lebih banyak mengarah ke marketing. Sementara saat ini,
+        kami sedang nggak mencari marketing crew.
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau dilihat dari CV-mu, sepertinya kamu agak salah melamar
+          posisi, deh. Pengalamanmu lebih banyak mengarah ke marketing. Sementara
+          saat ini, kami sedang nggak mencari marketing crew.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Waduhhh... aku salah kasih CV! Maaf banget, ya!
+        expressionSprite: {fileID: 21300000, guid: c0d3412e321644d468bdd8dbe5aad8c9, type: 3}
+      - speakerName: Wendy
+        dialogueText: Yang ini CV-ku untuk posisi staf di sini. Memang pengalamanku
+          masih kelihatan sedikit, tapi aku sudah ikut beberapa bootcamp yang berkaitan
+          dengan posisi ini, kok.
+        expressionSprite: {fileID: 340493152281059553, guid: 11183fa3942edbc44a1138532b1352e0, type: 3}
+    - choiceText: Kamu kelihatannya cukup ceria, ya. Apa memang selalu seperti ini?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kamu kelihatannya cukup ceria, ya. Apa memang selalu seperti
+          ini?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Biasanya aku nggak selalu seceria ini, kok. Tapi entah kenapa,
+          pas lihat kamu rasanya jadi lebih santai aja, hehe.
+        expressionSprite: {fileID: -1351012151645836446, guid: 6a3767ae0e53b034cb17e01a4a8f2cc4, type: 3}
+      - speakerName: Wendy
+        dialogueText: Oh, iya! Aku tadi bawa beberapa kue. Kamu mau? Anggap saja
+          teman buat nemenin interview kita.
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
+  - speakerName: Rookie
+    dialogueText: Baiklah, mungkin kita lanjutkan wawancara dulu, ya?
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: 'Kamu bilang sebelumnya pernah ikut beberapa bootcamp, kan?
+
+        Kalau
+        boleh, aku bisa lihat sertifikatnya?'
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: 'Kamu bilang sebelumnya pernah ikut beberapa bootcamp, kan?
+
+          Kalau
+          boleh, aku bisa lihat sertifikatnya?'
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Aduh... aku kelupaan lagi. Maaf banget, ya!
+        expressionSprite: {fileID: 21300000, guid: c0d3412e321644d468bdd8dbe5aad8c9, type: 3}
+      - speakerName: Wendy
+        dialogueText: Tapi aku punya foto bareng teman-temanku waktu kami ikut bootcamp.
+          Mungkin itu bisa jadi bukti sementara?
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
+      - speakerName: Wendy
+        dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
+          tadi kelihatannya kamu capek banget.
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
+      - speakerName: Wendy
+        dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
+          sampai kamu merasa cukup baikan buat lanjut interview-nya.
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
+    - choiceText: 'Kamu yakin dengan nominal gaji yang kamu ajukan ini?
+
+        Bukannya
+        angka ini terlalu rendah untuk posisi yang kamu lamar?'
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: 'Kamu yakin dengan nominal gaji yang kamu ajukan ini?
+
+          Bukannya
+          angka ini terlalu rendah untuk posisi yang kamu lamar?'
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Aku cukup sadar diri, kok. Aku masih pemula dan masih banyak
+          yang harus aku pelajari.
+        expressionSprite: {fileID: 21300000, guid: 36f8c7b832c5feb42aa7ae4647d9ce6c, type: 3}
+      - speakerName: Wendy
+        dialogueText: Lagipula, aku nggak mau terlalu membebani kamu dengan meminta
+          gaji yang tinggi. Buatku, mendapat kesempatan untuk belajar dan berkembang
+          di sini saja sudah berarti banyak
+        expressionSprite: {fileID: 340493152281059553, guid: 15e689f2002973248a67cc9b2cd931e3, type: 3}
+      - speakerName: Wendy
+        dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
+          tadi kelihatannya kamu capek banget.
+        expressionSprite: {fileID: 21300000, guid: b3fd3b084a986904aa6bba0a25760657, type: 3}
+      - speakerName: Wendy
+        dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
+          sampai kamu merasa cukup baikan buat lanjut interview-nya.
+        expressionSprite: {fileID: 0}
+    - choiceText: Gimana caramu membagi waktu dan mengatur semuanya supaya nggak
+        saling mengganggu?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau dilihat dari pengalamanmu, kamu juga cukup aktif di berbagai
+          organisasi, ya. Bahkan sampai sekarang masih ada beberapa yang kamu jalani.
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Gimana caramu membagi waktu dan mengatur semuanya supaya nggak
+          saling mengganggu?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Oh, soal itu... aku merasa mereka sudah seperti keluarga sendiri.
+          Makanya sampai sekarang aku masih tetap terlibat.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+      - speakerName: Wendy
+        dialogueText: Tapi karena sekarang statusku sudah alumni, aku nggak terlalu
+          sering ikut kegiatan mereka, kok.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+      - speakerName: Wendy
+        dialogueText: Jadi tenang saja. Aku tetap bisa membagi waktu dan bersikap
+          profesional saat mengerjakan proyek di perusahaanmu.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+      - speakerName: Wendy
+        dialogueText: Eh... tapi kamu jangan terlalu memaksakan diri, dong. Dari
+          tadi kelihatannya kamu capek banget.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+      - speakerName: Wendy
+        dialogueText: Ayo, istirahat dulu. Aku bakal tetap di sini, kok. Aku tunggu
+          sampai kamu merasa cukup baikan buat lanjut interview-nya.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+  - speakerName: Rookie
+    dialogueText: Ehm... aku masih aman, kok. Nggak perlu terlalu khawatir.
+    expressionSprite: {fileID: 1195984569339986040, guid: 0e5fa172c719b4d40bbd420aeee14385, type: 3}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Kita lanjut ke pertanyaan berikutnya saja, ya?
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 0
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: 
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices:
+    - choiceText: Kamu memang selalu sepeduli ini sama orang lain?
+      scoreWeight: 10
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kamu memang selalu sepeduli ini sama orang lain?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Mouuuh... jangan kasih pertanyaan kayak gitu, dong! Ini cuma
+          buang-buang waktumu. Lebih baik kamu istirahat dulu.
+        expressionSprite: {fileID: 21300000, guid: 36f8c7b832c5feb42aa7ae4647d9ce6c, type: 3}
+      - speakerName: Wendy
+        dialogueText: Kalau soal jawabannya... entah kenapa, aku merasa kayak sudah
+          kenal kamu sejak lama.
+        expressionSprite: {fileID: 21300000, guid: c0d3412e321644d468bdd8dbe5aad8c9, type: 3}
+      - speakerName: Wendy
+        dialogueText: A-aaa... udah, ya! Jangan tanya lebih jauh lagi... aku malu.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+    - choiceText: Kalau kamu diterima bekerja di sini, apa yang sebenarnya kamu harapkan?
+      scoreWeight: 15
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Kalau kamu diterima bekerja di sini, apa yang sebenarnya kamu
+          harapkan?
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Hmm... aku sendiri masih belum terlalu tahu, sih. Tapi aku
+          berharap bisa bertemu rekan-rekan yang sefrekuensi denganku.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+      - speakerName: Wendy
+        dialogueText: Terus, aku juga berharap bisa bekerja di lingkungan yang mendukungku
+          untuk terus belajar dan berkembang. Apalagi aku masih cukup awam di bidang
+          staf ini.
+        expressionSprite: {fileID: 4484487495128855409, guid: 382fa15454216fe46a90143eafd9217e, type: 3}
+      - speakerName: Wendy
+        dialogueText: Jadi... mungkin aku bakal banyak bertanya nanti. Jangan bosan
+          ngajarin aku, ya? Hehe.
+        expressionSprite: {fileID: -1520169496193513579, guid: dcb34014714217c40afa8a6e78468303, type: 3}
+    - choiceText: Boleh ceritakan salah satu pengalamanmu saat mengerjakan sebuah
+        proyek bersama tim?
+      scoreWeight: 25
+      reactionText: 
+      reactionSprite: {fileID: 0}
+      followUpDialogue:
+      - speakerName: Rookie
+        dialogueText: Boleh ceritakan salah satu pengalamanmu saat mengerjakan sebuah
+          proyek bersama tim?
+        expressionSprite: {fileID: 0}
+      - speakerName: Rookie
+        dialogueText: Aku penasaran bagaimana caramu bekerja sama dengan orang lain.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Waktu itu aku pernah mengerjakan sebuah proyek bersama organisasi
+          amal yang aku ikuti. Aku dipercaya menjadi wakil ketua karena... sepertinya
+          aku yang paling antusias waktu itu, hehe.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Kebanyakan anggota lain ikut karena ingin mendapatkan nilai.
+          Tapi menurutku, kalau dikerjakan karena terpaksa, semuanya malah terasa
+          lebih berat.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Jadi aku berusaha bikin suasananya lebih menyenangkan. Aku
+          ingin teman-teman yang lain nggak cuma berpikir soal nilai, tapi juga bisa
+          menikmati prosesnya.
+        expressionSprite: {fileID: 0}
+      - speakerName: Wendy
+        dialogueText: Dan ternyata lumayan berhasil, kok! Mereka jadi lebih semangat
+          dan suasana tim juga jadi lebih enak.
+        expressionSprite: {fileID: 0}
+  - speakerName: Rookie
+    dialogueText: Baiklah, kurasa cukup sampai di sini untuk interview-nya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices: []
+  - speakerName: Rookie
+    dialogueText: Terima kasih sudah meluangkan waktu dan menjawab semua pertanyaanku,
+      ya. Nanti akan aku kabari lagi mengenai hasilnya.
+    expressionSprite: {fileID: 0}
+    isDecisionPoint: 1
+    questionTitle: 
+    choices: []
