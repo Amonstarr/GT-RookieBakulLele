@@ -15,6 +15,7 @@ MonoBehaviour:
   candidateId: worker_6
   candidateName: Alstena Reszwki
   candidateBio: 
+  defaultPortrait: {fileID: -1377757999123886942, guid: e647347e3d99eab49944c8c689baf667, type: 3}
   defaultPortrait: {fileID: 7480188237302958220, guid: 60ba0c9465688554fa38441a40f1e421, type: 3}
   cvDocumentSprite: {fileID: -438266656303300566, guid: 21a2964e4e18fdb418198a390920664f, type: 3}
   dialogueLines:

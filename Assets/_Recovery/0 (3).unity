@@ -1122,12 +1122,6 @@ MonoBehaviour:
   - {fileID: 569455228}
   - {fileID: 361056512}
   - {fileID: 227502235}
-  cvPaperContainer: {fileID: 0}
-  cvPaperButton: {fileID: 0}
-  cvModalPanel: {fileID: 0}
-  cvDisplayImage: {fileID: 0}
-  startInterviewButton: {fileID: 0}
-  closeCVButton: {fileID: 0}
   summaryModalPanel: {fileID: 84823660}
   summaryTotalScoreText: {fileID: 48567833}
   summaryFeedbackText: {fileID: 509003141}
