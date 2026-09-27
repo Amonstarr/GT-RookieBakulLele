@@ -129,12 +129,12 @@ TextureImporter:
       name: Nathania sit_0
       rect:
         serializedVersion: 2
-        x: 10
+        x: 7
         y: 0
-        width: 48
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 53
+        height: 62
+      alignment: 9
+      pivot: {x: 0.4818309, y: 0.1296296}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 99409ccd44752d44fb4711ea3b0836cf
     internalID: 0
     vertices: []
     indices: 
