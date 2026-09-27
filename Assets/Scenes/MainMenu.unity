@@ -1875,7 +1875,7 @@ MonoBehaviour:
   sfxMixerGroupName: SFX
   bgmClip: {fileID: 8300000, guid: 376f888a183c18244b70819052c58035, type: 3}
   autoPlayBGM: 1
-  defaultButtonClickClip: {fileID: 8300000, guid: 740191ad8b27a9c42a3fb80166a4476c, type: 3}
+  defaultButtonClickClip: {fileID: 8300000, guid: 840e86e4f0fda5f40a747cb20e27ff09, type: 3}
 --- !u!114 &633957825
 MonoBehaviour:
   m_ObjectHideFlags: 0
