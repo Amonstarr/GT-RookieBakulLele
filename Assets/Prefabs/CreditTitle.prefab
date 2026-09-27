@@ -67,10 +67,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1207218127336231578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 799b96dfa208c1c40ae0426dbb94fd88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GT.Credits.CreditHeaderUI
-  headerText: {fileID: 568166636708930360}
+  nameText: {fileID: 568166636708930360}
+  roleText: {fileID: 0}
 --- !u!1 &5570298953855038244
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +137,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JUDUL BAGIAN
+  m_text: 'Work With Rookie
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -145,7 +148,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4282242815
   m_fontColor: {r: 1, g: 0.84, b: 0.24, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -158,7 +161,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3203ce6b6a013542a5b3c65980eb35c, type: 3}
   m_Name: CreditsContent
   m_EditorClassIdentifier: Assembly-CSharp::GT.Credits.CreditsContentSO
-  gameTitle: ROOKIE BAKUL LELE
+  gameTitle: Work With Rookie
   thanksMessage: TERIMA KASIH SUDAH BERMAIN!
   sections:
   - sectionTitle: Tim Pengembang

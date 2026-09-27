@@ -131,12 +131,41 @@ namespace GT.Leaderboard
                 GameObject rowGO = Instantiate(rowPrefab, rowsParent);
                 rowGO.SetActive(true);
 
+                bool isPlayer = selfRank > 0 && entry.Rank == selfRank;
                 LeaderboardRowUI row = rowGO.GetComponent<LeaderboardRowUI>();
                 if (row != null)
                 {
-                    bool isPlayer = selfRank > 0 && entry.Rank == selfRank;
                     row.SetEntry(entry, isPlayer, playerRowColor, i);
                 }
+                else
+                {
+                    FillRowFallback(rowGO.transform, entry, isPlayer, playerRowColor, i);
+                }
+            }
+        }
+
+        private static void FillRowFallback(Transform row, LeaderboardEntry entry, bool isPlayer, Color playerColor, int rowIndex)
+        {
+            foreach (TMP_Text text in row.GetComponentsInChildren<TMP_Text>(true))
+            {
+                switch (text.name)
+                {
+                    case "RankText":
+                        text.text = $"#{entry.Rank}";
+                        break;
+                    case "NameText":
+                        text.text = string.IsNullOrEmpty(entry.PlayerName) ? "Player" : entry.PlayerName;
+                        if (isPlayer) text.text = $"<color=#FFD700>{text.text}</color>  (Kamu)";
+                        break;
+                    case "ScoreText":
+                        text.text = Mathf.RoundToInt((float)entry.Score).ToString();
+                        break;
+                }
+            }
+
+            foreach (Image image in row.GetComponentsInChildren<Image>(true))
+            {
+                image.color = isPlayer ? playerColor : (rowIndex % 2 == 0 ? Color.white * 0.9f : Color.white * 0.8f);
             }
         }
 
