@@ -185,7 +185,7 @@ namespace GT.Leaderboard
                 switch (text.name)
                 {
                     case "RankText":
-                        text.text = $"#{entry.Rank}";
+                        text.text = $"#{entry.Rank + 1}";
                         break;
                     case "NameText":
                         text.text = ResolveDisplayName(entry, isPlayer ? playerNameOverride : null);
@@ -216,7 +216,7 @@ namespace GT.Leaderboard
 
             if (playerRankText != null)
             {
-                playerRankText.text = $"Peringkat kamu: <b>#{rank}</b>";
+                playerRankText.text = $"Peringkat kamu: <b>#{rank + 1}</b>";
                 if (playerScoreText != null)
                 {
                     playerScoreText.text = $"Skor: <b>{score}</b> poin";
@@ -224,7 +224,7 @@ namespace GT.Leaderboard
             }
             else if (playerScoreText != null)
             {
-                playerScoreText.text = $"Peringkat kamu: <b>#{rank}</b> · Skor: <b>{score}</b> poin";
+                playerScoreText.text = $"Peringkat kamu: <b>#{rank + 1}</b> · Skor: <b>{score}</b> poin";
             }
         }
 
@@ -257,7 +257,7 @@ public class LeaderboardRowUI : MonoBehaviour
 
         public void SetEntry(LeaderboardEntry entry, bool isPlayer, int rowIndex = 0, string playerNameOverride = null)
         {
-            if (rankText != null) rankText.text = $"#{entry.Rank}";
+            if (rankText != null) rankText.text = $"#{entry.Rank + 1}";
 
             string name = LeaderboardUI.ResolveDisplayName(entry, isPlayer ? playerNameOverride : null);
             if (nameText != null) nameText.text = name;
