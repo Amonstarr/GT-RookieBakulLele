@@ -132,19 +132,20 @@ namespace GT.Leaderboard
                 rowGO.SetActive(true);
 
                 bool isPlayer = selfRank > 0 && entry.Rank == selfRank;
+                string playerName = isPlayer ? PlayerSession.Nama : null;
                 LeaderboardRowUI row = rowGO.GetComponent<LeaderboardRowUI>();
                 if (row != null)
                 {
-                    row.SetEntry(entry, isPlayer, playerRowColor, i);
+                    row.SetEntry(entry, isPlayer, playerRowColor, i, playerName);
                 }
                 else
                 {
-                    FillRowFallback(rowGO.transform, entry, isPlayer, playerRowColor, i);
+                    FillRowFallback(rowGO.transform, entry, isPlayer, playerRowColor, i, playerName);
                 }
             }
         }
 
-        private static void FillRowFallback(Transform row, LeaderboardEntry entry, bool isPlayer, Color playerColor, int rowIndex)
+        private static void FillRowFallback(Transform row, LeaderboardEntry entry, bool isPlayer, Color playerColor, int rowIndex, string playerNameOverride = null)
         {
             foreach (TMP_Text text in row.GetComponentsInChildren<TMP_Text>(true))
             {
@@ -154,8 +155,10 @@ namespace GT.Leaderboard
                         text.text = $"#{entry.Rank}";
                         break;
                     case "NameText":
-                        text.text = string.IsNullOrEmpty(entry.PlayerName) ? "Player" : entry.PlayerName;
-                        if (isPlayer) text.text = $"<color=#FFD700>{text.text}</color>  (Kamu)";
+                        text.text = isPlayer && !string.IsNullOrWhiteSpace(playerNameOverride)
+                            ? playerNameOverride
+                            : string.IsNullOrEmpty(entry.PlayerName) ? "Player" : entry.PlayerName;
+                        if (isPlayer) text.text = $"<color=#FFD700>{text.text}</color>";
                         break;
                     case "ScoreText":
                         text.text = Mathf.RoundToInt((float)entry.Score).ToString();
@@ -216,10 +219,15 @@ namespace GT.Leaderboard
         [SerializeField] private TMP_Text scoreText;
         [SerializeField] private Image backgroundImage;
 
-        public void SetEntry(LeaderboardEntry entry, bool isPlayer, Color playerColor, int rowIndex = 0)
+        public void SetEntry(LeaderboardEntry entry, bool isPlayer, Color playerColor, int rowIndex = 0, string playerNameOverride = null)
         {
             if (rankText != null) rankText.text = $"#{entry.Rank}";
-            if (nameText != null) nameText.text = string.IsNullOrEmpty(entry.PlayerName) ? "Player" : entry.PlayerName;
+
+            string name = isPlayer && !string.IsNullOrWhiteSpace(playerNameOverride)
+                ? playerNameOverride
+                : string.IsNullOrEmpty(entry.PlayerName) ? "Player" : entry.PlayerName;
+            if (nameText != null) nameText.text = name;
+
             if (scoreText != null) scoreText.text = Mathf.RoundToInt((float)entry.Score).ToString();
 
             if (backgroundImage != null)
@@ -229,7 +237,7 @@ namespace GT.Leaderboard
 
             if (isPlayer && nameText != null)
             {
-                nameText.text = $"<color=#FFD700>{nameText.text}</color>  (Kamu)";
+                nameText.text = $"<color=#FFD700>{nameText.text}</color>";
             }
         }
     }
