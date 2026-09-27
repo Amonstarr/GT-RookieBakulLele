@@ -18,6 +18,20 @@ MonoBehaviour:
   - sectionTitle: Tim Pengembang
     entries:
     - name: Hammam Amanullah
-      role: Game Programmer
+      role: Game Programmer & Game Artist
     - name: Muhammad Dzakhwan Azizan
       role: Game Programmer
+    - name: Nestly Reina So'an
+      role: Game Artist
+    - name: Galuh Intan Khumaira
+      role: UI Programmer
+    - name: Muhammad Rilvandio
+      role: UI Programmer
+    - name: Adam Firza Firdaus
+      role: Sound Composer
+    - name: Ulinnuha Ubay Sambodo
+      role: Game Programmer
+    - name: Muhammad Akram Al Hazim
+      role: Game Artist
+    - name: Reinbrandt
+      role: 'Support '
