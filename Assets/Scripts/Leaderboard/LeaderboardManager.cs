@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
@@ -106,11 +107,23 @@ namespace GT.Leaderboard
 
                 if (updatePlayerNameFromSession && !string.IsNullOrWhiteSpace(PlayerSession.Nama))
                 {
-                    await AuthenticationService.Instance.UpdatePlayerNameAsync(PlayerSession.Nama);
-                    Debug.Log($"[LeaderboardManager] Nama player diperbarui: {PlayerSession.Nama}");
+                    string sanitized = SanitizePlayerName(PlayerSession.Nama);
+                    try
+                    {
+                        await AuthenticationService.Instance.UpdatePlayerNameAsync(sanitized);
+                        Debug.Log($"[LeaderboardManager] Nama player diperbarui: {sanitized}");
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogWarning($"[LeaderboardManager] Gagal perbarui nama player ('{sanitized}'): {e.Message}. Lanjut submit skor tanpa nama.");
+                    }
                 }
 
-                LeaderboardEntry entry = await service.AddPlayerScoreAsync(leaderboardId, score);
+                LeaderboardEntry entry = await service.AddPlayerScoreAsync(leaderboardId, score,
+                    new AddPlayerScoreOptions
+                    {
+                        Metadata = new Dictionary<string, string> { { "name", PlayerSession.Nama } }
+                    });
                 Debug.Log($"[LeaderboardManager] Skor {score} berhasil dikirim ke leaderboard '{leaderboardId}' (Rank: {entry.Rank}).");
                 return entry;
             }
@@ -119,6 +132,23 @@ namespace GT.Leaderboard
                 Debug.LogError($"[LeaderboardManager] Gagal submit skor: {e.Message}");
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Ubah nama yang diketik user menjadi format yang diterima layanan Authentication
+        /// (alfanumerik, '-', '_', tanpa spasi, maks 30 karakter). Nama asli tetap dipakai untuk
+        /// tampilan leaderboard via metadata entri skor, jadi sanitasi ini hanya pelengkap.
+        /// </summary>
+        private static string SanitizePlayerName(string raw)
+        {
+            if (string.IsNullOrWhiteSpace(raw)) return null;
+
+            string name = Regex.Replace(raw.Trim(), @"\s+", "_");
+            name = Regex.Replace(name, "[^A-Za-z0-9_-]", "_");
+            name = name.Trim('_');
+            if (string.IsNullOrEmpty(name)) return "Player";
+            if (name.Length > 30) name = name.Substring(0, 30);
+            return name;
         }
 
         /// <summary>
@@ -131,7 +161,7 @@ namespace GT.Leaderboard
                 ILeaderboardsService service = await EnsureServiceAsync();
                 if (service == null) return null;
 
-                return await service.GetPlayerScoreAsync(leaderboardId);
+                return await service.GetPlayerScoreAsync(leaderboardId, new GetPlayerScoreOptions { IncludeMetadata = true });
             }
             catch (LeaderboardsException e) when (e.Reason == LeaderboardsExceptionReason.EntryNotFound || e.Reason == LeaderboardsExceptionReason.LeaderboardNotFound)
             {
@@ -155,7 +185,7 @@ namespace GT.Leaderboard
                 if (service == null) return null;
 
                 LeaderboardScoresPage page = await service.GetScoresAsync(leaderboardId,
-                    new GetScoresOptions { Offset = 0, Limit = Math.Max(1, limit) });
+                    new GetScoresOptions { Offset = 0, Limit = Math.Max(1, limit), IncludeMetadata = true });
                 return page.Results ?? new List<LeaderboardEntry>();
             }
             catch (Exception e)
