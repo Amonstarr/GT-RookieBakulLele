@@ -16,12 +16,11 @@ MonoBehaviour:
   candidateName: Jimny Pawapua
   candidateBio: Pakar budidaya lele sangkuriang dengan insting tajam.
   defaultPortrait: {fileID: 21300000, guid: 0f383cb9f92a2ca47a78f5c8e0150e4f, type: 3}
-  defaultPortrait: {fileID: -8961180997118601234, guid: 1fe3573a3da685f4184e4de7d8837bb0, type: 3}
   cvDocumentSprite: {fileID: -1384224957554588902, guid: cb78f754f8b621d43b8fbc1d1c876631, type: 3}
   dialogueLines:
   - speakerName: Jimny Pawapua.
     dialogueText: Selamat pagi. Saya Jimny Pawapua.
-    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
+    expressionSprite: {fileID: -511995232096784254, guid: e5c0cb5b4306562429304d9764880752, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -48,7 +47,7 @@ MonoBehaviour:
   - speakerName: Rookie
     dialogueText: Kalau begitu, mari kita mulai dengan membahas beberapa hal yang
       menarik dari CV kamu.
-    expressionSprite: {fileID: 21300000, guid: f36e8a512ad5bea40817e5dc7e408932, type: 3}
+    expressionSprite: {fileID: -511995232096784254, guid: e5c0cb5b4306562429304d9764880752, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
@@ -256,13 +255,13 @@ MonoBehaviour:
         expressionSprite: {fileID: 0}
   - speakerName: Rookie
     dialogueText: Cukup... berani dan penuh visi, ya?
-    expressionSprite: {fileID: 0}
+    expressionSprite: {fileID: -2905033936099167209, guid: 10687a8514befd44c9793c5227d2ab27, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
   - speakerName: Rookie
     dialogueText: Baiklah, Jimny. Sekarang kita masuk ke sesi terakhir wawancara.
-    expressionSprite: {fileID: 21300000, guid: 0f383cb9f92a2ca47a78f5c8e0150e4f, type: 3}
+    expressionSprite: {fileID: 8562917491337144741, guid: 9617be6bca231e84b887653f8deb2092, type: 3}
     isDecisionPoint: 0
     questionTitle: 
     choices: []
