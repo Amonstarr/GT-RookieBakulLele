@@ -374,7 +374,7 @@ namespace Tycoon.UI
 
             // Remove HorizontalLayoutGroup if it exists
             UnityEngine.UI.HorizontalLayoutGroup hlg = itemCardContainer.GetComponent<UnityEngine.UI.HorizontalLayoutGroup>();
-            if (hlg != null) Destroy(hlg);
+            if (hlg != null) DestroyImmediate(hlg);
 
             // Auto-add Vertical Layout Group if missing
             UnityEngine.UI.VerticalLayoutGroup vlg = itemCardContainer.GetComponent<UnityEngine.UI.VerticalLayoutGroup>();
@@ -382,13 +382,17 @@ namespace Tycoon.UI
             {
                 vlg = itemCardContainer.gameObject.AddComponent<UnityEngine.UI.VerticalLayoutGroup>();
             }
-            vlg.spacing = 10f;
-            vlg.padding = new RectOffset(8, 8, 8, 8);
-            vlg.childAlignment = TextAnchor.UpperCenter;
-            vlg.childControlWidth = true;
-            vlg.childControlHeight = false;
-            vlg.childForceExpandWidth = true;
-            vlg.childForceExpandHeight = false;
+
+            if (vlg != null)
+            {
+                vlg.spacing = 10f;
+                vlg.padding = new RectOffset(8, 8, 8, 8);
+                vlg.childAlignment = TextAnchor.UpperCenter;
+                vlg.childControlWidth = true;
+                vlg.childControlHeight = false;
+                vlg.childForceExpandWidth = true;
+                vlg.childForceExpandHeight = false;
+            }
 
             // Auto-add Content Size Fitter if missing
             UnityEngine.UI.ContentSizeFitter csf = itemCardContainer.GetComponent<UnityEngine.UI.ContentSizeFitter>();
@@ -396,8 +400,11 @@ namespace Tycoon.UI
             {
                 csf = itemCardContainer.gameObject.AddComponent<UnityEngine.UI.ContentSizeFitter>();
             }
-            csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained;
-            csf.verticalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize;
+            if (csf != null)
+            {
+                csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained;
+                csf.verticalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize;
+            }
 
             EnsureScrollRect();
             EnsureSidebarPosition();
@@ -440,7 +447,7 @@ namespace Tycoon.UI
 
             // Remove VerticalLayoutGroup if it exists
             UnityEngine.UI.VerticalLayoutGroup vlg = itemCardContainer.GetComponent<UnityEngine.UI.VerticalLayoutGroup>();
-            if (vlg != null) Destroy(vlg);
+            if (vlg != null) DestroyImmediate(vlg);
 
             // Ensure container Anchors & Pivot are set to Left-Center (0, 0.5) so ContentSizeFitter can expand width
             if (itemCardContainer is RectTransform rt)
@@ -456,12 +463,16 @@ namespace Tycoon.UI
             {
                 hlg = itemCardContainer.gameObject.AddComponent<UnityEngine.UI.HorizontalLayoutGroup>();
             }
-            hlg.spacing = 20f;
-            hlg.childAlignment = TextAnchor.MiddleLeft;
-            hlg.childControlWidth = false;
-            hlg.childControlHeight = false;
-            hlg.childForceExpandWidth = false;
-            hlg.childForceExpandHeight = false;
+
+            if (hlg != null)
+            {
+                hlg.spacing = 20f;
+                hlg.childAlignment = TextAnchor.MiddleLeft;
+                hlg.childControlWidth = false;
+                hlg.childControlHeight = false;
+                hlg.childForceExpandWidth = false;
+                hlg.childForceExpandHeight = false;
+            }
 
             // Auto-add Content Size Fitter if missing
             UnityEngine.UI.ContentSizeFitter csf = itemCardContainer.GetComponent<UnityEngine.UI.ContentSizeFitter>();
@@ -469,8 +480,11 @@ namespace Tycoon.UI
             {
                 csf = itemCardContainer.gameObject.AddComponent<UnityEngine.UI.ContentSizeFitter>();
             }
-            csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize;
-            csf.verticalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained;
+            if (csf != null)
+            {
+                csf.horizontalFit = UnityEngine.UI.ContentSizeFitter.FitMode.PreferredSize;
+                csf.verticalFit = UnityEngine.UI.ContentSizeFitter.FitMode.Unconstrained;
+            }
         }
     }
 }
